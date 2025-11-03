@@ -1,0 +1,50 @@
+Sub Create_Tables()
+
+DoCmd.RunSQL "CREATE TABLE user_(" & _
+   "id_user INT," & _
+   "email VARCHAR(254) NOT NULL," & _
+   "name VARCHAR(100)," & _
+   "password VARCHAR(255) NOT NULL," & _
+   "role json NOT NULL," & _
+   "PRIMARY KEY(id_user)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE quizz(" & _
+   "id_quizz INT," & _
+   "name VARCHAR(100) NOT NULL," & _
+   "description TEXT NOT NULL," & _
+   "id_user INT NOT NULL," & _
+   "PRIMARY KEY(id_quizz)," & _
+   "FOREIGN KEY(id_user) REFERENCES user_(id_user)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE question(" & _
+   "id_question INT," & _
+   "name VARCHAR(255) NOT NULL," & _
+   "description TEXT NOT NULL," & _
+   "point INT NOT NULL," & _
+   "type enum NOT NULL," & _
+   "id_quizz INT NOT NULL," & _
+   "PRIMARY KEY(id_question)," & _
+   "FOREIGN KEY(id_quizz) REFERENCES quizz(id_quizz)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE choice(" & _
+   "id_choice INT," & _
+   "name TEXT NOT NULL," & _
+   "id_question INT NOT NULL," & _
+   "PRIMARY KEY(id_choice)," & _
+   "FOREIGN KEY(id_question) REFERENCES question(id_question)" & _
+");"   
+
+DoCmd.RunSQL "CREATE TABLE Try(" & _
+   "id_try INT," & _
+   "result_ INT NOT NULL," & _
+   "id_quizz INT NOT NULL," & _
+   "id_user INT NOT NULL," & _
+   "PRIMARY KEY(id_try)," & _
+   "FOREIGN KEY(id_quizz) REFERENCES quizz(id_quizz)," & _
+   "FOREIGN KEY(id_user) REFERENCES user_(id_user)" & _
+");"   
+
+End Sub

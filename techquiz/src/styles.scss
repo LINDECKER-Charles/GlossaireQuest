@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* --- Inline config moderne --- */
+@theme {
+  --color-cg-bg: #0A0E17;
+  --color-cg-card: #121826;
+  --color-cg-border: #1E2535;
+  --color-cg-text: #E5E7EB;
+  --color-cg-text-dim: #9CA3AF;
+  --color-cg-accent: #00E0FF;
+  --color-cg-accent-2: #FF6B00;
+  --color-cg-success: #00FFAB;
+  --color-cg-error: #FF4D4D;
+
+  --font-sans: Inter, Rubik, sans-serif;
+  --font-mono: JetBrains Mono, Share Tech Mono, monospace;
+
+  --shadow-neon-blue: 0 0 10px #00E0FF66;
+  --shadow-neon-orange: 0 0 10px #FF6B0066;
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 5px #00E0FF, 0 0 10px #00E0FF; }
+    to { text-shadow: 0 0 15px #00E0FF, 0 0 25px #00E0FF; }
+  }
+}
+
+/* --- Global styles --- */
+body {
+  @apply bg-cg-bg text-cg-text font-sans;
+}
+
+/* --- Custom utilities --- */
+.card {
+  @apply bg-cg-card border border-cg-border rounded-xl p-6
+         shadow-[var(--shadow-neon-blue)] transition-transform
+         hover:scale-[1.02];
+}
+
+.btn {
+  @apply inline-block px-4 py-2 rounded-md font-mono text-sm transition
+         text-cg-bg bg-cg-accent hover:bg-cg-accent-2 hover:text-white
+         shadow-[var(--shadow-neon-orange)];
+}
+
+.animate-fadeIn {
+  animation: fade-in 0.6s ease-in-out;
+}
+
+.animate-glow {
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
