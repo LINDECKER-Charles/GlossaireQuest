@@ -127,3 +127,4 @@ C:\Users\CharlesLINDECKER\GlossaireQuest\Glossaire.Api\obj\Debug\net9.0\refint\G
 C:\Users\CharlesLINDECKER\GlossaireQuest\Glossaire.Api\obj\Debug\net9.0\Glossaire.Api.pdb
 C:\Users\CharlesLINDECKER\GlossaireQuest\Glossaire.Api\obj\Debug\net9.0\Glossaire.Api.genruntimeconfig.cache
 C:\Users\CharlesLINDECKER\GlossaireQuest\Glossaire.Api\obj\Debug\net9.0\ref\Glossaire.Api.dll
+C:\Users\CharlesLINDECKER\GlossaireQuest\Glossaire.Api\obj\Debug\net9.0\Glossaire.Api.sourcelink.json
