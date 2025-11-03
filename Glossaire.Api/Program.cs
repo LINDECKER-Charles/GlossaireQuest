@@ -1,9 +1,44 @@
+using TechQuiz.Api.Data;
+using TechQuiz.Api.Services; // ✅ Ajoute ceci pour accéder à JwtService
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Ajoute le support des contrôleurs (obligatoire si tu utilises app.MapControllers)
+// Ajoute le support des contrôleurs
 builder.Services.AddControllers();
 
-// (Optionnel) Documentation OpenAPI / Swagger
+// Ajoute Entity Framework + PostgreSQL
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Clé secrète utilisée pour signer le token
+var secretKey = "71d6f722f2725e62ce44ec1caec3701245e2b0fbc4e506b307bff50d05f69f9bc752b0dd";
+var key = Encoding.ASCII.GetBytes(secretKey);
+
+// ✅ Enregistre ton service JWT dans le conteneur DI
+builder.Services.AddSingleton(new JwtService(secretKey));
+
+// Configure l’authentification JWT
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,
+        ValidateAudience = false
+    };
+});
+
+// Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -18,7 +53,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// Route les contrôleurs
-app.MapControllers();
+// ✅ Ces deux middlewares doivent venir avant MapControllers()
+app.UseAuthentication();
+app.UseAuthorization();
 
+app.MapControllers();
 app.Run();
