@@ -9,13 +9,13 @@ namespace TechQuiz.Api.Models
         public int Id { get; set; }
 
         [Required, MaxLength(254)]
-        public string Email { get; set; }
+        public required string Email { get; set; }
 
         [MaxLength(100)]
         public string? Name { get; set; }
 
         [Required, MaxLength(255)]
-        public string Password { get; set; }
+        public required string Password { get; set; }
 
         [Required, MaxLength(50)]
         public string Role { get; set; } = "user";

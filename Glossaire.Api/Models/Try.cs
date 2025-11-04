@@ -16,10 +16,10 @@ namespace TechQuiz.Api.Models
 
         [ForeignKey(nameof(User))]
         public int UserId { get; set; }
-        public User User { get; set; }
+        public required User User { get; set; }
 
         [ForeignKey(nameof(Quizz))]
         public int QuizzId { get; set; }
-        public Quizz Quizz { get; set; }
+        public required Quizz Quizz { get; set; }
     }
 }

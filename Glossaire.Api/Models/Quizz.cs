@@ -10,15 +10,15 @@ namespace TechQuiz.Api.Models
         public int Id { get; set; }
 
         [Required, MaxLength(100)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
 
         [Required]
-        public string Description { get; set; }
+        public required string Description { get; set; }
 
         // Foreign key vers User
         [ForeignKey(nameof(User))]
-        public int UserId { get; set; }
-        public User User { get; set; }
+        public required int UserId { get; set; }
+        public required User User { get; set; }
 
         // Relations
         public ICollection<Question> Questions { get; set; } = new List<Question>();
