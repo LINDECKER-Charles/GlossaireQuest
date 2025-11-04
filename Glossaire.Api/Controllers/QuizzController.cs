@@ -140,6 +140,9 @@ namespace TechQuiz.Api.Controllers
 
             QuizzService.PatchQuestion(request, question);
 
+            _context.Questions.Update(question);
+            await _context.SaveChangesAsync();
+            
             return Ok(new { message = "Question modifié avec succès." });
         }
 
