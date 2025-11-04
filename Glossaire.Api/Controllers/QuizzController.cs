@@ -34,23 +34,6 @@ namespace TechQuiz.Api.Controllers
         // Récupérer un quiz, ajouter une partiticipation
 
         [HttpGet]
-        public async Task<IActionResult> GetQuizzesSummary()
-        {
-            var quizzes = await _context.Quizzes
-                .Select(q => new
-                {
-                    q.Id,
-                    q.Name,
-                    q.Description,
-                    Author = q.User.Name,
-                    QuestionCount = q.Questions.Count
-                })
-                .ToListAsync();
-
-            return Ok(quizzes);
-        }
-        
-        [HttpGet("{id}")]
         public async Task<IActionResult> GetQuizze(int id)
         {
             var quiz = await _context.Quizzes
@@ -81,6 +64,23 @@ namespace TechQuiz.Api.Controllers
             return Ok(quiz);
         }
 
+        [HttpGet("summary")]
+        public async Task<IActionResult> GetQuizzesSummary()
+        {
+            var quizzes = await _context.Quizzes
+                .Select(q => new
+                {
+                    q.Id,
+                    q.Name,
+                    q.Description,
+                    Author = q.User.Name,
+                    QuestionCount = q.Questions.Count
+                })
+                .ToListAsync();
+
+            return Ok(quizzes);
+        }
+        
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> CreateQuizz([FromBody] QuizzRequest request)
@@ -103,12 +103,56 @@ namespace TechQuiz.Api.Controllers
             return Ok(new { message = "Quiz créé avec succès." });
         }
 
+        [Authorize]
+        [HttpPost("question")]
+        public async Task<IActionResult> AddQuestion(int id, [FromBody] QuestionRequest request)
+        {
+            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+            User? user = await _acces.getUser(email);
+            if (user == null || _acces.IsAdmin(user))
+                return Unauthorized(new { message = "Accès non autorisé." });
 
+            var quiz = await _context.Quizzes.FindAsync(id);
+            if (quiz == null)
+                return NotFound(new { message = "Quizz non trouvé." });
+
+            var question = QuizzFactory.CreateQuestion(request, quiz);
+
+            quiz.Questions.Add(question);
+
+            _context.Quizzes.Update(quiz);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Question créée avec succès." });
+        }
 
         [Authorize]
-        [HttpPatch("{id}")]
+        [HttpPost("choice")]
+        public async Task<IActionResult> AddChoice(int id, [FromBody] ChoiceRequest request)
+        {
+            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+            User? user = await _acces.getUser(email);
+            if (user == null || _acces.IsAdmin(user))
+                return Unauthorized(new { message = "Accès non autorisé." });
+
+            var question = await _context.Questions.FindAsync(id);
+            if (question == null)
+                return NotFound(new { message = "Question non trouvée." });
+
+            var choice = QuizzFactory.CreateChoice(request, question);
+
+            question.Choices.Add(choice);
+            _context.Questions.Update(question);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Choix créé avec succès." });
+        }
+
+        [Authorize]
+        [HttpPatch]
         public async Task<IActionResult> PatchQuiz(int id, [FromBody] QuizzPatch request)
         {
+            Console.WriteLine("PatchQuiz called");
             string? email = User.FindFirst(ClaimTypes.Email)?.Value;
             User? user = await _acces.getUser(email);
             if (user == null || _acces.IsAdmin(user))
@@ -117,8 +161,7 @@ namespace TechQuiz.Api.Controllers
             var quiz = await _context.Quizzes.FindAsync(id);
             if (quiz == null) return NotFound();
 
-            if (!string.IsNullOrEmpty(request.Description)) quiz.Description = request.Description;
-            if (!string.IsNullOrEmpty(request.Name)) quiz.Name = request.Name;
+            quiz = QuizzService.PatchQuizz(request, quiz);
 
             _context.Quizzes.Update(quiz);
             await _context.SaveChangesAsync();
@@ -127,34 +170,54 @@ namespace TechQuiz.Api.Controllers
         }
 
         [Authorize]
-        [HttpPatch("question/{id}")]
+        [HttpPatch("question")]
         public async Task<IActionResult> PatchQuestion(int id, [FromBody] QuestionPatch request)
         {
             string? email = User.FindFirst(ClaimTypes.Email)?.Value;
             User? user = await _acces.getUser(email);
             if (user == null || _acces.IsAdmin(user))
                 return Unauthorized(new { message = "Accès non autorisé." });
-            
-            var question = await _context.Questions.FindAsync(id);
-            if (question == null) return NotFound();
 
-            QuizzService.PatchQuestion(request, question);
+            var question = await _context.Questions.FindAsync(id);
+            
+            if (question == null) return NotFound();
+                question = QuizzService.PatchQuestion(request, question);
 
             _context.Questions.Update(question);
             await _context.SaveChangesAsync();
-            
+
             return Ok(new { message = "Question modifié avec succès." });
         }
 
         [Authorize]
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteQuiz(int id)
+        [HttpPatch("choice")]
+        public async Task<IActionResult> PatchChoice(int id, [FromBody] ChoicePatch request)
         {
             string? email = User.FindFirst(ClaimTypes.Email)?.Value;
             User? user = await _acces.getUser(email);
             if (user == null || _acces.IsAdmin(user))
                 return Unauthorized(new { message = "Accès non autorisé." });
             
+            var choice = await _context.Choices.FindAsync(id);
+            if (choice == null) return NotFound();
+
+            choice = QuizzService.PatchChoice(request, choice);
+
+            _context.Choices.Update(choice);
+            await _context.SaveChangesAsync();
+            
+            return Ok(new { message = "Choix modifié avec succès." });
+        }
+
+        [Authorize]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteQuiz(int id)
+        {
+            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+            User? user = await _acces.getUser(email);
+            if (user == null || _acces.IsAdmin(user))
+                return Unauthorized(new { message = "Accès non autorisé." });
+
             var quiz = await _context.Quizzes.FindAsync(id);
             if (quiz == null)
                 return NotFound();
@@ -166,22 +229,41 @@ namespace TechQuiz.Api.Controllers
             return Ok(new { message = "Quizz suprimmé avec succès." });
         }
 
+        [Authorize]
+        [HttpDelete("question")]
+        public async Task<IActionResult> DeleteQuestion(int id)
+        {
+            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+            User? user = await _acces.getUser(email);
+            if (user == null || _acces.IsAdmin(user))
+                return Unauthorized(new { message = "Accès non autorisé." });
+
+            var question = await _context.Questions.FindAsync(id);
+            if (question == null)
+                return NotFound();
+
+            _context.Questions.Remove(question);
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Question supprimée avec succès." });
+        }
+
+        [Authorize]
+        [HttpDelete("choice")]
+        public async Task<IActionResult> DeleteChoice(int id)
+        {
+            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+            User? user = await _acces.getUser(email);
+            if (user == null || _acces.IsAdmin(user))
+                return Unauthorized(new { message = "Accès non autorisé." });
+
+            var choice = await _context.Choices.FindAsync(id);
+            if (choice == null)
+                return NotFound();
+
+            _context.Choices.Remove(choice);
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Choix supprimé avec succès." });
+        }
     }
-
-
-    public record QuizzPatch(
-        string? Name,
-        string? Description
-    );
-    public record QuestionPatch(
-        string? Name,
-        string? Description,
-        int? Point,
-        string? Type
-    );
-    public record ChoicePatch(
-        string? Name,
-        bool? IsCorrect
-    );
 
 }

@@ -19,4 +19,9 @@ namespace TechQuiz.Api.Dtos
         string Name,
         bool IsCorrect
     );
+
+    public record TryRequest(
+        int Result,
+        int QuizzId
+    );
 }

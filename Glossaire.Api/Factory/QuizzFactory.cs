@@ -45,5 +45,55 @@ namespace TechQuiz.Api.Factory
 
             return quizz;
         }
+
+        public static Question CreateQuestion(QuestionRequest request, Quizz quiz)
+        {
+            var question = new Question
+            {
+                Name = request.Name,
+                Description = request.Description,
+                Point = request.Point,
+                Type = request.Type,
+                Quizz = quiz,
+                QuizzId = quiz.Id
+            };
+
+            question.Choices = request.Choices.Select(c => new Choice
+            {
+                Name = c.Name,
+                IsCorrect = c.IsCorrect,
+                Question = question,
+                QuestionId = question.Id
+            }).ToList();
+
+            return question;
+        }
+
+        public static Choice CreateChoice(ChoiceRequest request, Question question)
+        {
+            var choice = new Choice
+            {
+                Name = request.Name,
+                IsCorrect = request.IsCorrect,
+                Question = question,
+                QuestionId = question.Id
+            };
+
+            return choice;
+        }
+
+        public static Try CreateTry(TryRequest request, Quizz quiz, User user)
+        {
+            var tryEntry = new Try
+            {
+                Result = request.Result,
+                Quizz = quiz,
+                QuizzId = quiz.Id,
+                User = user,
+                UserId = user.Id
+            };
+
+            return tryEntry;
+        }
     }
 }
