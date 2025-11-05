@@ -1,0 +1,45 @@
+<main class="home-page flex flex-col gap-12 py-12 px-6 text-center">
+
+  <!-- Liste des quiz -->
+  <section class="section-quizzes">
+    <h2 class="text-4xl font-bold mb-10 text-[#E2A411]"> Tous les Quiz Disponibles</h2>
+
+    <div
+      class="quiz-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center"
+    >
+      <div
+        *ngFor="let quiz of quizzList"
+        class="quiz-card w-full max-w-[320px] bg-[#30353B] border border-[#3A3F46] rounded-xl p-6 flex flex-col justify-between shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+      >
+        <!-- 🔹 Titre + description -->
+        <div class="text-left">
+          <h3 class="text-xl font-semibold mb-2 text-[#F3F6F7] line-clamp-2">
+            {{ quiz.name }}
+          </h3>
+          <p class="text-[#888C96] text-sm mb-3 line-clamp-3">
+            {{ quiz.description }}
+          </p>
+
+          <p class="text-xs text-[#E2A411] font-mono mb-4">
+            {{ quiz.questionCount }} question{{ quiz.questionCount > 1 ? 's' : '' }}
+          </p>
+        </div>
+
+        <!-- 🔹 Bouton -->
+        <div class="mt-auto flex justify-center">
+          <a
+            [routerLink]="['/quizz', quiz.id]"
+            class="btn-primary inline-block py-2 px-4 rounded-lg text-sm"
+          >
+            Jouer maintenant
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Si aucun quiz -->
+    <div *ngIf="!quizzList?.length" class="text-[#888C96] mt-8">
+      Aucun quiz disponible pour le moment.
+    </div>
+  </section>
+</main>

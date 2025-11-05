@@ -1,0 +1,28 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
+
+@Injectable({
+  providedIn: 'root'
+})
+export abstract class AbstractRequestService {
+
+  protected baseUrl = environment.apiUrl;  
+  constructor(protected http : HttpClient, protected auth : AuthService, protected router : Router) { }
+
+  protected request<T>(method: string, url: string, body?: any, log: boolean = true): Observable<T> {
+    if(this.auth.isTokenExpired() && log){
+      this.auth.logout();
+      this.router.navigate(['/login']);
+    }
+    const token = this.auth.getToken();
+    const headers = new HttpHeaders({
+      'Authorization': token ? `Bearer ${token}` : '',
+      'Content-Type': 'application/json'
+    });
+    return this.http.request<T>(method, url, { body, headers });
+  }
+}

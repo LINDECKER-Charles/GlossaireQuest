@@ -1,0 +1,53 @@
+<main class="page">
+  <section class="card w-full max-w-md">
+    <h2 class="card-title">Connexion</h2>
+
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="space-y-4">
+      <!-- Email -->
+      <label class="label block">
+        Adresse e-mail
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          required
+          placeholder="ex: your.mail@mail.com"
+          class="input mt-1"
+        />
+      </label>
+
+      <!-- Mot de passe -->
+      <label for="password" class="label block">
+        Mot de passe
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+          placeholder="••••••••"
+          class="input"
+        />
+      </label>
+      <!-- Message d'erreur -->
+      <p *ngIf="errorMessage" class="error-text">{{ errorMessage }}</p>
+
+      <!-- Bouton -->
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="btn-primary w-full py-2.5 font-bold"
+      >
+        Se connecter
+      </button>
+    </form>
+
+    <!-- Liens secondaires -->
+    <nav aria-label="Liens d’authentification" class="mt-6 text-center text-sm text-muted space-y-2">
+      <p>
+        Pas encore de compte ?
+        <a routerLink="/register" class="link">Créez-en un</a>
+      </p>
+    </nav>
+  </section>
+</main>

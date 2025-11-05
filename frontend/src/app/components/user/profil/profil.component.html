@@ -1,0 +1,99 @@
+<main class="page">
+  <section aria-labelledby="profile-title" class="card max-w-lg w-full">
+    <!-- Titre -->
+    <h1 id="profile-title" class="section-title text-center">Profil utilisateur</h1>
+
+    <!-- État : chargement -->
+    <div *ngIf="loading" class="text-center text-muted animate-pulse">
+      Chargement des informations...
+    </div>
+
+    <!-- État : erreur -->
+    <div *ngIf="error" class="text-center text-red-500 font-semibold">
+      {{ error }}
+    </div>
+
+    <!-- Informations utilisateur -->
+    <dl *ngIf="!loading && user" class="profile-info">
+      <div class="profile-row">
+        <dt>Nom :</dt>
+        <dd>{{ user.name }}</dd>
+      </div>
+
+      <div class="profile-row">
+        <dt>Email :</dt>
+        <dd>{{ user.email }}</dd>
+      </div>
+
+      <div class="profile-row">
+        <dt>Rôle :</dt>
+        <dd>{{ user.role }}</dd>
+      </div>
+    </dl>
+
+    <!-- Résumé des tentatives -->
+    <section *ngIf="!loading && tries?.length" class="mt-12 card bg-[#30353B] border border-[#3A3F46] rounded-xl p-6">
+      <h2 class="text-2xl font-bold text-[#E2A411] mb-4 text-center">Résumé des tentatives</h2>
+
+      <div class="grid sm:grid-cols-3 gap-6 text-center text-[#F3F6F7]">
+        <div class="stat">
+          <p class="text-sm text-[#888C96]">Total de tentatives</p>
+          <p class="text-3xl font-bold">{{ triesSummary.total }}</p>
+        </div>
+        <div class="stat">
+          <p class="text-sm text-[#888C96]">Meilleur score</p>
+          <p class="text-3xl font-bold text-[#E2A411]">{{ triesSummary.best }}</p>
+        </div>
+        <div class="stat">
+          <p class="text-sm text-[#888C96]">Moyenne</p>
+          <p class="text-3xl font-bold text-[#A7F3D0]">{{ triesSummary.average | number:'1.0-1' }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 dernières tentatives -->
+    <section *ngIf="!loading && tries?.length" class="mt-10 card bg-[#30353B] border border-[#3A3F46] rounded-xl p-6">
+      <h2 class="text-2xl font-bold text-[#E2A411] mb-6 text-center">Dernières tentatives</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse text-[#F3F6F7]">
+          <thead class="bg-[#25282D] text-[#E2A411]">
+            <tr>
+              <th class="py-3 px-4">Quiz</th>
+              <th class="py-3 px-4 text-center">Résultat</th>
+              <th class="py-3 px-4 text-center">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let t of tries | slice:0:5"
+              class="border-t border-[#3A3F46] hover:bg-[#3A3F46] transition-colors duration-200"
+            >
+              <td class="py-3 px-4 font-medium">{{ t.quizName }}</td>
+              <td class="py-3 px-4 text-center text-[#E2A411] font-semibold">
+                {{ t.result }}
+              </td>
+              <td class="py-3 px-4 text-center text-[#888C96]">
+                {{ t.date | date:'short' }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Aucun essai -->
+    <section *ngIf="!loading && (!tries?.length || tries?.length === 0)" class="mt-10 text-center text-[#888C96]">
+      Aucune tentative enregistrée pour le moment.
+    </section>
+
+
+
+    <!-- Bouton déconnexion -->
+    <div *ngIf="!loading && user" class="text-center mt-8">
+      <button (click)="logout()" class="btn-primary w-full py-2.5 font-semibold">
+        Déconnexion
+      </button>
+    </div>
+  </section>
+</main>

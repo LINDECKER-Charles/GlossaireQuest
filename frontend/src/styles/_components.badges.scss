@@ -1,0 +1,21 @@
+@layer components {
+  .status-pill {
+    @apply px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  .status-verified {
+    @apply bg-green-600 text-neutral-100;
+  }
+
+  .status-unverified {
+    @apply bg-red-600 text-neutral-100;
+  }
+}
+
+.btn-primary {
+  @apply bg-[#E2A411] text-[#1B1C1C] font-semibold rounded-lg transition-colors duration-300 hover:bg-[#f1b927];
+}
+
+.btn-outline {
+  @apply border border-[#E2A411] text-[#E2A411] font-medium rounded-lg transition-colors duration-300 hover:bg-[#E2A411] hover:text-[#1B1C1C];
+}

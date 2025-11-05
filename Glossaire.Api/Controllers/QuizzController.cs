@@ -44,6 +44,7 @@ namespace TechQuiz.Api.Controllers
                     q.Name,
                     q.Description,
                     Author = q.User.Name,
+                    QuestionCount = q.Questions.Count,
                     Questions = q.Questions.Select(ques => new
                     {
                         ques.Id,
@@ -62,6 +63,14 @@ namespace TechQuiz.Api.Controllers
                 .ToListAsync();
 
             return Ok(quiz);
+        }
+
+        [HttpGet("best")]
+        public async Task<IActionResult> GetBestQuizzes()
+        {
+
+
+            return Ok();
         }
 
         [HttpGet("summary")]
