@@ -1,35 +1,59 @@
-<main class="home-page flex flex-col gap-12 py-12 px-6 text-center">
+<main class="home-page flex flex-col gap-16 py-16 px-6">
+
+  <!-- En-tête / titre principal -->
+<section class="text-center flex flex-col items-center justify-center min-h-[20vh]">
+  <h1 class="hero-title text-5xl font-extrabold text-primary-400 mb-4">
+    Tous les Quiz Disponibles
+  </h1>
+  <p class="hero-subtitle text-neutral-400 mx-auto max-w-2xl">
+    Teste tes connaissances sur différents langages et sujets techniques.  
+    Chaque quiz est unique — choisis ton défi !
+  </p>
+</section>
+
+  <!-- Section CTA -->
+  <section class="section-cta" *ngIf="!isLoggedIn()">
+    <h2 class="cta-title">Prêt à relever un nouveau défi ?</h2>
+    <p class="cta-text">
+      Connecte-toi pour enregistrer tes scores et suivre ta progression dans le classement.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a routerLink="/register" class="btn-primary px-6 py-3">Créer un compte</a>
+      <a routerLink="/login" class="btn-outline px-6 py-3">Se connecter</a>
+    </div>
+  </section>
 
   <!-- Liste des quiz -->
-  <section class="section-quizzes">
-    <h2 class="text-4xl font-bold mb-10 text-[#E2A411]"> Tous les Quiz Disponibles</h2>
-
+  <section class="container">
     <div
-      class="quiz-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center"
+      class="quiz-grid grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center"
     >
+      <!-- Carte quiz -->
       <div
         *ngFor="let quiz of quizzList"
-        class="quiz-card w-full max-w-[320px] bg-[#30353B] border border-[#3A3F46] rounded-xl p-6 flex flex-col justify-between shadow-md hover:shadow-lg hover:scale-[1.02] transition-all duration-300"
+        class="card w-full max-w-[320px] flex flex-col justify-between hover:-translate-y-1 transition-all duration-300"
       >
-        <!-- 🔹 Titre + description -->
-        <div class="text-left">
-          <h3 class="text-xl font-semibold mb-2 text-[#F3F6F7] line-clamp-2">
+        <!-- Contenu -->
+        <div class="text-left mb-6">
+          <h3 class="text-xl font-semibold mb-2 text-neutral-100 line-clamp-2">
             {{ quiz.name }}
           </h3>
-          <p class="text-[#888C96] text-sm mb-3 line-clamp-3">
+
+          <p class="text-neutral-400 text-sm mb-3 line-clamp-3">
             {{ quiz.description }}
           </p>
 
-          <p class="text-xs text-[#E2A411] font-mono mb-4">
+          <p class="text-xs text-primary-400 font-mono">
             {{ quiz.questionCount }} question{{ quiz.questionCount > 1 ? 's' : '' }}
           </p>
         </div>
 
-        <!-- 🔹 Bouton -->
+        <!-- Bouton -->
         <div class="mt-auto flex justify-center">
           <a
             [routerLink]="['/quizz', quiz.id]"
-            class="btn-primary inline-block py-2 px-4 rounded-lg text-sm"
+            class="btn-primary w-full py-2.5 text-sm rounded-lg font-semibold"
           >
             Jouer maintenant
           </a>
@@ -37,9 +61,10 @@
       </div>
     </div>
 
-    <!-- Si aucun quiz -->
-    <div *ngIf="!quizzList?.length" class="text-[#888C96] mt-8">
+    <!-- Aucun quiz -->
+    <div *ngIf="!quizzList?.length" class="text-neutral-500 mt-8 text-center">
       Aucun quiz disponible pour le moment.
     </div>
   </section>
+
 </main>

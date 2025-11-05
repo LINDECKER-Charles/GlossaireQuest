@@ -1,17 +1,19 @@
-<footer role="contentinfo" class="footer">
-  <div class="footer-container">
-    <!-- Bloc gauche -->
-    <section aria-labelledby="footer-about" class="footer-section">
-      <h2 id="footer-about" class="footer-title">MoneyFollow</h2>
-      <p class="footer-text">
-        Application web développée pour la gestion financière personnelle.
+<footer role="contentinfo" class="footer bg-neutral-900 border-t border-neutral-700 mt-16">
+  <div class="footer-container max-w-6xl mx-auto py-12 px-6 grid gap-8 md:grid-cols-3 text-neutral-400">
+
+    <!-- À propos -->
+    <section aria-labelledby="footer-about" class="footer-section space-y-3 text-left">
+      <h2 id="footer-about" class="footer-title text-primary-400 text-lg font-semibold">TechQuiz</h2>
+      <p class="footer-text text-sm leading-relaxed">
+        Plateforme web de quiz techniques pour développeurs curieux.<br>
+        Testez vos connaissances, progressez et grimpez dans le classement.
       </p>
     </section>
 
-    <!-- Bloc central : coordonnées -->
-    <address aria-labelledby="footer-contact" class="footer-address">
-      <h2 id="footer-contact" class="footer-title">Contact</h2>
-      <ul class="space-y-1">
+    <!-- Contact -->
+    <address aria-labelledby="footer-contact" class="footer-section not-italic text-left space-y-3">
+      <h2 id="footer-contact" class="footer-title text-primary-400 text-lg font-semibold">Contact</h2>
+      <ul class="space-y-1 text-sm">
         <li>
           <span class="font-medium text-neutral-100">Développeur :</span> Charles Lindecker
         </li>
@@ -19,18 +21,18 @@
           <span class="font-medium text-neutral-100">Email :</span>
           <a
             href="mailto:charles.lindecker@outlook.fr"
-            class="footer-link"
+            class="footer-link text-primary-400 hover:underline"
           >
             charles.lindecker&#64;outlook.fr
           </a>
         </li>
         <li>
-          <span class="font-medium text-neutral-100">Portfolio :</span>
+          <span class="font-medium text-neutral-100">GitHub :</span>
           <a
             href="https://github.com/LINDECKER-Charles"
             target="_blank"
             rel="noopener"
-            class="footer-link"
+            class="footer-link text-primary-400 hover:underline"
           >
             github.com/LINDECKER-Charles
           </a>
@@ -38,19 +40,19 @@
       </ul>
     </address>
 
-    <!-- Bloc droit : mentions légales -->
-    <section aria-labelledby="footer-legal" class="footer-section">
-      <h2 id="footer-legal" class="footer-title">Mentions légales</h2>
-      <p class="footer-text">
+    <!-- Mentions légales -->
+    <section aria-labelledby="footer-legal" class="footer-section text-left space-y-3">
+      <h2 id="footer-legal" class="footer-title text-primary-400 text-lg font-semibold">Mentions légales</h2>
+      <p class="footer-text text-sm leading-relaxed">
         Ce site est un projet personnel à but non commercial.<br>
-        Les informations et données affichées sont strictement confidentielles.<br>
-        Hébergement assuré par <span class="text-neutral-100">Hostinger</span>.
+        Toutes les données et contenus sont protégés.<br>
+        Hébergement : <span class="text-neutral-100 font-medium">Hostinger</span>.
       </p>
     </section>
   </div>
 
-  <!-- Bande inférieure -->
-  <div class="footer-bottom">
-    <small>© {{ currentYear }} Charles Lindecker — Tous droits réservés.</small>
+  <!-- Bas de page -->
+  <div class="footer-bottom border-t border-neutral-700 py-4 text-center text-neutral-500 text-sm">
+    <small>© {{ currentYear }} <span class="text-primary-400">Charles Lindecker</span> — Tous droits réservés.</small>
   </div>
 </footer>

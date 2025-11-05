@@ -16,7 +16,7 @@
   }
 
   .btn-primary {
-    @apply btn bg-gradient-to-tr from-primary-500 to-secondary-500 text-white hover:from-primary-400 hover:to-secondary-400 disabled:from-neutral-600 disabled:to-neutral-700 disabled:cursor-not-allowed hover:cursor-pointer;
+    @apply btn bg-gradient-to-tr from-primary-500 to-secondary-500 text-white hover:from-primary-400 hover:to-secondary-400 disabled:from-neutral-600 disabled:to-neutral-700 disabled:cursor-not-allowed hover:cursor-pointer px-4 py-2;
   }
 
   .btn-back {

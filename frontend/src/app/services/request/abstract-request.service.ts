@@ -25,4 +25,8 @@ export abstract class AbstractRequestService {
     });
     return this.http.request<T>(method, url, { body, headers });
   }
+
+  protected requestNoAuth<T>(method: string, url: string, body?: any, log: boolean = true): Observable<T> {
+    return this.http.request<T>(method, url, { body });
+  }
 }

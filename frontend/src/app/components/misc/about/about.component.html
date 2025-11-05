@@ -1,49 +1,106 @@
-<main id="main-content" class="page bg-background-dark text-neutral-100 py-16 px-6 flex justify-center">
-  <section aria-labelledby="about-title" class="card max-w-4xl text-center border border-neutral-700">
-    <h1 id="about-title" class="text-3xl font-bold text-primary-400 mb-6">
-      À propos de MoneyFollow
+<main
+  id="main-content"
+  class="page bg-neutral-900 text-neutral-100 py-20 px-6 flex justify-center"
+>
+  <section
+    aria-labelledby="about-title"
+    class="card max-w-4xl w-full border border-neutral-700 text-center shadow-soft"
+  >
+    <!-- 🔹 Titre principal -->
+    <h1
+      id="about-title"
+      class="text-4xl md:text-5xl font-extrabold text-primary-400 mb-8"
+    >
+      À propos de <span class="text-secondary-400">TechQuiz</span>
     </h1>
 
+    <!-- 🔹 Description -->
     <article class="space-y-6 text-neutral-300 text-lg leading-relaxed">
       <p>
-        <span class="text-primary-400 font-semibold">MoneyFollow</span> est une application web moderne dédiée à la
-        gestion financière personnelle. Son objectif : permettre à chacun de mieux comprendre ses dépenses et revenus à
-        travers une interface claire, rapide et intuitive.
+        <span class="text-primary-400 font-semibold">TechQuiz</span> est une
+        plateforme web conçue pour les passionnés de technologie.  
+        Son objectif : offrir un espace ludique et formateur où chacun peut
+        tester, améliorer et démontrer ses connaissances techniques.
       </p>
 
       <p>
-        Ce projet est développé avec <span class="text-primary-400">Angular</span> pour le front-end et
-        <span class="text-primary-400">Spring Boot</span> pour le back-end, connectés à une base
-        <span class="text-primary-400">PostgreSQL</span>.  
-        Un stack robuste, sécurisé et pensé pour l’évolution.
+        Le projet repose sur un écosystème moderne et performant :  
+        <span class="text-primary-400">Angular</span> pour le front-end,
+        <span class="text-primary-400">.NET 8 (C#)</span> pour l’API, et une
+        base de données <span class="text-primary-400">PostgreSQL</span> — le
+        tout orchestré avec <span class="text-primary-400">Docker</span> et
+        une architecture pensée pour l’évolutivité et la sécurité.
+      </p>
+
+      <p>
+        L’application s’inscrit dans une logique d’apprentissage continu :
+        de nouveaux quiz, catégories et classements sont régulièrement ajoutés
+        afin d’enrichir l’expérience.
       </p>
     </article>
 
-    <address aria-labelledby="contact-title" class="not-italic mt-10 space-y-2 text-neutral-400 text-sm">
-      <h2 id="contact-title" class="text-lg font-semibold text-primary-400 mb-3">
+    <!-- 🔹 Ligne décorative -->
+    <div class="h-px w-2/3 bg-neutral-700 mx-auto my-10"></div>
+
+    <!-- 🔹 Contact -->
+    <address
+      aria-labelledby="contact-title"
+      class="not-italic mt-10 space-y-2 text-neutral-400 text-sm"
+    >
+      <h2
+        id="contact-title"
+        class="text-xl font-semibold text-primary-400 mb-3"
+      >
         Contact
       </h2>
 
-      <p><span class="font-medium text-neutral-100">Développeur :</span> Charles Lindecker</p>
+      <p>
+        <span class="font-medium text-neutral-100">Développeur :</span>
+        Charles Lindecker
+      </p>
 
       <p>
         <span class="font-medium text-neutral-100">Email :</span>
-        <a href="mailto:charles.lindecker@outlook.fr" class="link">
+        <a
+          href="mailto:charles.lindecker@outlook.fr"
+          class="text-primary-400 hover:underline transition"
+        >
           charles.lindecker&#64;outlook.fr
         </a>
       </p>
 
       <p>
-        <span class="font-medium text-neutral-100">Portfolio :</span>
+        <span class="font-medium text-neutral-100">GitHub :</span>
         <a
           href="https://github.com/LINDECKER-Charles"
           target="_blank"
           rel="noopener"
-          class="link"
+          class="text-primary-400 hover:underline transition"
         >
           github.com/LINDECKER-Charles
         </a>
       </p>
     </address>
+
+    <!-- Bouton retour -->
+    <div class="mt-10">
+      <a routerLink="/" class="btn-back">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4 mr-2"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+        Retour à l’accueil
+      </a>
+    </div>
   </section>
 </main>

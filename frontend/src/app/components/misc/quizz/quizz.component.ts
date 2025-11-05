@@ -113,6 +113,17 @@ export class QuizzComponent implements OnInit {
 
   }
 
+  public isQuestionCorrect(question: Question): boolean {
+    // Vérifie si l'utilisateur a tout bon sur cette question
+    if (question.type === 'MULTI') {
+      return question.choices.every(
+        (c) => c.isCorrect === c.selected
+      );
+    }
+    const selected = question.choices.find((c) => c.selected);
+    return selected ? selected.isCorrect : false;
+  }
+
   // Rejouer
   public retryQuiz(): void {
     if (!this.quiz) return;

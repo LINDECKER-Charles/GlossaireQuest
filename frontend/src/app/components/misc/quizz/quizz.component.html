@@ -1,96 +1,129 @@
-<main class="quiz-detail-page flex flex-col items-center py-12 px-6">
+<main class="quiz-detail-page container py-16">
 
   <!-- En-tête du quiz -->
-  <section class="quiz-header text-center max-w-2xl mb-10" *ngIf="quiz && !isPlaying && !isFinished">
-    <h1 class="text-4xl font-bold text-[#E2A411] mb-4">{{ quiz.name }}</h1>
-    <p class="text-[#BDC1C7] text-lg mb-4">{{ quiz.description }}</p>
-    <p class="text-[#888C96] text-sm italic">
-      Créé par <span class="text-[#E2A411]">{{ quiz.author }}</span> — 
+  <section class="quiz-header text-center max-w-2xl mx-auto mb-12" *ngIf="quiz && !isPlaying && !isFinished">
+    <h1 class="section-title mb-4">{{ quiz.name }}</h1>
+    <p class="text-muted text-lg mb-4">{{ quiz.description }}</p>
+    <p class="text-sm text-neutral-400 italic">
+      Créé par <span class="highlight">{{ quiz.author }}</span> —
       {{ quiz.questionCount }} question{{ quiz.questionCount > 1 ? 's' : '' }}
     </p>
 
     <div class="mt-6">
-      <button class="btn-primary py-2 px-6" (click)="startQuiz()">
+      <button class="btn-primary px-6 py-2" (click)="startQuiz()">
         Commencer le quiz
       </button>
     </div>
   </section>
 
   <!-- Liste des questions -->
-  <section *ngIf="isPlaying" class="quiz-questions w-full max-w-3xl flex flex-col gap-8">
+  <section *ngIf="isPlaying" class="quiz-questions max-w-3xl mx-auto space-y-8">
     <article
       *ngFor="let question of quiz?.questions; let index = index"
-      class="question-card bg-[#30353B] border border-[#3A3F46] rounded-xl p-6 shadow-md"
+      class="card"
     >
-      <h2 class="text-xl font-semibold mb-2 text-[#F3F6F7]">
+      <h2 class="card-title text-left mb-2">
         {{ index + 1 }}. {{ question.name }}
       </h2>
 
-      <!-- Points -->
-      <p class="text-sm text-[#E2A411] font-mono mb-3">
+      <p class="text-sm text-primary-400 font-mono mb-2">
         {{ question.point }} point{{ question.point > 1 ? 's' : '' }}
       </p>
 
-      <p class="text-[#888C96] mb-4">{{ question.description }}</p>
+      <p class="text-muted mb-4">{{ question.description }}</p>
 
-      <!-- Type de question -->
-      <p class="text-xs uppercase text-[#E2A411] mb-2">
-        Type : 
+      <p class="text-xs uppercase text-primary-400 mb-2">
+        Type :
         <span *ngIf="question.type === 'ONE'">Réponse unique</span>
         <span *ngIf="question.type === 'MULTI'">Réponses multiples</span>
       </p>
 
-      <ul class="flex flex-col gap-3">
+      <ul class="space-y-3">
         <li
           *ngFor="let choice of question.choices"
-          class="choice-item border border-[#3A3F46] rounded-lg p-3 cursor-pointer flex items-center gap-3 transition-colors duration-200"
-          [class.bg-[#E2A411]]="choice.selected"
-          [class.text-[#1B1C1C]]="choice.selected"
+          class="border border-neutral-700 rounded-lg p-3 cursor-pointer flex items-center gap-3 transition-colors duration-200 hover:bg-neutral-700/40"
+          [class.bg-primary-400]="choice.selected"
+          [class.text-neutral-900]="choice.selected"
           (click)="selectChoice(question, choice)"
         >
           <!-- Icône selon type -->
-          <div class="flex-shrink-0 w-5 h-5 rounded-full border border-[#E2A411] flex items-center justify-center">
+          <div class="flex-shrink-0 w-5 h-5 rounded-full border border-primary-400 flex items-center justify-center">
             <ng-container *ngIf="question.type === 'ONE'">
               <div
-                class="w-3 h-3 rounded-full bg-[#E2A411] transition-opacity duration-300"
+                class="w-3 h-3 rounded-full bg-primary-400 transition-opacity duration-300"
                 [class.opacity-0]="!choice.selected"
               ></div>
             </ng-container>
 
             <ng-container *ngIf="question.type === 'MULTI'">
-              <svg *ngIf="choice.selected" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#E2A411" class="w-4 h-4">
+              <svg *ngIf="choice.selected" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#1B1C1C" class="w-4 h-4">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 10-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" />
               </svg>
             </ng-container>
           </div>
 
-          <span class="flex-1 text-left font-medium">{{ choice.name }}</span>
+          <span class="flex-1 font-medium">{{ choice.name }}</span>
         </li>
       </ul>
     </article>
 
-    <!-- Bouton de validation -->
-    <div class="flex justify-center mt-8">
-      <button class="btn-primary py-2 px-6" (click)="submitQuiz()">
+    <div class="text-center mt-8">
+      <button class="btn-primary px-6 py-2" (click)="submitQuiz()">
         Valider mes réponses
       </button>
     </div>
   </section>
 
   <!-- Résultats du quiz -->
-  <section *ngIf="isFinished" class="quiz-results text-center mt-12 max-w-xl">
-    <h2 class="text-3xl font-bold text-[#E2A411] mb-4">Résultat</h2>
-    <p class="text-[#BDC1C7] text-lg mb-4">
-      Score :
-      <span class="text-[#E2A411] font-semibold">{{ score }}</span>
-      /
-      <span class="text-[#F3F6F7] font-semibold">{{ totalPoints }}</span>
-      points
-    </p>
+  <section *ngIf="isFinished" class="quiz-results text-center mt-16 max-w-xl mx-auto">
+    <h2 class="section-title mb-4">Résultat</h2>
 
-    <div class="flex justify-center gap-4 mt-6">
-      <button class="btn-primary py-2 px-6" (click)="retryQuiz()">Rejouer</button>
-      <button class="btn-outline py-2 px-6" routerLink="/">Retour à l’accueil</button>
+    <!-- Résumé des questions -->
+    <div class="text-left space-y-8 mt-10">
+      <article *ngFor="let question of quiz?.questions" class="card">
+        <h3 class="text-lg font-semibold mb-2">{{ question.name }}</h3>
+
+        <ul class="space-y-2">
+          <li
+            *ngFor="let choice of question.choices"
+            class="border border-neutral-700 rounded-lg p-3 flex items-center gap-3"
+            [ngClass]="{
+              'bg-green-600/30 border-green-500 text-green-300': choice.isCorrect,
+              'bg-red-600/30 border-red-500 text-red-400': !choice.isCorrect && choice.selected,
+              'opacity-50': !choice.isCorrect && !choice.selected
+            }"
+          >
+            <span class="flex-1">{{ choice.name }}</span>
+
+            <!-- Icônes simples -->
+            <span *ngIf="choice.isCorrect" class="text-sm">✔️</span>
+            <span *ngIf="!choice.isCorrect && choice.selected" class="text-sm">❌</span>
+          </li>
+        </ul>
+
+        <!-- Message résumé -->
+        <p class="mt-3 text-sm"
+          [ngClass]="{
+            'text-green-400': isQuestionCorrect(question),
+            'text-red-400': !isQuestionCorrect(question)
+          }">
+          {{ isQuestionCorrect(question) ? 'Bonne réponse !' : 'Mauvaise réponse.' }}
+        </p>
+      </article>
+    </div>
+    <section class=" my-12">
+      <p class="text-neutral-300 text-lg mb-6 my-6">
+        Score :
+        <span class="highlight">{{ score }}</span> /
+        <span class="text-neutral-100 font-semibold">{{ totalPoints }}</span> points
+      </p>
+    </section>
+    <div class="flex justify-center gap-4 mt-10">
+      <button class="btn-primary px-6 py-2" (click)="retryQuiz()">Rejouer</button>
+      <button class="btn-outline px-6 py-2" routerLink="/">Retour à l’accueil</button>
     </div>
   </section>
+
+
+  
 </main>

@@ -37,11 +37,11 @@ export class QuizzRequestService extends AbstractRequestService {
   private url = this.baseUrl + '/quizz';
 
   public getQuizz(id: number): Observable<Quizz> {
-    return this.request<Quizz>('GET', this.url + '?id=' + id + '' );
+    return this.requestNoAuth<Quizz>('GET', this.url + '?id=' + id + '' );
   }
 
   public getAllQuizzes(): Observable<Quizz[]> {
-    return this.request<Quizz[]>('GET', this.url + '/summary');
+    return this.requestNoAuth<Quizz[]>('GET', this.url + '/summary');
   }
 
 }
