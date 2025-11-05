@@ -1,0 +1,494 @@
+[
+{
+  "name": "Glossaire - Généralités PHP",
+  "description": "Testez vos connaissances de base sur le développement PHP, les concepts fondamentaux et les notions générales du web.",
+  "questions": [
+    {
+      "name": "Quel est l’environnement nécessaire pour exécuter un script PHP ?",
+      "description": "Contexte d’exécution et exemples de logiciels.",
+      "point": 3,
+      "type": "MULTI",
+      "choices": [
+        { "name": "Un serveur avec interpréteur PHP", "isCorrect": true },
+        { "name": "Un navigateur web uniquement", "isCorrect": false },
+        { "name": "Apache ou Nginx avec PHP", "isCorrect": true },
+        { "name": "XAMPP ou Laragon en local", "isCorrect": true },
+        { "name": "Node.js", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce qu’un algorithme ?",
+      "description": "Définition de base.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "Un langage de programmation", "isCorrect": false },
+        { "name": "Une suite finie d’instructions permettant de résoudre un problème", "isCorrect": true },
+        { "name": "Un type de variable", "isCorrect": false },
+        { "name": "Une fonction PHP intégrée", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Quel symbole préfixe une variable en PHP ?",
+      "description": "Syntaxe des variables.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "%", "isCorrect": false },
+        { "name": "&", "isCorrect": false },
+        { "name": "$", "isCorrect": true },
+        { "name": "#", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Quelle est la différence entre une variable et une constante en PHP ?",
+      "description": "Concept de mutabilité.",
+      "point": 3,
+      "type": "MULTI",
+      "choices": [
+        { "name": "Une constante ne peut pas être modifiée après déclaration", "isCorrect": true },
+        { "name": "Une variable peut changer de valeur", "isCorrect": true },
+        { "name": "Une constante est toujours en majuscules", "isCorrect": false },
+        { "name": "Les deux se déclarent avec le mot-clé const", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Combien de superglobales principales existent en PHP ?",
+      "description": "Variables disponibles partout dans le code.",
+      "point": 3,
+      "type": "ONE",
+      "choices": [
+        { "name": "5", "isCorrect": false },
+        { "name": "7", "isCorrect": false },
+        { "name": "9", "isCorrect": true },
+        { "name": "11", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Lesquelles sont des superglobales PHP valides ?",
+      "description": "Variables internes accessibles globalement.",
+      "point": 4,
+      "type": "MULTI",
+      "choices": [
+        { "name": "$_POST", "isCorrect": true },
+        { "name": "$_SESSION", "isCorrect": true },
+        { "name": "$_COOKIE", "isCorrect": true },
+        { "name": "$_SQL", "isCorrect": false },
+        { "name": "$_ENV", "isCorrect": true },
+        { "name": "$GLOBALS", "isCorrect": true }
+      ]
+    },
+    {
+      "name": "Quels sont les types primitifs en PHP ?",
+      "description": "Types de base d’une variable.",
+      "point": 4,
+      "type": "MULTI",
+      "choices": [
+        { "name": "booléen", "isCorrect": true },
+        { "name": "entier", "isCorrect": true },
+        { "name": "flottant", "isCorrect": true },
+        { "name": "chaîne de caractères", "isCorrect": true },
+        { "name": "NULL", "isCorrect": true },
+        { "name": "tableau", "isCorrect": false },
+        { "name": "ressource", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Quelle est la fonction permettant de connaître la longueur d’une chaîne ?",
+      "description": "Fonction native PHP.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "strlen()", "isCorrect": true },
+        { "name": "count()", "isCorrect": false },
+        { "name": "sizeof()", "isCorrect": false },
+        { "name": "length()", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Quelle est la différence entre include et require en PHP ?",
+      "description": "Inclusion de fichiers externes.",
+      "point": 4,
+      "type": "MULTI",
+      "choices": [
+        { "name": "require provoque une erreur fatale si le fichier est manquant", "isCorrect": true },
+        { "name": "include continue l’exécution du script même si le fichier est manquant", "isCorrect": true },
+        { "name": "require_once et include_once existent", "isCorrect": true },
+        { "name": "require fonctionne uniquement avec les fichiers PHP", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Quelle fonction PHP permet de démarrer une session ?",
+      "description": "Sessions côté serveur.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "session_start()", "isCorrect": true },
+        { "name": "start_session()", "isCorrect": false },
+        { "name": "init_session()", "isCorrect": false },
+        { "name": "open_session()", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Comment effectuer une redirection en PHP ?",
+      "description": "Utilisation de header().",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "header('Location: page.php'); exit();", "isCorrect": true },
+        { "name": "redirect('page.php');", "isCorrect": false },
+        { "name": "goto('page.php');", "isCorrect": false },
+        { "name": "move('page.php');", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Quels langages concernent respectivement le front-end et le back-end ?",
+      "description": "Distinction entre client et serveur.",
+      "point": 4,
+      "type": "MULTI",
+      "choices": [
+        { "name": "Front-end : HTML, CSS, JavaScript", "isCorrect": true },
+        { "name": "Back-end : PHP, Java, Python", "isCorrect": true },
+        { "name": "Front-end : PHP, SQL", "isCorrect": false },
+        { "name": "Back-end : HTML, CSS", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce que Git ?",
+      "description": "Contrôle de version.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "Un outil de gestion de version de code", "isCorrect": true },
+        { "name": "Un CMS", "isCorrect": false },
+        { "name": "Un serveur web", "isCorrect": false },
+        { "name": "Une bibliothèque JavaScript", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce qu’un CMS ?",
+      "description": "Systèmes de gestion de contenu.",
+      "point": 3,
+      "type": "MULTI",
+      "choices": [
+        { "name": "Une application de gestion de contenu", "isCorrect": true },
+        { "name": "Un outil facilitant la création de sites sans coder entièrement", "isCorrect": true },
+        { "name": "WordPress et PrestaShop en sont des exemples", "isCorrect": true },
+        { "name": "Un langage serveur", "isCorrect": false }
+      ]
+    }
+  ]
+},
+{
+  "name": "Quiz Front-End — Niveau Développeur Web",
+  "description": "Testez vos connaissances sur les langages du front-end, les concepts web essentiels et les bonnes pratiques d’intégration.",
+  "questions": [
+    {
+      "name": "Définir HTML",
+      "description": "Langage de balisage structurant le contenu d'une page web.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "Un langage de programmation compilé", "isCorrect": false },
+        { "name": "Un langage de balisage décrivant la structure d’une page web", "isCorrect": true },
+        { "name": "Un protocole de communication web", "isCorrect": false },
+        { "name": "Un framework de développement front-end", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Définir CSS",
+      "description": "Langage de feuille de style contrôlant la présentation du contenu HTML.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "Un langage de balisage", "isCorrect": false },
+        { "name": "Un langage de style permettant de définir la présentation du HTML", "isCorrect": true },
+        { "name": "Un moteur de rendu graphique", "isCorrect": false },
+        { "name": "Un préprocesseur JavaScript", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Définir JavaScript",
+      "description": "Langage de programmation du front-end.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "Un langage de balisage pour créer des pages web", "isCorrect": false },
+        { "name": "Un langage de programmation permettant de rendre les pages dynamiques", "isCorrect": true },
+        { "name": "Un langage utilisé uniquement pour les serveurs", "isCorrect": false },
+        { "name": "Un format de données structuré", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Définir JSON et son usage principal",
+      "description": "Format d’échange de données léger basé sur les objets JavaScript.",
+      "point": 3,
+      "type": "ONE",
+      "choices": [
+        { "name": "Un format binaire de stockage de fichiers multimédia", "isCorrect": false },
+        { "name": "Un format textuel utilisé pour l’échange de données entre client et serveur", "isCorrect": true },
+        { "name": "Un protocole d’envoi d’emails", "isCorrect": false },
+        { "name": "Une API pour manipuler des bases de données", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Peut-on exécuter du JavaScript côté serveur ?",
+      "description": "Exécution du JS hors navigateur.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "Non, il est exclusivement exécuté côté client", "isCorrect": false },
+        { "name": "Oui, grâce à Node.js", "isCorrect": true },
+        { "name": "Oui, mais uniquement dans un navigateur spécifique", "isCorrect": false },
+        { "name": "Oui, via PHP", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce qu’un sélecteur CSS ?",
+      "description": "Mécanisme de ciblage d’éléments HTML pour leur appliquer des styles.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "Une fonction JavaScript permettant d’ajouter des éléments", "isCorrect": false },
+        { "name": "Un élément de syntaxe permettant de cibler des balises HTML", "isCorrect": true },
+        { "name": "Une classe JavaScript", "isCorrect": false },
+        { "name": "Une méthode de templating", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Quelle balise HTML permet de créer un lien hypertexte ?",
+      "description": "Balises de navigation HTML.",
+      "point": 1,
+      "type": "ONE",
+      "choices": [
+        { "name": "<a>", "isCorrect": true },
+        { "name": "<link>", "isCorrect": false },
+        { "name": "<nav>", "isCorrect": false },
+        { "name": "<href>", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce qu’une requête AJAX ?",
+      "description": "Communication asynchrone entre client et serveur.",
+      "point": 3,
+      "type": "ONE",
+      "choices": [
+        { "name": "Une méthode pour envoyer des emails via JavaScript", "isCorrect": false },
+        { "name": "Une requête HTTP asynchrone exécutée en arrière-plan", "isCorrect": true },
+        { "name": "Un protocole de transfert de fichiers", "isCorrect": false },
+        { "name": "Une fonction CSS de mise à jour dynamique", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Quels symboles sont utilisés pour cibler une classe ou un identifiant en CSS ?",
+      "description": "Syntaxe des sélecteurs CSS.",
+      "point": 2,
+      "type": "MULTI",
+      "choices": [
+        { "name": "Le point (.) pour une classe", "isCorrect": true },
+        { "name": "Le dièse (#) pour un identifiant", "isCorrect": true },
+        { "name": "@ pour les media queries", "isCorrect": false },
+        { "name": "$ pour les variables CSS", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Définir le responsive design",
+      "description": "Adaptation d’un site à différents supports.",
+      "point": 3,
+      "type": "ONE",
+      "choices": [
+        { "name": "Une méthode pour créer plusieurs versions d’un site selon le navigateur", "isCorrect": false },
+        { "name": "Une approche de conception qui adapte la mise en page à la taille d’écran", "isCorrect": true },
+        { "name": "Une technologie pour accélérer le chargement des pages web", "isCorrect": false },
+        { "name": "Une fonctionnalité JavaScript d’accessibilité", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce que le templating ?",
+      "description": "Injection de données dans des modèles HTML.",
+      "point": 3,
+      "type": "ONE",
+      "choices": [
+        { "name": "Une méthode de structuration d’API", "isCorrect": false },
+        { "name": "Une technique consistant à injecter dynamiquement des données dans un modèle de page", "isCorrect": true },
+        { "name": "Un protocole d’affichage JSON", "isCorrect": false },
+        { "name": "Un format XML pour le HTML", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce qu’une fonction anonyme en JavaScript ?",
+      "description": "Fonctions sans nom explicite.",
+      "point": 3,
+      "type": "ONE",
+      "choices": [
+        { "name": "Une fonction sans mot-clé return", "isCorrect": false },
+        { "name": "Une fonction définie sans nom et souvent passée en paramètre", "isCorrect": true },
+        { "name": "Une fonction automatiquement exécutée au chargement de la page", "isCorrect": false },
+        { "name": "Une fonction utilisée uniquement dans les classes", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Quelle méthode JavaScript ajoute un élément à la fin d’un tableau ?",
+      "description": "Méthodes natives des tableaux JavaScript.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "append()", "isCorrect": false },
+        { "name": "push()", "isCorrect": true },
+        { "name": "add()", "isCorrect": false },
+        { "name": "extend()", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce qu’un media query en CSS ?",
+      "description": "Application conditionnelle de styles.",
+      "point": 2,
+      "type": "ONE",
+      "choices": [
+        { "name": "Une requête HTTP permettant de charger un fichier CSS", "isCorrect": false },
+        { "name": "Une règle permettant d’appliquer des styles selon la taille de l’écran", "isCorrect": true },
+        { "name": "Une méthode JavaScript pour détecter les événements clavier", "isCorrect": false },
+        { "name": "Un sélecteur spécial pour cibler le premier élément d’une liste", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce qu’un pseudo-élément en CSS ?",
+      "description": "Éléments virtuels pour styliser une partie d’un contenu.",
+      "point": 3,
+      "type": "ONE",
+      "choices": [
+        { "name": "Un élément HTML masqué dans le DOM", "isCorrect": false },
+        { "name": "Un sélecteur CSS permettant de cibler une partie d’un élément", "isCorrect": true },
+        { "name": "Une balise HTML expérimentale", "isCorrect": false },
+        { "name": "Une variable CSS globale", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce que Bootstrap ?",
+      "description": "Framework front-end CSS populaire.",
+      "point": 3,
+      "type": "MULTI",
+      "choices": [
+        { "name": "Un framework front-end proposant des composants CSS et JS", "isCorrect": true },
+        { "name": "Une bibliothèque de fonctions PHP", "isCorrect": false },
+        { "name": "Un outil pour compiler du SCSS en CSS", "isCorrect": false },
+        { "name": "Un framework équivalent à Tailwind CSS ou Bulma", "isCorrect": true }
+      ]
+    },
+    {
+      "name": "Quelles sont les deux méthodes qu’un formulaire HTML peut utiliser ?",
+      "description": "Différences entre GET et POST.",
+      "point": 4,
+      "type": "MULTI",
+      "choices": [
+        { "name": "GET : envoie les données dans l’URL", "isCorrect": true },
+        { "name": "POST : envoie les données dans le corps de la requête", "isCorrect": true },
+        { "name": "PUT : envoie les fichiers binaires uniquement", "isCorrect": false },
+        { "name": "DELETE : supprime les données après envoi", "isCorrect": false }
+      ]
+    }
+  ]
+},
+{
+  "name": "Quiz UX/UI — Niveau Designer d’Interface",
+  "description": "Testez vos connaissances sur la conception d’expérience utilisateur, les interfaces graphiques et les principes fondamentaux du design numérique.",
+  "questions": [
+    {
+      "name": "Quelle est la différence entre UX Design et UI Design ?",
+      "description": "Deux disciplines complémentaires du design numérique.",
+      "point": 4,
+      "type": "MULTI",
+      "choices": [
+        { "name": "L’UX Design s’intéresse à l’expérience globale de l’utilisateur", "isCorrect": true },
+        { "name": "L’UI Design concerne l’aspect visuel et esthétique d’une interface", "isCorrect": true },
+        { "name": "L’UX Design consiste à choisir les couleurs et les typographies", "isCorrect": false },
+        { "name": "L’UI Design se limite à la structure fonctionnelle du produit", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce qu’un wireframe ?",
+      "description": "Représentation simplifiée d’une interface.",
+      "point": 3,
+      "type": "ONE",
+      "choices": [
+        { "name": "Une maquette schématique montrant la structure d’une page sans design final", "isCorrect": true },
+        { "name": "Un prototype interactif d’un site web", "isCorrect": false },
+        { "name": "Un guide de style décrivant les couleurs et les polices d’un projet", "isCorrect": false },
+        { "name": "Une maquette haute-fidélité utilisée en production", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce qu’un prototype ?",
+      "description": "Simulation interactive d’un produit numérique.",
+      "point": 3,
+      "type": "ONE",
+      "choices": [
+        { "name": "Une version interactive permettant de tester les interactions d’une interface", "isCorrect": true },
+        { "name": "Une simple image statique d’une page web", "isCorrect": false },
+        { "name": "Un schéma technique destiné aux développeurs back-end", "isCorrect": false },
+        { "name": "Un document décrivant la charte graphique", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce que la hiérarchie visuelle en UI Design ?",
+      "description": "Organisation et importance des éléments graphiques.",
+      "point": 4,
+      "type": "ONE",
+      "choices": [
+        { "name": "L’organisation visuelle qui guide l’attention de l’utilisateur selon la taille, la couleur ou la position des éléments", "isCorrect": true },
+        { "name": "L’ordre d’apparition des animations dans une page", "isCorrect": false },
+        { "name": "Le plan de navigation entre plusieurs pages d’un site", "isCorrect": false },
+        { "name": "Une méthode d’optimisation des performances graphiques", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce que l’accessibilité en UX Design ?",
+      "description": "Inclusion et accessibilité numérique.",
+      "point": 4,
+      "type": "MULTI",
+      "choices": [
+        { "name": "La conception d’interfaces utilisables par les personnes en situation de handicap", "isCorrect": true },
+        { "name": "L’ajout de descriptions alternatives (alt) aux images", "isCorrect": true },
+        { "name": "La création de designs esthétiques uniquement pour les mobiles", "isCorrect": false },
+        { "name": "L’usage exclusif de couleurs contrastées", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce qu’une grille de mise en page ?",
+      "description": "Structure visuelle d’une interface.",
+      "point": 3,
+      "type": "ONE",
+      "choices": [
+        { "name": "Un système de lignes et colonnes servant à organiser les éléments d’une interface", "isCorrect": true },
+        { "name": "Une bibliothèque de composants UI", "isCorrect": false },
+        { "name": "Un format de fichier vectoriel utilisé dans le webdesign", "isCorrect": false },
+        { "name": "Un outil d’intégration automatique de contenu", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce que la notion d’affordance en UX Design ?",
+      "description": "Compréhension intuitive des éléments interactifs.",
+      "point": 3,
+      "type": "ONE",
+      "choices": [
+        { "name": "La capacité d’un élément à indiquer par son apparence comment il doit être utilisé", "isCorrect": true },
+        { "name": "Une animation visuelle servant à attirer l’attention sur un bouton", "isCorrect": false },
+        { "name": "Un principe de test utilisateur en conditions réelles", "isCorrect": false },
+        { "name": "Une méthode de prototypage rapide", "isCorrect": false }
+      ]
+    },
+    {
+      "name": "Qu’est-ce qu’un mobile first design ?",
+      "description": "Approche moderne du responsive design.",
+      "point": 4,
+      "type": "ONE",
+      "choices": [
+        { "name": "Une méthode de conception où la version mobile est pensée avant la version desktop", "isCorrect": true },
+        { "name": "Une technique de compression d’images pour les smartphones", "isCorrect": false },
+        { "name": "Un design réservé exclusivement aux appareils Android", "isCorrect": false },
+        { "name": "Une approche d’optimisation des performances réseaux", "isCorrect": false }
+      ]
+    }
+  ]
+}
+]

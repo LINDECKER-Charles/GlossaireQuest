@@ -6,7 +6,7 @@ export interface Choice {
   id: number;
   name: string;
   isCorrect: boolean;
-  selected?: boolean; // ajouté pour la sélection côté front
+  selected?: boolean;
 }
 
 export interface Question {
