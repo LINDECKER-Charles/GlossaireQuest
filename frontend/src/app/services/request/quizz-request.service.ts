@@ -27,6 +27,24 @@ export interface Quizz {
   questions: Question[];
 }
 
+export interface ChoicePost {
+  name: string;
+  isCorrect: boolean;
+}
+
+export interface QuestionPost {
+  name: string;
+  description: string;
+  point: number;
+  type: string;
+  choices: ChoicePost[];
+}
+
+export interface QuizzPost {
+  name: string;
+  description: string;
+  questions: QuestionPost[];
+}
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +60,10 @@ export class QuizzRequestService extends AbstractRequestService {
 
   public getAllQuizzes(): Observable<Quizz[]> {
     return this.requestNoAuth<Quizz[]>('GET', this.url + '/summary');
+  }
+
+  public postQuizz(quizz: QuizzPost): Observable<any> {
+    return this.request<any>('POST', this.url, quizz);
   }
 
 }

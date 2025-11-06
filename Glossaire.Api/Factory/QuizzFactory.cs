@@ -20,6 +20,8 @@ namespace TechQuiz.Api.Factory
                 User = user
             };
 
+            if (request.Questions == null) return quizz;
+
             quizz.Questions = request.Questions.Select(q =>
             {
                 var question = new Question
@@ -31,6 +33,8 @@ namespace TechQuiz.Api.Factory
                     Quizz = quizz,
                     QuizzId = quizz.Id
                 };
+
+                if (q.Choices == null) return question;
 
                 question.Choices = q.Choices.Select(c => new Choice
                 {
@@ -58,6 +62,8 @@ namespace TechQuiz.Api.Factory
                 QuizzId = quiz.Id
             };
 
+            if (request.Choices == null) return question;
+            
             question.Choices = request.Choices.Select(c => new Choice
             {
                 Name = c.Name,

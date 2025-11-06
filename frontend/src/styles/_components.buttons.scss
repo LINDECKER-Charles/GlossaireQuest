@@ -12,7 +12,7 @@
   }
 
   .btn-outline {
-    @apply rounded-lg border border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-neutral-900 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply rounded-lg border border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-neutral-900 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed p-2;
   }
 
   .btn-primary {

@@ -4,7 +4,7 @@ namespace TechQuiz.Api.Dtos
     public record QuizzRequest(
         string Name,
         string Description,
-        List<QuestionRequest> Questions
+        List<QuestionRequest>? Questions
     );
 
     public record QuestionRequest(
@@ -12,7 +12,7 @@ namespace TechQuiz.Api.Dtos
         string Description,
         int Point,
         string Type,
-        List<ChoiceRequest> Choices
+        List<ChoiceRequest>? Choices
     );
 
     public record ChoiceRequest(

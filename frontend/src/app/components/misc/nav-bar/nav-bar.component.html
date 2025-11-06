@@ -16,7 +16,13 @@
             À propos
           </a>
         </li>
-
+        <ng-container *ngIf="isAdmin">
+          <li>
+            <a routerLink="/quizz-create" routerLinkActive="nav-link-active" class="nav-link">
+              Créer un Quiz
+            </a>
+          </li>
+        </ng-container>
         <!-- Si utilisateur connecté -->
         <ng-container *ngIf="isLoggedIn; else guestLinks">
           <li>

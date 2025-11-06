@@ -1,0 +1,75 @@
+<main class="container py-16">
+  <section class="card max-w-3xl mx-auto p-8">
+    <h1 class="section-title text-center mb-8">Créer un Quiz</h1>
+
+    <!-- On vérifie que le form est bien prêt -->
+    <form *ngIf="quizzForm" [formGroup]="quizzForm" (ngSubmit)="onSubmit()" class="space-y-8">
+
+      <!-- Informations générales -->
+      <div>
+        <label class="block text-sm text-neutral-400 mb-1">Nom du quiz</label>
+        <input type="text" formControlName="name" class="input w-full" placeholder="Ex: Quiz sur la pédagogie" />
+      </div>
+
+      <div>
+        <label class="block text-sm text-neutral-400 mb-1">Description</label>
+        <textarea formControlName="description" class="input w-full h-24" placeholder="Décrivez votre quiz..."></textarea>
+      </div>
+
+      <!-- Liste des questions -->
+      <div formArrayName="questions">
+        <h2 class="text-xl font-semibold text-primary-400 mb-4">Questions</h2>
+
+        <div *ngFor="let question of questions.controls; let qi = index" [formGroupName]="qi" class="card bg-neutral-800 p-6 mb-6">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="font-semibold text-neutral-100">Question {{ qi + 1 }}</h3>
+            <button type="button" class="text-red-400 text-sm" (click)="removeQuestion(qi)">Supprimer</button>
+          </div>
+
+          <div class="space-y-3">
+            <input class="input w-full" placeholder="Titre de la question" formControlName="name" />
+            <textarea class="input w-full h-16" placeholder="Description" formControlName="description"></textarea>
+
+            <div class="flex gap-4">
+              <div class="flex-1">
+                <label class="text-sm text-neutral-400">Points</label>
+                <input type="number" class="input w-full" formControlName="point" />
+              </div>
+
+              <div class="flex-1">
+                <label class="text-sm text-neutral-400">Type</label>
+                <select class="input w-full" formControlName="type">
+                  <option value="ONE">Réponse unique</option>
+                  <option value="MULTI">Réponses multiples</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Choix -->
+          <div class="mt-4" formArrayName="choices">
+            <h4 class="font-medium text-primary-400 mb-2">Choix</h4>
+
+            <div *ngFor="let choice of getChoices(qi).controls; let ci = index" [formGroupName]="ci" class="flex items-center gap-4 mb-2">
+              <input class="input flex-1" placeholder="Texte du choix" formControlName="name" />
+              <label class="flex items-center gap-1 text-sm text-neutral-300">
+                <input type="checkbox" formControlName="isCorrect" /> Correct
+              </label>
+              <button type="button" class="text-red-400 text-sm" (click)="removeChoice(qi, ci)">✖</button>
+            </div>
+
+            <button type="button" class="btn-outline text-sm mt-2" (click)="addChoice(qi)">
+              + Ajouter un choix
+            </button>
+          </div>
+        </div>
+
+        <button type="button" class="btn-primary mt-4" (click)="addQuestion()">+ Ajouter une question</button>
+      </div>
+
+      <div class="text-center mt-8">
+        <button type="submit" class="btn-primary px-8 py-2">Créer le Quiz</button>
+      </div>
+    </form>
+  </section>
+</main>

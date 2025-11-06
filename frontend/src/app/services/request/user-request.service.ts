@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AbstractRequestService } from './abstract-request.service';
 import { Observable } from 'rxjs/internal/Observable';
+import { map } from 'rxjs/internal/operators/map';
 
 export interface User {
   name: string,
@@ -44,4 +45,11 @@ export class UserRequestService extends AbstractRequestService {
   public getTries(): Observable<Tries> {
     return this.request<Tries>('GET', this.url + '/show/try');
   }
+
+  public isAdmin(): Observable<boolean> {
+    return this.getUser().pipe(
+      map(user => user.role === 'ADMIN')
+    );
+  }
+
 }

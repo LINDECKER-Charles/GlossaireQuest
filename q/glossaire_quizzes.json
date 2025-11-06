@@ -1,0 +1,3568 @@
+[
+  {
+    "name": "Glossaire - Général",
+    "description": "Quiz couvrant les notions générales de PHP et des concepts fondamentaux.",
+    "questions": [
+      {
+        "name": "Quel est l’environnement à installer pour exécuter un script PHP ?",
+        "description": "Environnement serveur intégrant PHP et exemples de logiciels locaux.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Un environnement serveur intégrant PHP (Apache ou Nginx avec PHP)",
+            "isCorrect": true
+          },
+          {
+            "name": "Un simple navigateur sans serveur",
+            "isCorrect": false
+          },
+          {
+            "name": "Un IDE tel que Visual Studio Code suffit",
+            "isCorrect": false
+          },
+          {
+            "name": "Des logiciels comme XAMPP ou Laragon pour un usage local",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un algorithme ?",
+        "description": "Définition d’un algorithme.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une suite finie et ordonnée d’instructions pour résoudre un problème",
+            "isCorrect": true
+          },
+          {
+            "name": "Un langage de programmation",
+            "isCorrect": false
+          },
+          {
+            "name": "Une variable en PHP",
+            "isCorrect": false
+          },
+          {
+            "name": "Un composant hardware d’un ordinateur",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une variable ? Par quel symbole est préfixée une variable en PHP ?",
+        "description": "Définition d’une variable et symbole de préfixe en PHP.",
+        "point": 3,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Un espace mémoire identifié par un nom pour stocker une valeur",
+            "isCorrect": true
+          },
+          {
+            "name": "En PHP, une variable est préfixée par le symbole $",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle se déclare en HTML uniquement",
+            "isCorrect": false
+          },
+          {
+            "name": "Le symbole est &",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que la portée d’une variable ?",
+        "description": "Zone du code où la variable est accessible.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "La zone du code où elle est accessible",
+            "isCorrect": true
+          },
+          {
+            "name": "Son type de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Son emplacement dans la base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "L'adresse IP de l'utilisateur",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une constante ? Quelle est la différence avec une variable ?",
+        "description": "Concept de constante et différence avec une variable.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une constante est une valeur fixe non modifiable, tandis qu'une variable peut changer",
+            "isCorrect": true
+          },
+          {
+            "name": "Elles sont identiques en PHP",
+            "isCorrect": false
+          },
+          {
+            "name": "Une constante est préfixée par #",
+            "isCorrect": false
+          },
+          {
+            "name": "Une constante est un cookie",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une superglobale, combien en existent-ils et donner un exemple d’utilisation",
+        "description": "Variables internes de PHP accessibles partout dans le script.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une variable PHP interne accessible partout dans le script sans déclaration",
+            "isCorrect": true
+          },
+          {
+            "name": "Il en existe environ 9 principales",
+            "isCorrect": true
+          },
+          {
+            "name": "Par exemple $_GET pour récupérer des paramètres de la requête HTTP",
+            "isCorrect": true
+          },
+          {
+            "name": "Un plugin jQuery",
+            "isCorrect": false
+          },
+          {
+            "name": "Une classe statique en Java",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quels sont les différents types (primitifs) que l’on peut associer à une variable en PHP ?",
+        "description": "Types primitifs et exemples.",
+        "point": 5,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Booléen (true/false)",
+            "isCorrect": true
+          },
+          {
+            "name": "Entier (int)",
+            "isCorrect": true
+          },
+          {
+            "name": "Flottant (float)",
+            "isCorrect": true
+          },
+          {
+            "name": "Chaîne de caractères (string)",
+            "isCorrect": true
+          },
+          {
+            "name": "NULL pour une variable sans valeur",
+            "isCorrect": true
+          },
+          {
+            "name": "Tableau multidimensionnel",
+            "isCorrect": false
+          },
+          {
+            "name": "Objet JSON",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Existe-t-il plusieurs types de tableaux en PHP, si oui lesquels ?",
+        "description": "Utilisation des tableaux indexés et associatifs en PHP.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Il existe un seul type 'array' réutilisé comme tableau indexé",
+            "isCorrect": true
+          },
+          {
+            "name": "Il existe un seul type 'array' réutilisé comme tableau associatif",
+            "isCorrect": true
+          },
+          {
+            "name": "Chaque type de tableau a une classe spéciale",
+            "isCorrect": false
+          },
+          {
+            "name": "PHP ne supporte pas les tableaux associatifs",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelles sont les différentes structures de contrôles qu’il existe en algorithmie ?",
+        "description": "Structures de contrôle comme conditions et boucles.",
+        "point": 3,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Les conditions, par exemple if()",
+            "isCorrect": true
+          },
+          {
+            "name": "Les boucles, par exemple while()",
+            "isCorrect": true
+          },
+          {
+            "name": "Les bases de données, par exemple SQL()",
+            "isCorrect": false
+          },
+          {
+            "name": "Les stylos, par exemple CSS()",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle est la fonction PHP permettant de demander la longueur d’une chaîne de caractères ?",
+        "description": "Fonction pour obtenir la longueur d’une chaîne.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "strlen()",
+            "isCorrect": true
+          },
+          {
+            "name": "length()",
+            "isCorrect": false
+          },
+          {
+            "name": "len()",
+            "isCorrect": false
+          },
+          {
+            "name": "count()",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une session ? Quelle fonction permet de démarrer une session en PHP ?",
+        "description": "Mécanisme de session et fonction session_start().",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Un mécanisme côté serveur pour stocker des informations sur un utilisateur",
+            "isCorrect": true
+          },
+          {
+            "name": "On démarre la session avec session_start()",
+            "isCorrect": true
+          },
+          {
+            "name": "Les données sont stockées dans $_SESSION",
+            "isCorrect": true
+          },
+          {
+            "name": "Pour créer une session on utilise echo()",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un cookie ? Donner un exemple d’utilisation en PHP",
+        "description": "Définition et utilisation des cookies.",
+        "point": 3,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une petite donnée stockée sur le navigateur de l’utilisateur",
+            "isCorrect": true
+          },
+          {
+            "name": "Envoyée automatiquement au serveur à chaque requête HTTP",
+            "isCorrect": true
+          },
+          {
+            "name": "Permet d'enregistrer des préférences ou un identifiant de connexion",
+            "isCorrect": true
+          },
+          {
+            "name": "Une variable stockée sur le serveur",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle est la différence entre les instructions “require” et “include” en PHP",
+        "description": "Comportement d'inclusion de fichiers.",
+        "point": 3,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "include lève un warning et le script continue",
+            "isCorrect": true
+          },
+          {
+            "name": "require lève une erreur fatale et stoppe l’exécution si le fichier est introuvable",
+            "isCorrect": true
+          },
+          {
+            "name": "include fonctionne uniquement pour les fichiers JS",
+            "isCorrect": false
+          },
+          {
+            "name": "require ne peut pas être utilisé dans PHP",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Comment effectuer une redirection en PHP ?",
+        "description": "Utilisation de header('Location: ...') et exit().",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "header('Location: ...') suivi de exit()",
+            "isCorrect": true
+          },
+          {
+            "name": "echo redirect(...)",
+            "isCorrect": false
+          },
+          {
+            "name": "using include()",
+            "isCorrect": false
+          },
+          {
+            "name": "header('Route: ...')",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir la partie « front-end » et « back-end » d’une application",
+        "description": "Distinction entre front-end et back-end.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Front-end est tout ce qui est exécuté côté client (HTML/CSS/JS)",
+            "isCorrect": true
+          },
+          {
+            "name": "Back-end est exécuté côté serveur et gère la logique métier et les données",
+            "isCorrect": true
+          },
+          {
+            "name": "Front-end gère la base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Back-end est chargé uniquement de l’apparence",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir le contrôle de version ? Qu’est-ce que Git ?",
+        "description": "Concept de contrôle de version et Git.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Un système qui enregistre l’historique des modifications d’un projet",
+            "isCorrect": true
+          },
+          {
+            "name": "Permet de revenir en arrière en cas d’erreur et de collaborer",
+            "isCorrect": true
+          },
+          {
+            "name": "Git est l’outil de contrôle de version le plus utilisé aujourd’hui",
+            "isCorrect": true
+          },
+          {
+            "name": "Git est un navigateur web",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un CMS ? Citer au moins 2 exemples",
+        "description": "Définition d'un CMS et exemples.",
+        "point": 3,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une application qui permet de créer et gérer du contenu sur un site web",
+            "isCorrect": true
+          },
+          {
+            "name": "Exemples : WordPress et PrestaShop",
+            "isCorrect": true
+          },
+          {
+            "name": "Un système pour compiler du code C++",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole de messagerie",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glossaire - Front-end",
+    "description": "Quiz sur les technologies et concepts du front-end.",
+    "questions": [
+      {
+        "name": "Définir HTML",
+        "description": "Langage de balisage structurant le contenu des pages web.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un langage de balisage qui structure et décrit le contenu d'une page web",
+            "isCorrect": true
+          },
+          {
+            "name": "Un langage de programmation compilé",
+            "isCorrect": false
+          },
+          {
+            "name": "Un framework de sécurité",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole de communication",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir CSS",
+        "description": "Langage de feuille de style décrivant l’apparence d’une page HTML.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un langage de style qui décrit la présentation d'une page HTML",
+            "isCorrect": true
+          },
+          {
+            "name": "Un langage de programmation serveur",
+            "isCorrect": false
+          },
+          {
+            "name": "Un outil de base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Un système d'exploitation",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir Javascript",
+        "description": "Langage de programmation côté client pour rendre les pages dynamiques.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un langage de programmation pour exécuter du code côté client dans le navigateur",
+            "isCorrect": true
+          },
+          {
+            "name": "Un protocole HTTP",
+            "isCorrect": false
+          },
+          {
+            "name": "Un langage de markup",
+            "isCorrect": false
+          },
+          {
+            "name": "Une base de données",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir JSON. Dans quel contexte ce format est-il utilisé ?",
+        "description": "Format de données pour l’échange de données entre client et serveur.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un format textuel léger basé sur des paires clé/valeur pour échanger des données entre client et serveur",
+            "isCorrect": true
+          },
+          {
+            "name": "Un langage de balisage pour documents",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole d'authentification",
+            "isCorrect": false
+          },
+          {
+            "name": "Un programme C++",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Peut-on interpréter du Javascript côté serveur ? Si oui, comment ?",
+        "description": "Utilisation de Node.js pour exécuter JavaScript côté serveur.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Oui, grâce à des environnements comme Node.js",
+            "isCorrect": true
+          },
+          {
+            "name": "Non, uniquement dans les navigateurs",
+            "isCorrect": false
+          },
+          {
+            "name": "Oui, via SQL",
+            "isCorrect": false
+          },
+          {
+            "name": "Oui, en PHP",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un sélecteur CSS ?",
+        "description": "Mécanisme de ciblage des balises HTML pour appliquer des styles.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un élément de syntaxe permettant de cibler les balises HTML pour appliquer des règles de style",
+            "isCorrect": true
+          },
+          {
+            "name": "Une fonction JavaScript",
+            "isCorrect": false
+          },
+          {
+            "name": "Un logiciel d'édition",
+            "isCorrect": false
+          },
+          {
+            "name": "Un attribut HTML",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle balise HTML permet de créer un lien hypertexte ?",
+        "description": "Balise permettant de créer un lien vers une autre page.",
+        "point": 1,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "<a>",
+            "isCorrect": true
+          },
+          {
+            "name": "<link>",
+            "isCorrect": false
+          },
+          {
+            "name": "<span>",
+            "isCorrect": false
+          },
+          {
+            "name": "<div>",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une requête AJAX ?",
+        "description": "Requête HTTP asynchrone permettant d'échanger des données sans recharger la page.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une requête HTTP asynchrone envoyée par JavaScript pour échanger des données sans recharger la page",
+            "isCorrect": true
+          },
+          {
+            "name": "Un protocole de mise en page CSS",
+            "isCorrect": false
+          },
+          {
+            "name": "Une extension PHP",
+            "isCorrect": false
+          },
+          {
+            "name": "Une redirection HTTP",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quel sélecteur CSS permet de sélectionner tous les éléments d’une classe spécifique ? D’un identifiant spécifique ?",
+        "description": "Syntaxe pour cibler une classe et un identifiant en CSS.",
+        "point": 3,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Utiliser un point (.) suivi du nom de la classe",
+            "isCorrect": true
+          },
+          {
+            "name": "Utiliser un dièse (#) suivi du nom de l'identifiant",
+            "isCorrect": true
+          },
+          {
+            "name": "Utiliser deux points",
+            "isCorrect": false
+          },
+          {
+            "name": "Utiliser @media",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir le responsive design",
+        "description": "Approche adaptant la page à toutes les tailles d'écran.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une approche qui permet à une page de s’adapter automatiquement à toutes les tailles d'écran",
+            "isCorrect": true
+          },
+          {
+            "name": "Un langage de programmation",
+            "isCorrect": false
+          },
+          {
+            "name": "Un plugin jQuery",
+            "isCorrect": false
+          },
+          {
+            "name": "Une méthode pour cacher des images",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que le templating ?",
+        "description": "Méthode consistant à créer un modèle de page et y injecter des données.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "La création d'un modèle de page dans lequel on injecte dynamiquement des données",
+            "isCorrect": true
+          },
+          {
+            "name": "Un type d'algorithme de tri",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole HTTP",
+            "isCorrect": false
+          },
+          {
+            "name": "Une méthode de chiffrement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une fonction anonyme en Javascript ?",
+        "description": "Fonction sans nom pouvant être affectée à une variable ou passée en paramètre.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une fonction sans nom qui peut être affectée à une variable ou passée en paramètre",
+            "isCorrect": true
+          },
+          {
+            "name": "Une méthode privée obligatoire",
+            "isCorrect": false
+          },
+          {
+            "name": "Un objet JSON",
+            "isCorrect": false
+          },
+          {
+            "name": "Une balise HTML",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle méthode JavaScript est utilisée pour ajouter un élément à la fin d'un tableau ?",
+        "description": "Méthode pour ajouter à la fin d’un tableau.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "push()",
+            "isCorrect": true
+          },
+          {
+            "name": "pop()",
+            "isCorrect": false
+          },
+          {
+            "name": "shift()",
+            "isCorrect": false
+          },
+          {
+            "name": "append()",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un “media query” ?",
+        "description": "Règle CSS appliquant des styles selon le périphérique.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une règle CSS pour appliquer des styles en fonction des caractéristiques du périphérique",
+            "isCorrect": true
+          },
+          {
+            "name": "Une fonction JavaScript",
+            "isCorrect": false
+          },
+          {
+            "name": "Un attribut HTML",
+            "isCorrect": false
+          },
+          {
+            "name": "Un plugin PHP",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un pseudo élément en CSS ?",
+        "description": "Sélecteur permettant de styliser une partie spécifique d’un élément.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un sélecteur spécial permettant de styliser une partie spécifique d’un élément",
+            "isCorrect": true
+          },
+          {
+            "name": "Un langage de programmation",
+            "isCorrect": false
+          },
+          {
+            "name": "Un serveur web",
+            "isCorrect": false
+          },
+          {
+            "name": "Une balise script",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que Bootstrap ? Donner d’autres exemples équivalent",
+        "description": "Framework CSS et alternatives équivalentes.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Un framework front-end fournissant des classes CSS et des composants JS",
+            "isCorrect": true
+          },
+          {
+            "name": "Equivalent: Tailwind CSS, Foundation, Bulma ou Materialize",
+            "isCorrect": true
+          },
+          {
+            "name": "Un moteur de base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Un serveur Apache",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quand un formulaire HTML est créé, quelles sont les 2 méthodes qui peuvent lui être associées ?",
+        "description": "Différence entre les méthodes GET et POST.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "GET : les données sont envoyées dans l'URL sous forme de paramètres",
+            "isCorrect": true
+          },
+          {
+            "name": "POST : les données sont envoyées dans le corps de la requête HTTP",
+            "isCorrect": true
+          },
+          {
+            "name": "PUT : utilisé pour supprimer les données",
+            "isCorrect": false
+          },
+          {
+            "name": "DELETE : utilisé pour créer les données",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glossaire - UX UI",
+    "description": "Quiz sur l'expérience utilisateur et l'interface utilisateur.",
+    "questions": [
+      {
+        "name": "Quelle est la différence entre UX Design et UI Design ?",
+        "description": "Distinction entre l’UX et l’UI Design.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "L’UX Design s’intéresse à l’expérience globale de l’utilisateur",
+            "isCorrect": true
+          },
+          {
+            "name": "L’UI Design concerne l’aspect visuel et esthétique d’une interface",
+            "isCorrect": true
+          },
+          {
+            "name": "L’UX Design consiste à choisir les couleurs et les typographies",
+            "isCorrect": false
+          },
+          {
+            "name": "L’UI Design se limite à la structure fonctionnelle du produit",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un wireframe ?",
+        "description": "Maquette schématique montrant la structure d’une interface sans détails graphiques.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une maquette schématique montrant uniquement la disposition et la hiérarchie des éléments sans détails graphiques",
+            "isCorrect": true
+          },
+          {
+            "name": "Un code source HTML",
+            "isCorrect": false
+          },
+          {
+            "name": "Une maquette haute-fidélité",
+            "isCorrect": false
+          },
+          {
+            "name": "Un style CSS complet",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un prototype ?",
+        "description": "Version interactive pour tester l'expérience utilisateur avant le développement final.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une version intermédiaire interactive simulant le fonctionnement afin de tester l’expérience utilisateur",
+            "isCorrect": true
+          },
+          {
+            "name": "Un modèle de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Un fichier de code",
+            "isCorrect": false
+          },
+          {
+            "name": "Une capture d'écran statique",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que la hiérarchie visuelle en UI Design ?",
+        "description": "Organisation visuelle guidant l'utilisateur.",
+        "point": 4,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Organisation des éléments pour guider l’utilisateur, basée sur arrangement, taille, couleurs, contrastes et typographie",
+            "isCorrect": true
+          },
+          {
+            "name": "Disposition aléatoire",
+            "isCorrect": false
+          },
+          {
+            "name": "Ordre alphabétique des fichiers",
+            "isCorrect": false
+          },
+          {
+            "name": "Ordre des pages HTML",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que l’accessibilité en UX Design ?",
+        "description": "Conception universelle pour tous les utilisateurs.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Concevoir des interfaces utilisables par toutes les personnes y compris les personnes handicapées",
+            "isCorrect": true
+          },
+          {
+            "name": "Ajouter des attributs alt sur les images pour les lecteurs d'écran",
+            "isCorrect": true
+          },
+          {
+            "name": "Concevoir un design uniquement pour les utilisateurs payants",
+            "isCorrect": false
+          },
+          {
+            "name": "Utiliser exclusivement des animations flashy",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une grille de mise en page ?",
+        "description": "Système d’organisation structurant une interface en lignes et colonnes.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un système d’organisation structurant une interface en lignes, colonnes et marges",
+            "isCorrect": true
+          },
+          {
+            "name": "Un type de serveur",
+            "isCorrect": false
+          },
+          {
+            "name": "Une fonction PHP",
+            "isCorrect": false
+          },
+          {
+            "name": "Une base de données",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que la notion d’affordance en UX Design ?",
+        "description": "Capacité d’un élément d’interface à suggérer son usage.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "La capacité d'un élément d'interface à suggérer son utilisation par son apparence",
+            "isCorrect": true
+          },
+          {
+            "name": "La réactivité d'une page web",
+            "isCorrect": false
+          },
+          {
+            "name": "La fiabilité du serveur",
+            "isCorrect": false
+          },
+          {
+            "name": "Le design adaptatif",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un “mobile first design” ?",
+        "description": "Approche de conception en pensant d'abord au mobile.",
+        "point": 4,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une approche de conception qui consiste à créer une interface en pensant d’abord à son utilisation sur mobile",
+            "isCorrect": true
+          },
+          {
+            "name": "Un design uniquement pour PC",
+            "isCorrect": false
+          },
+          {
+            "name": "Un langage de programmation mobile",
+            "isCorrect": false
+          },
+          {
+            "name": "Une base de données mobile",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glossaire - Programmation orientée objet",
+    "description": "Quiz sur la programmation orientée objet (POO).",
+    "questions": [
+      {
+        "name": "Donner une définition de la programmation orientée objet",
+        "description": "Paradigme manipulant des objets avec données et comportements.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un paradigme de programmation qui manipule des objets contenant données et comportements, basés sur encapsulation, héritage et polymorphisme",
+            "isCorrect": true
+          },
+          {
+            "name": "Un langage de requête base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Un format de données JSON",
+            "isCorrect": false
+          },
+          {
+            "name": "Une méthode de chiffrement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une classe ? Comment la déclare-t-on ?",
+        "description": "Définition d’une classe et déclaration en PHP.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une classe est un modèle qui définit propriétés et méthodes des objets",
+            "isCorrect": true
+          },
+          {
+            "name": "En PHP on la déclare avec le mot-clé class",
+            "isCorrect": true
+          },
+          {
+            "name": "Chaque classe doit être déclarée dans un fichier séparé selon PSR-4",
+            "isCorrect": true
+          },
+          {
+            "name": "Les classes sont déclarées avec la balise <class>",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un objet ?",
+        "description": "Instance concrète d’une classe.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une instance concrète d’une classe",
+            "isCorrect": true
+          },
+          {
+            "name": "Une base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Une variable qui change",
+            "isCorrect": false
+          },
+          {
+            "name": "Une fonction SQL",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir la notion de propriété / attribut / méthode",
+        "description": "Différence entre propriété, méthode et attribut en PHP 8+.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une propriété est une variable définie dans une classe représentant l'état d'un objet",
+            "isCorrect": true
+          },
+          {
+            "name": "Une méthode est une fonction définie dans une classe représentant un comportement",
+            "isCorrect": true
+          },
+          {
+            "name": "En PHP 8+, un attribut est une métadonnée attachée à une classe, méthode ou propriété",
+            "isCorrect": true
+          },
+          {
+            "name": "Une propriété est un fichier PHP",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que la visibilité d’une propriété ou d’une méthode ? Citer les différents types de visibilité",
+        "description": "Niveaux d’accès pour propriétés et méthodes.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "La visibilité définit où et par qui une propriété ou une méthode peut être accédée",
+            "isCorrect": true
+          },
+          {
+            "name": "public: accessible partout, aussi bien dans la classe que de l'extérieur",
+            "isCorrect": true
+          },
+          {
+            "name": "private: accessible uniquement dans la classe qui la définit",
+            "isCorrect": true
+          },
+          {
+            "name": "protected: accessible dans la classe et les classes qui en héritent",
+            "isCorrect": true
+          },
+          {
+            "name": "public: empêche l'accès aux enfants",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle est la méthode spécifique utilisée pour créer un nouvel objet à partir d’une classe ?",
+        "description": "Instanciation d’une classe en PHP.",
+        "point": 3,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Utiliser le mot-clé new pour instancier la classe",
+            "isCorrect": true
+          },
+          {
+            "name": "Le constructeur __construct() est appelé automatiquement lors de l'instanciation",
+            "isCorrect": true
+          },
+          {
+            "name": "Utiliser header()",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que l’encapsulation ?",
+        "description": "Principe consistant à regrouper et protéger les données internes.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Regrouper propriétés et méthodes dans une classe et contrôler l'accès via des niveaux de visibilité pour protéger les données internes",
+            "isCorrect": true
+          },
+          {
+            "name": "Placer tout le code dans un seul fichier",
+            "isCorrect": false
+          },
+          {
+            "name": "Encapsuler l'application dans un conteneur docker",
+            "isCorrect": false
+          },
+          {
+            "name": "Une méthode de chiffrement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Que signifie « étendre une classe » ? Quelle est le concept clé mis en œuvre ?",
+        "description": "Étendre une classe et concept d’héritage.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Créer une nouvelle classe qui hérite des propriétés et méthodes d'une autre classe",
+            "isCorrect": true
+          },
+          {
+            "name": "Le concept clé est l'héritage",
+            "isCorrect": true
+          },
+          {
+            "name": "Par exemple : class VoitureElectrique extends Voiture",
+            "isCorrect": true
+          },
+          {
+            "name": "Remplacer la classe parent par un module jQuery",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir l’opérateur de résolution de portée",
+        "description": "Opérateur :: pour accéder à des éléments de classe sans instantiation.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "En PHP, l’opérateur :: permet d’accéder à des éléments d’une classe sans instancier d’objet",
+            "isCorrect": true
+          },
+          {
+            "name": "L'opérateur ->",
+            "isCorrect": false
+          },
+          {
+            "name": "Le mot-clé new",
+            "isCorrect": false
+          },
+          {
+            "name": "L'underscore _",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir une méthode / propriété statique",
+        "description": "Concept de statique en POO.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une méthode statique est définie avec le mot-clé static et peut être appelée sans créer d'objet",
+            "isCorrect": true
+          },
+          {
+            "name": "Une propriété statique est partagée par toutes les instances de la classe",
+            "isCorrect": true
+          },
+          {
+            "name": "On y accède avec l'opérateur ::",
+            "isCorrect": true
+          },
+          {
+            "name": "Une méthode statique est accessible uniquement via ->",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir le polymorphisme en POO",
+        "description": "Principe permettant à une même méthode d’avoir des comportements différents selon l’objet.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Principe qui permet à une même méthode d’avoir des comportements différents selon l’objet ou la classe qui l’appelle",
+            "isCorrect": true
+          },
+          {
+            "name": "Multiplication de classes identiques",
+            "isCorrect": false
+          },
+          {
+            "name": "Remplacement des objets par des variables",
+            "isCorrect": false
+          },
+          {
+            "name": "Un format de données",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir une méthode / classe abstraite ?",
+        "description": "Classes abstraites et méthodes abstraites.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une classe abstraite ne peut pas être instanciée directement",
+            "isCorrect": true
+          },
+          {
+            "name": "Une méthode abstraite est déclarée sans implémentation dans une classe abstraite",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle doit être redéfinie par les classes enfants",
+            "isCorrect": true
+          },
+          {
+            "name": "Une classe abstraite est une classe de base de données",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir le chaînage de méthodes",
+        "description": "Technique d’appels successifs sur un même objet.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Technique permettant d'appeler plusieurs méthodes à la suite sur un même objet, chaque méthode renvoyant l'objet courant",
+            "isCorrect": true
+          },
+          {
+            "name": "Chaînage de classes en SQL",
+            "isCorrect": false
+          },
+          {
+            "name": "Création d'un réseau de serveurs",
+            "isCorrect": false
+          },
+          {
+            "name": "Usage de colonnes multiples",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que la méthode __toString() ? Existe-t-il d’autres méthodes « magiques »",
+        "description": "Méthode __toString et autres méthodes magiques en PHP.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "__toString() est appelée lorsqu'un objet est utilisé comme une chaîne",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle doit retourner une chaîne",
+            "isCorrect": true
+          },
+          {
+            "name": "Il existe d'autres méthodes magiques comme __construct(), __destruct(), __get(), __set(), __call(), __clone()",
+            "isCorrect": true
+          },
+          {
+            "name": "__toString() sert à démarrer une session PHP",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un « autoload » ?",
+        "description": "Mécanisme de chargement automatique des classes en PHP.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Fonctionnalité de PHP pour charger automatiquement les fichiers de classes nécessaires sans les inclure manuellement",
+            "isCorrect": true
+          },
+          {
+            "name": "Une boucle for",
+            "isCorrect": false
+          },
+          {
+            "name": "Une méthode de test unitaire",
+            "isCorrect": false
+          },
+          {
+            "name": "Une base de données autogérée",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Comment appelle-t-on en français les « getters » et les « setters » ?",
+        "description": "Traduction française des getters et setters.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Accesseurs pour getters et mutateurs pour setters",
+            "isCorrect": true
+          },
+          {
+            "name": "Lecteurs pour getters et écrivains pour setters",
+            "isCorrect": false
+          },
+          {
+            "name": "Créateurs et modificateurs",
+            "isCorrect": false
+          },
+          {
+            "name": "Destructeurs",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que la sérialisation en PHP ?",
+        "description": "Conversion d'une variable en chaîne pour stockage ou transmission.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Processus consistant à convertir une variable (tableau, objet, etc.) en une chaîne pour la stocker ou la transmettre",
+            "isCorrect": true
+          },
+          {
+            "name": "Remplissage d'une base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Création de fichiers HTML",
+            "isCorrect": false
+          },
+          {
+            "name": "Conversion de chaîne en nombre",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glossaire - Architecture",
+    "description": "Quiz sur l’architecture logicielle, client/serveur et design patterns.",
+    "questions": [
+      {
+        "name": "Qu’est-ce que l’architecture client / serveur ?",
+        "description": "Description du modèle client/serveur et requêtes HTTP/HTTPS.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "C'est un modèle où un client envoie des requêtes à un serveur qui répond",
+            "isCorrect": true
+          },
+          {
+            "name": "On interroge via HTTP (HyperText Transfer Protocol)",
+            "isCorrect": true
+          },
+          {
+            "name": "HTTPS indique que les échanges sont chiffrés via TLS/SSL",
+            "isCorrect": true
+          },
+          {
+            "name": "HTTP est un langage de programmation",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Donner la définition d’un design pattern. Citer au moins 3 exemples de design pattern",
+        "description": "Solution générique réutilisable et exemples de patterns.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une solution réutilisable à un problème de conception logiciel",
+            "isCorrect": true
+          },
+          {
+            "name": "Exemples : Singleton, Observer, Factory",
+            "isCorrect": true
+          },
+          {
+            "name": "Une spécification SQL",
+            "isCorrect": false
+          },
+          {
+            "name": "Une classe CSS",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que l’architecture MVC ?",
+        "description": "Modèle de séparation en Model, View, Controller.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Modèle de conception séparant une application en Model, View, Controller",
+            "isCorrect": true
+          },
+          {
+            "name": "Modèle basé sur microservices",
+            "isCorrect": false
+          },
+          {
+            "name": "Technique de chiffrement",
+            "isCorrect": false
+          },
+          {
+            "name": "Base de données relationnelle",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quel est le rôle de chaque couche du design pattern MVC : Model, View, Controller ?",
+        "description": "Description des responsabilités de chaque couche.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Model gère les données et la logique métier",
+            "isCorrect": true
+          },
+          {
+            "name": "View gère l'affichage et la présentation des données",
+            "isCorrect": true
+          },
+          {
+            "name": "Controller gère les requêtes utilisateur et choisit la vue à afficher",
+            "isCorrect": true
+          },
+          {
+            "name": "View gère la base de données",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quels sont les avantages de l’architecture MVC ?",
+        "description": "Avantages de la séparation Model-View-Controller.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Séparation claire des responsabilités (données, logique, présentation)",
+            "isCorrect": true
+          },
+          {
+            "name": "Meilleure organisation et factorisation du code",
+            "isCorrect": true
+          },
+          {
+            "name": "Réutilisabilité et testabilité accrues",
+            "isCorrect": true
+          },
+          {
+            "name": "Scalabilité plus simple",
+            "isCorrect": true
+          },
+          {
+            "name": "Il n'y a aucun avantage",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Existe-t-il des variantes à l’architecture MVC ?",
+        "description": "Variantes du modèle MVC.",
+        "point": 3,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Oui, par exemple MVP (Model–View–Presenter)",
+            "isCorrect": true
+          },
+          {
+            "name": "MVVM (Model–View–ViewModel)",
+            "isCorrect": true
+          },
+          {
+            "name": "API REST",
+            "isCorrect": false
+          },
+          {
+            "name": "SQL",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une API ? Définir l’architecture REST",
+        "description": "Description d’une API et des principes REST.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une API permet à deux applications de communiquer via requêtes et réponses",
+            "isCorrect": true
+          },
+          {
+            "name": "REST est un style d’architecture d’API basé sur HTTP",
+            "isCorrect": true
+          },
+          {
+            "name": "Il utilise les verbes GET, POST, PUT/PATCH et DELETE",
+            "isCorrect": true
+          },
+          {
+            "name": "REST est un système de base de données",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glossaire - Modélisation et Base de données",
+    "description": "Quiz sur la modélisation de données et les bases de données.",
+    "questions": [
+      {
+        "name": "Qu’est-ce que la modélisation de données ? Définir la méthode Merise",
+        "description": "Représentation schématique des données et méthode Merise.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Représenter les données et leurs relations de manière schématique",
+            "isCorrect": true
+          },
+          {
+            "name": "La méthode Merise distingue MCD, MLD et MPD",
+            "isCorrect": true
+          },
+          {
+            "name": "Merise est un langage de programmation",
+            "isCorrect": false
+          },
+          {
+            "name": "MCD est un média de vidéo",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelles sont les 3 étapes principales de la méthode Merise ?",
+        "description": "Étapes de la méthode Merise.",
+        "point": 3,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Analyse",
+            "isCorrect": true
+          },
+          {
+            "name": "Conception",
+            "isCorrect": true
+          },
+          {
+            "name": "Réalisation",
+            "isCorrect": true
+          },
+          {
+            "name": "Interprétation",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un modèle conceptuel de données (MCD) en Merise ?",
+        "description": "Définition du MCD.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "MCD : Modèle Conceptuel de Données (entités, associations)",
+            "isCorrect": true
+          },
+          {
+            "name": "Modèle de Comptabilité des Documents",
+            "isCorrect": false
+          },
+          {
+            "name": "Machine Calculatrice Désuète",
+            "isCorrect": false
+          },
+          {
+            "name": "Moniteur CPU distant",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un modèle logique de données (MLD) en Merise ?",
+        "description": "Définition du MLD.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "MLD : Modèle Logique de Données (adapté au SGBD)",
+            "isCorrect": true
+          },
+          {
+            "name": "Modèle de Lien Documentaire",
+            "isCorrect": false
+          },
+          {
+            "name": "Module Linux Dashboard",
+            "isCorrect": false
+          },
+          {
+            "name": "Machine Learning Device",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Donner la définition des mots suivants : Entité, Relation, Cardinalité, Clé primaire / clé étrangère",
+        "description": "Notions de modélisation : entité, relation, cardinalité, clés.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une entité est un objet ou concept représenté dans la base et correspond généralement à une table",
+            "isCorrect": true
+          },
+          {
+            "name": "Une relation est un lien logique entre deux entités établi par des clés étrangères",
+            "isCorrect": true
+          },
+          {
+            "name": "La cardinalité exprime le nombre minimum et maximum d'occurrences d'une entité associées à une autre",
+            "isCorrect": true
+          },
+          {
+            "name": "Une clé primaire identifie de manière unique chaque enregistrement; une clé étrangère référence la clé primaire d'une autre table",
+            "isCorrect": true
+          },
+          {
+            "name": "Une entité est un champ d'une table",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Que devient une relation de type « Many To Many » dans le modèle logique de données ?",
+        "description": "Transformation d'une relation Many-to-Many.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Elle est transformée en une nouvelle table d’association contenant les clés primaires des deux entités comme clés étrangères",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle reste inchangée",
+            "isCorrect": false
+          },
+          {
+            "name": "Elle fusionne les tables",
+            "isCorrect": false
+          },
+          {
+            "name": "Elle supprime la relation",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une base de données ?",
+        "description": "Définition d'une base de données.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un système organisé permettant de stocker, structurer et manipuler des données de manière fiable et efficace",
+            "isCorrect": true
+          },
+          {
+            "name": "Un serveur web",
+            "isCorrect": false
+          },
+          {
+            "name": "Une feuille Excel",
+            "isCorrect": false
+          },
+          {
+            "name": "Un langage de programmation",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir les notions suivantes : SQL, MySQL, SGBD (donner 2 exemples de SGBD)",
+        "description": "Description de SQL, MySQL et des SGBD.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "SQL est un langage déclaratif normalisé pour interagir avec une base de données relationnelle",
+            "isCorrect": true
+          },
+          {
+            "name": "MySQL est un SGBD relationnel open source souvent utilisé dans les applications web",
+            "isCorrect": true
+          },
+          {
+            "name": "Un SGBD est un logiciel qui permet de créer, gérer et interroger une base de données; exemples : PostgreSQL et MongoDB",
+            "isCorrect": true
+          },
+          {
+            "name": "SQL est un protocole réseau",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Dans une base de données, les données sont stockées dans des ___. Celles-ci sont constituées de lignes appelées ___ et de colonnes appelées ___",
+        "description": "Tables, enregistrements et champs.",
+        "point": 3,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Dans une base de données, les données sont stockées dans des tables",
+            "isCorrect": true
+          },
+          {
+            "name": "Les lignes sont appelées enregistrements",
+            "isCorrect": true
+          },
+          {
+            "name": "Les colonnes sont appelées champs",
+            "isCorrect": true
+          },
+          {
+            "name": "Les lignes sont appelées programmes",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle est la différence entre une base de données relationnelle et non relationnelle ?",
+        "description": "Comparaison entre bases SQL et NoSQL.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une base relationnelle organise les données en tables reliées par clés primaires/étrangères pour des données structurées; une base non relationnelle stocke les données sous forme de documents, graphes, colonnes ou paires clé/valeur",
+            "isCorrect": true
+          },
+          {
+            "name": "Une base relationnelle n'existe pas",
+            "isCorrect": false
+          },
+          {
+            "name": "Une base non relationnelle stocke uniquement des images",
+            "isCorrect": false
+          },
+          {
+            "name": "Elles sont identiques",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une jointure dans une base de données ? En existe-t-il plusieurs ? Si oui lesquelles ?",
+        "description": "Opération combinant des tables et types de jointures.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Combiner les données de plusieurs tables basées sur un attribut commun",
+            "isCorrect": true
+          },
+          {
+            "name": "Il existe plusieurs types: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN",
+            "isCorrect": true
+          },
+          {
+            "name": "Une jointure renvoie une requête SELECT",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "A quoi sert une vue dans une base de données ?",
+        "description": "Définition d'une vue en base de données.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une vue est une table virtuelle basée sur le résultat d'une requête, permettant de présenter des données filtrées ou agrégées sans dupliquer les données",
+            "isCorrect": true
+          },
+          {
+            "name": "Une vue est une clé primaire",
+            "isCorrect": false
+          },
+          {
+            "name": "Une vue est un index",
+            "isCorrect": false
+          },
+          {
+            "name": "Une vue est un serveur",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que l’intégrité référentielle dans une base de données ?",
+        "description": "Concept de cohérence des relations entre tables.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "L'intégrité référentielle garantit que les relations entre tables restent cohérentes: une clé étrangère doit correspondre à une clé primaire valide",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle permet d'encrypter les mots de passe",
+            "isCorrect": false
+          },
+          {
+            "name": "C'est une extension de CSS",
+            "isCorrect": false
+          },
+          {
+            "name": "Elle définit la taille d'une colonne",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelles sont les fonctions d’agrégation en SQL ?",
+        "description": "Fonctions d’agrégation courantes en SQL.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "COUNT()",
+            "isCorrect": true
+          },
+          {
+            "name": "SUM()",
+            "isCorrect": true
+          },
+          {
+            "name": "AVG()",
+            "isCorrect": true
+          },
+          {
+            "name": "MIN()",
+            "isCorrect": true
+          },
+          {
+            "name": "MAX()",
+            "isCorrect": true
+          },
+          {
+            "name": "SELECT()",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un CRUD dans le contexte d’une base de données ?",
+        "description": "Opérations de base Create, Read, Update, Delete.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "CRUD désigne les 4 opérations de base Create, Read, Update, Delete permettant de gérer les enregistrements",
+            "isCorrect": true
+          },
+          {
+            "name": "Un type d'algorithme",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole de messagerie",
+            "isCorrect": false
+          },
+          {
+            "name": "Un fichier HTML",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelles sont les clauses qui permettent de : Insérer, Modifier, Supprimer, Supprimer base, Filtrer, Trier, Regrouper, Concaténer ?",
+        "description": "Clauses SQL pour les opérations communes.",
+        "point": 8,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "INSERT INTO ... VALUES (...)",
+            "isCorrect": true
+          },
+          {
+            "name": "UPDATE ... SET ... WHERE ...",
+            "isCorrect": true
+          },
+          {
+            "name": "DELETE FROM ... WHERE ...",
+            "isCorrect": true
+          },
+          {
+            "name": "DROP DATABASE ...",
+            "isCorrect": true
+          },
+          {
+            "name": "WHERE ...",
+            "isCorrect": true
+          },
+          {
+            "name": "ORDER BY ... [ASC|DESC]",
+            "isCorrect": true
+          },
+          {
+            "name": "GROUP BY ...",
+            "isCorrect": true
+          },
+          {
+            "name": "CONCAT(champ1, champ2)",
+            "isCorrect": true
+          },
+          {
+            "name": "PRINT()",
+            "isCorrect": false
+          },
+          {
+            "name": "FORMAT()",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Comment se connecter à une base de données en PHP ? Quelle est la classe native utilisée ?",
+        "description": "Connexion à la base de données via PDO.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "On se connecte généralement en PHP via la classe PDO (PHP Data Objects)",
+            "isCorrect": true
+          },
+          {
+            "name": "Using HTML form only",
+            "isCorrect": false
+          },
+          {
+            "name": "La classe DBConnect",
+            "isCorrect": false
+          },
+          {
+            "name": "script.js",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glossaire - Symfony",
+    "description": "Quiz sur le framework Symfony et ses concepts.",
+    "questions": [
+      {
+        "name": "Qu’est-ce que Symfony ?",
+        "description": "Framework PHP open source basé sur MVC.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un framework PHP open source basé sur l’architecture MVC",
+            "isCorrect": true
+          },
+          {
+            "name": "Un langage de programmation",
+            "isCorrect": false
+          },
+          {
+            "name": "Un serveur web",
+            "isCorrect": false
+          },
+          {
+            "name": "Un CMS",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Sur quel langage de programmation et design pattern repose Symfony ?",
+        "description": "Langage et patterns utilisés par Symfony.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Symfony est écrit en PHP",
+            "isCorrect": true
+          },
+          {
+            "name": "Il repose sur le design pattern MVC",
+            "isCorrect": true
+          },
+          {
+            "name": "Il intègre aussi Front Controller, Injection de dépendances et Observer",
+            "isCorrect": true
+          },
+          {
+            "name": "Il est développé en JavaScript",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle est la dernière version en date de Symfony ?",
+        "description": "Version stable la plus récente de Symfony en novembre 2025.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "7.3.5",
+            "isCorrect": true
+          },
+          {
+            "name": "6.4",
+            "isCorrect": false
+          },
+          {
+            "name": "7.4",
+            "isCorrect": false
+          },
+          {
+            "name": "8.0",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un bundle ?",
+        "description": "Paquet réutilisable regroupant code et configuration pour ajouter une fonctionnalité.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un paquet réutilisable regroupant code, services et configurations pour ajouter une fonctionnalité",
+            "isCorrect": true
+          },
+          {
+            "name": "Un type de base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Une variable en PHP",
+            "isCorrect": false
+          },
+          {
+            "name": "Un serveur Apache",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quel est le moteur de template utilisé par défaut dans Symfony ?",
+        "description": "Template engine par défaut dans Symfony.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Twig",
+            "isCorrect": true
+          },
+          {
+            "name": "Blade",
+            "isCorrect": false
+          },
+          {
+            "name": "Smarty",
+            "isCorrect": false
+          },
+          {
+            "name": "Handlebars",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un ORM ? Quel est son utilité et comment s’appelle-t-il au sein de Symfony ?",
+        "description": "Object-Relational Mapping et Doctrine.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Un ORM est un outil qui fait le lien entre les objets et les tables d'une base de données",
+            "isCorrect": true
+          },
+          {
+            "name": "Il simplifie l'interaction avec la base en manipulant des entités",
+            "isCorrect": true
+          },
+          {
+            "name": "Dans Symfony, il s'appelle Doctrine",
+            "isCorrect": true
+          },
+          {
+            "name": "Il s'appelle Twig",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que l’injection de dépendances ? Quel est l’outil utilisé dans ce contexte et quel fichier contient l’intégralité des dépendances du projet ?",
+        "description": "Concept d'injection de dépendances et gestion dans Symfony.",
+        "point": 5,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Fournir à une classe les objets dont elle dépend plutôt qu'elle les crée elle-même",
+            "isCorrect": true
+          },
+          {
+            "name": "L'outil utilisé est le conteneur de services",
+            "isCorrect": true
+          },
+          {
+            "name": "Les dépendances externes sont listées dans le fichier composer.json",
+            "isCorrect": true
+          },
+          {
+            "name": "La configuration des services est définie dans config/services.yaml",
+            "isCorrect": true
+          },
+          {
+            "name": "L'injection de dépendances est une attaque XSS",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Que permet le bundle Maker au sein de Symfony ?",
+        "description": "Génération automatique de code standard.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Il génère rapidement du code standard (entités, contrôleurs, formulaires, commandes...)",
+            "isCorrect": true
+          },
+          {
+            "name": "Il s'utilise via des commandes de la console Symfony",
+            "isCorrect": true
+          },
+          {
+            "name": "Il s'installe comme un bundle de développement (symfony/maker-bundle)",
+            "isCorrect": true
+          },
+          {
+            "name": "Il supprime les fichiers obsolètes",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quel est le langage de requêtage exploité au sein d’un projet Symfony ?",
+        "description": "Langage de requête utilisé par Doctrine.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Doctrine Query Language (DQL)",
+            "isCorrect": true
+          },
+          {
+            "name": "SQL uniquement",
+            "isCorrect": false
+          },
+          {
+            "name": "GraphQL",
+            "isCorrect": false
+          },
+          {
+            "name": "XQuery",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quel est le composant qui garantit l’authentification et l’autorisation des utilisateurs ?",
+        "description": "Composant de sécurité de Symfony.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Le Security Component",
+            "isCorrect": true
+          },
+          {
+            "name": "Le Routing Component",
+            "isCorrect": false
+          },
+          {
+            "name": "Le Validator Component",
+            "isCorrect": false
+          },
+          {
+            "name": "Le Console Component",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glossaire - Sécurité",
+    "description": "Quiz sur les failles de sécurité et les bonnes pratiques.",
+    "questions": [
+      {
+        "name": "Qu’est-ce que l’injection SQL ? Comment s’en prémunir ?",
+        "description": "Attaque consistant à insérer du code SQL malveillant et mesures de prévention.",
+        "point": 5,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Insertion de code SQL malveillant dans une requête non sécurisée",
+            "isCorrect": true
+          },
+          {
+            "name": "Utiliser des requêtes préparées avec des paramètres liés",
+            "isCorrect": true
+          },
+          {
+            "name": "Ne jamais concaténer directement des entrées utilisateur dans une requête",
+            "isCorrect": true
+          },
+          {
+            "name": "Utiliser un ORM qui applique des protections par défaut",
+            "isCorrect": true
+          },
+          {
+            "name": "Concaténer les variables dans la requête est la solution",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que la faille XSS ? Comment s’en prémunir ?",
+        "description": "Injection de code malveillant dans une page et contre-mesures.",
+        "point": 5,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Injection de code malveillant exécuté dans le navigateur des autres utilisateurs",
+            "isCorrect": true
+          },
+          {
+            "name": "Échapper et valider toutes les données affichées",
+            "isCorrect": true
+          },
+          {
+            "name": "Utiliser les mécanismes d'auto-escaping du framework (par ex. Twig)",
+            "isCorrect": true
+          },
+          {
+            "name": "Mettre en place des en-têtes comme Content-Security-Policy",
+            "isCorrect": true
+          },
+          {
+            "name": "Désactiver l'escaping des templates",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que la faille CSRF ? Comment s’en prémunir ?",
+        "description": "Exploitation de la session de l’utilisateur pour exécuter des actions non souhaitées et protections.",
+        "point": 5,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Exploiter la session active d'un utilisateur pour lui faire exécuter une action non souhaitée",
+            "isCorrect": true
+          },
+          {
+            "name": "Utiliser un token CSRF unique pour chaque requête sensible",
+            "isCorrect": true
+          },
+          {
+            "name": "Privilégier la méthode POST pour les actions critiques",
+            "isCorrect": true
+          },
+          {
+            "name": "Utiliser l'en-tête SameSite pour les cookies",
+            "isCorrect": true
+          },
+          {
+            "name": "Supprimer les tokens de sécurité",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir l’attaque par force brute et l’attaque par dictionnaire",
+        "description": "Comparaison entre force brute et dictionnaire et protections.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "L’attaque par force brute consiste à tester toutes les combinaisons possibles jusqu’à trouver le mot de passe",
+            "isCorrect": true
+          },
+          {
+            "name": "L’attaque par dictionnaire consiste à tester des mots de passe à partir d’un dictionnaire de mots",
+            "isCorrect": true
+          },
+          {
+            "name": "Limiter le nombre de tentatives (rate limiting) est une protection",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle consiste à injecter du code SQL",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Existe-t-il d’autres failles de sécurité ? Citer celles-ci et expliquer simplement leur comportement",
+        "description": "Exemples de failles comme SSRF, IDOR, SQLi variante, Open Redirect.",
+        "point": 5,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "SSRF : le serveur vulnérable est forcé d’initier une requête réseau vers une cible choisie par l’attaquant",
+            "isCorrect": true
+          },
+          {
+            "name": "IDOR : accès direct à une ressource via un identifiant prévisible sans vérification d’autorisation",
+            "isCorrect": true
+          },
+          {
+            "name": "SQLi : la base de données peut contenir des vulnérabilités permettant élévation de privilèges",
+            "isCorrect": true
+          },
+          {
+            "name": "Open Redirect : redirection vers une URL fournie par l’utilisateur sans contrôle",
+            "isCorrect": true
+          },
+          {
+            "name": "Le CSRF en fait partie",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "A quoi servent l’authentification et l’autorisation dans un contexte d’application web ?",
+        "description": "Distinction entre authentification et autorisation.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "L’authentification vérifie l’identité de l’utilisateur",
+            "isCorrect": true
+          },
+          {
+            "name": "L’autorisation définit les ressources et actions auxquelles l’utilisateur a accès",
+            "isCorrect": true
+          },
+          {
+            "name": "Ensemble, elles garantissent que seules les personnes légitimes accèdent aux données sensibles",
+            "isCorrect": true
+          },
+          {
+            "name": "Elles stylisent la page",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir la notion de hachage d’un mot de passe et citer des algorithmes de hachage",
+        "description": "Hachage de mot de passe et algorithmes recommandés.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Le hachage transforme un mot de passe en une valeur fixe non réversible",
+            "isCorrect": true
+          },
+          {
+            "name": "On utilise un sel unique et un facteur de travail pour renforcer la sécurité",
+            "isCorrect": true
+          },
+          {
+            "name": "Algorithmes recommandés: Argon2id, bcrypt, scrypt, PBKDF2",
+            "isCorrect": true
+          },
+          {
+            "name": "Un hachage est réversible",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une politique de mots de passe forts ?",
+        "description": "Règles pour des mots de passe robustes.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une politique de mots de passe forts définit des règles pour garantir l’entropie des mots de passe",
+            "isCorrect": true
+          },
+          {
+            "name": "Exemples: longueur minimale, interdiction des mots courants, sel + hachage sécurisé, limitation du nombre de tentatives",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle vise à empêcher les attaques par force brute",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle consiste à utiliser le même mot de passe partout",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que l’hameçonnage ?",
+        "description": "Technique de phishing et contre-mesures.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Une technique d'ingénierie sociale visant à tromper l’utilisateur pour obtenir ses informations sensibles ou l’inciter à exécuter une action",
+            "isCorrect": true
+          },
+          {
+            "name": "Se prémunir: vérifier l’expéditeur et l'URL, ne jamais saisir ses identifiants sur une page non vérifiée",
+            "isCorrect": true
+          },
+          {
+            "name": "Utiliser la MFA et les standards SPF/DKIM/DMARC",
+            "isCorrect": true
+          },
+          {
+            "name": "C'est une technique de mise en page",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Définir la « validation des entrées »",
+        "description": "Contrôle et validation des données utilisateur.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Contrôler toutes les données fournies par l’utilisateur pour s’assurer qu’elles respectent le format attendu",
+            "isCorrect": true
+          },
+          {
+            "name": "Ignorer les entrées invalides",
+            "isCorrect": false
+          },
+          {
+            "name": "Remplacer les entrées par défaut",
+            "isCorrect": false
+          },
+          {
+            "name": "Valider uniquement les mots de passe",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glossaire - RGPD",
+    "description": "Quiz sur le Règlement Général sur la Protection des Données (RGPD).",
+    "questions": [
+      {
+        "name": "Qu’est-ce que le RGPD ?",
+        "description": "Règlement européen sur la protection des données.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Règlement européen encadrant la collecte, le traitement et la conservation des données personnelles",
+            "isCorrect": true
+          },
+          {
+            "name": "Un protocole HTTP",
+            "isCorrect": false
+          },
+          {
+            "name": "Un moteur de base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Un langage de programmation",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quel est son objectif principal ?",
+        "description": "Objectif de protection des droits des utilisateurs.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Protéger les droits des utilisateurs et imposer des obligations de transparence, sécurité et consentement",
+            "isCorrect": true
+          },
+          {
+            "name": "Augmenter le profit des entreprises",
+            "isCorrect": false
+          },
+          {
+            "name": "Créer de nouveaux langages",
+            "isCorrect": false
+          },
+          {
+            "name": "Optimiser le SEO",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle est la date d’entrée en vigueur du RGPD ?",
+        "description": "Date d’application du RGPD.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "25 mai 2018",
+            "isCorrect": true
+          },
+          {
+            "name": "1er janvier 2016",
+            "isCorrect": false
+          },
+          {
+            "name": "1er mai 2020",
+            "isCorrect": false
+          },
+          {
+            "name": "25 mai 2023",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelles sont les sanctions possibles en cas de non-respect du RGPD ?",
+        "description": "Sanctions encourues en cas de non-conformité.",
+        "point": 4,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Les sanctions vont d’un rappel à l’ordre ou mise en demeure jusqu’à des amendes pouvant atteindre 20 millions d’euros ou 4 % du chiffre d’affaires annuel mondial",
+            "isCorrect": true
+          },
+          {
+            "name": "Aucune sanction",
+            "isCorrect": false
+          },
+          {
+            "name": "Retrait de permis de conduire",
+            "isCorrect": false
+          },
+          {
+            "name": "Récompense pour l'entreprise",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "En France, quel est l’autorité administrative qui s’occupe de faire appliquer le RGPD ?",
+        "description": "Autorité de protection des données en France.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "La CNIL (Commission Nationale de l’Informatique et des Libertés)",
+            "isCorrect": true
+          },
+          {
+            "name": "Le Ministère de la Culture",
+            "isCorrect": false
+          },
+          {
+            "name": "La Banque de France",
+            "isCorrect": false
+          },
+          {
+            "name": "La DGSE",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quel est le consentement valide selon le RPGD ?",
+        "description": "Conditions d’un consentement valide.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un consentement donné librement, pour une finalité spécifique, de manière éclairée et univoque",
+            "isCorrect": true
+          },
+          {
+            "name": "Une acceptation tacite par défaut",
+            "isCorrect": false
+          },
+          {
+            "name": "Un clic sur n'importe quel bouton",
+            "isCorrect": false
+          },
+          {
+            "name": "Obtenir le consentement après le traitement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une politique de confidentialité ?",
+        "description": "Description de la politique de confidentialité.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Document décrivant comment un site collecte, utilise, stocke et protège les données personnelles des utilisateurs et informant sur leurs droits",
+            "isCorrect": true
+          },
+          {
+            "name": "Une charte graphique",
+            "isCorrect": false
+          },
+          {
+            "name": "Un fichier CSS",
+            "isCorrect": false
+          },
+          {
+            "name": "Une loi sur les animaux",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle est la durée de conservation maximale des données personnelles selon le RGPD ?",
+        "description": "Durée de conservation des données.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Les données doivent être conservées seulement le temps nécessaire à la finalité du traitement, puis supprimées ou anonymisées",
+            "isCorrect": true
+          },
+          {
+            "name": "Pendant 10 ans minimum",
+            "isCorrect": false
+          },
+          {
+            "name": "Indéfiniment",
+            "isCorrect": false
+          },
+          {
+            "name": "Pendant 24 heures",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quels sont les droits des utilisateurs selon le RGPD ?",
+        "description": "Droits reconnus aux individus par le RGPD.",
+        "point": 6,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Droit d'accès",
+            "isCorrect": true
+          },
+          {
+            "name": "Droit de rectification",
+            "isCorrect": true
+          },
+          {
+            "name": "Droit de suppression (oubli)",
+            "isCorrect": true
+          },
+          {
+            "name": "Droit à la portabilité",
+            "isCorrect": true
+          },
+          {
+            "name": "Droit d'opposition",
+            "isCorrect": true
+          },
+          {
+            "name": "Droit à la limitation du traitement",
+            "isCorrect": true
+          },
+          {
+            "name": "Droit de posséder des données sur tout le monde",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que le principe de minimisation des données selon le RGPD ?",
+        "description": "Collecte uniquement des données nécessaires.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Collecter et traiter uniquement les données strictement nécessaires à l’objectif poursuivi",
+            "isCorrect": true
+          },
+          {
+            "name": "Collecter toutes les données possibles pour améliorer l'analyse",
+            "isCorrect": false
+          },
+          {
+            "name": "Minimiser la taille des fichiers CSS",
+            "isCorrect": false
+          },
+          {
+            "name": "Réduire la luminosité de l'écran",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glossaire - SEO",
+    "description": "Quiz sur l’optimisation pour les moteurs de recherche (SEO).",
+    "questions": [
+      {
+        "name": "Qu’est-ce que le SEO ?",
+        "description": "Définition du référencement naturel.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Ensemble des techniques visant à optimiser un site pour faciliter son indexation par les moteurs de recherche et améliorer sa visibilité",
+            "isCorrect": true
+          },
+          {
+            "name": "Une base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole réseau",
+            "isCorrect": false
+          },
+          {
+            "name": "Un langage de programmation",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quel est l’objectif principal du SEO ?",
+        "description": "Objectif d’augmenter la visibilité et attirer un trafic qualifié.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Augmenter la visibilité d’un site dans les résultats naturels des moteurs de recherche afin d’attirer un trafic qualifié et durable sans recourir aux annonces payantes",
+            "isCorrect": true
+          },
+          {
+            "name": "Réduire les performances du site",
+            "isCorrect": false
+          },
+          {
+            "name": "Rendre les images plus belles",
+            "isCorrect": false
+          },
+          {
+            "name": "Créer des redirections permanentes",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Existe-t-il plusieurs types de référencement ? Lesquels ?",
+        "description": "Types de référencement (SEO, SEA, SMO).",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "SEO : référencement naturel",
+            "isCorrect": true
+          },
+          {
+            "name": "SEA : référencement payant",
+            "isCorrect": true
+          },
+          {
+            "name": "SMO : optimisation des réseaux sociaux",
+            "isCorrect": true
+          },
+          {
+            "name": "CSS : style des pages",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que la densité de mots-clés en SEO ?",
+        "description": "Proportion de mots-clés par rapport au contenu total.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Rapport entre le nombre d’occurrences d’un mot-clé et le nombre total de mots sur une page",
+            "isCorrect": true
+          },
+          {
+            "name": "Nombre de mots dans l'URL",
+            "isCorrect": false
+          },
+          {
+            "name": "Nombre de pages indexées",
+            "isCorrect": false
+          },
+          {
+            "name": "Utilisation de hashtags",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une balise « alt » ?",
+        "description": "Attribut HTML fournissant une description d’une image.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Attribut HTML fournissant une description textuelle d’une image, essentiel pour l’accessibilité et le SEO",
+            "isCorrect": true
+          },
+          {
+            "name": "Un attribut CSS",
+            "isCorrect": false
+          },
+          {
+            "name": "Une API JSON",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole WebSocket",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que la balise « meta description » ?",
+        "description": "Résumé du contenu d’une page web.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Balise HTML <meta name=\"description\"> qui fournit un résumé du contenu d’une page web",
+            "isCorrect": true
+          },
+          {
+            "name": "Balise qui charge un fichier CSS",
+            "isCorrect": false
+          },
+          {
+            "name": "Script PHP",
+            "isCorrect": false
+          },
+          {
+            "name": "Une balise de formulaire",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que le « nofollow » en SEO ?",
+        "description": "Utilisation de l’attribut rel=\"nofollow\" dans les liens.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "L’attribut rel=\"nofollow\" appliqué à un lien indique aux moteurs de recherche de ne pas suivre ce lien et de ne pas transmettre d'autorité SEO",
+            "isCorrect": true
+          },
+          {
+            "name": "Un tag HTML pour accélérer la page",
+            "isCorrect": false
+          },
+          {
+            "name": "Un style CSS",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle est l'importance du contenu de qualité pour le référencement d'un site web ?",
+        "description": "Impact du contenu de qualité sur le SEO.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un contenu de qualité répond aux intentions de recherche des utilisateurs, améliore l’expérience et est valorisé par les moteurs de recherche",
+            "isCorrect": true
+          },
+          {
+            "name": "Aucun impact",
+            "isCorrect": false
+          },
+          {
+            "name": "Diminue le classement",
+            "isCorrect": false
+          },
+          {
+            "name": "N'intéresse que les réseaux sociaux",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Pourquoi est-il important d'utiliser des balises de titre (h1, h2, h3, etc.) de manière structurée ?",
+        "description": "Utilisation des balises de titre pour la hiérarchie du contenu.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Elles définissent une hiérarchie claire du contenu et aident les moteurs à comprendre l’importance des informations",
+            "isCorrect": true
+          },
+          {
+            "name": "Elles ralentissent le site",
+            "isCorrect": false
+          },
+          {
+            "name": "Elles modifient le code PHP",
+            "isCorrect": false
+          },
+          {
+            "name": "Elles ne sont pas nécessaires",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle est la recommandation pour les URL d'un site web bien référencé ?",
+        "description": "Bonne pratique des URL pour le SEO.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Les URL doivent être courtes, claires, descriptives, contenir des mots-clés pertinents et utiliser des tirets",
+            "isCorrect": true
+          },
+          {
+            "name": "Les URL doivent contenir des numéros et symboles",
+            "isCorrect": false
+          },
+          {
+            "name": "Elles doivent être très longues",
+            "isCorrect": false
+          },
+          {
+            "name": "Ne pas utiliser de mots",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu'est-ce que le maillage interne et pourquoi est-il important pour le référencement ?",
+        "description": "Liens internes et leur rôle dans le SEO.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Le maillage interne désigne l’ensemble des liens reliant les pages d’un même site pour faciliter la navigation et transmettre l’autorité SEO",
+            "isCorrect": true
+          },
+          {
+            "name": "Des liens vers d'autres sites",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole de mise en réseau",
+            "isCorrect": false
+          },
+          {
+            "name": "Les liens CSS",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu'est-ce que l'optimisation des images pour le référencement ?",
+        "description": "Optimisation des images et impact sur le SEO.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Utiliser des fichiers au bon format et compressés avec des attributs alt descriptifs pour aider les moteurs à comprendre le contenu",
+            "isCorrect": true
+          },
+          {
+            "name": "Insérer des images floues",
+            "isCorrect": false
+          },
+          {
+            "name": "Ajouter beaucoup d’images lourdes",
+            "isCorrect": false
+          },
+          {
+            "name": "Ignorer la description",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu'est-ce qu'un plan de site (sitemap) et pourquoi est-il important pour le référencement ?",
+        "description": "Description et importance du sitemap.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Un sitemap est un fichier décrivant la structure et l’arborescence d'un site pour aider à l’exploration et à l’indexation",
+            "isCorrect": true
+          },
+          {
+            "name": "Une page de contact",
+            "isCorrect": false
+          },
+          {
+            "name": "Un style CSS",
+            "isCorrect": false
+          },
+          {
+            "name": "Une base de données",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Glossaire - Gestion de projets et DevOps",
+    "description": "Quiz sur la gestion de projets, l’Agilité, DevOps et tests.",
+    "questions": [
+      {
+        "name": "Qu’est-ce que la gestion de projet ?",
+        "description": "Méthodes et pratiques pour mener un projet à bien.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Ensemble de méthodes et pratiques pour planifier, organiser, découper et suivre les tâches afin de mener un projet à bien",
+            "isCorrect": true
+          },
+          {
+            "name": "Un outil de base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Une technique de vente",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une méthode Agile de gestion de projet ?",
+        "description": "Découpage en sprints courts favorisant adaptation et collaboration.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Méthode basée sur un découpage du projet en sprints courts et itératifs avec un livrable fonctionnel à la fin de chaque sprint",
+            "isCorrect": true
+          },
+          {
+            "name": "Méthode pour accélérer les transactions bancaires",
+            "isCorrect": false
+          },
+          {
+            "name": "Technique de CSS",
+            "isCorrect": false
+          },
+          {
+            "name": "Protocole SMTP",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Expliquer la méthode MoSCoW en quelques lignes et citer ses avantages",
+        "description": "Méthode de priorisation des fonctionnalités.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "La méthode MoSCoW classe les fonctionnalités en Must have, Should have, Could have, Won't have",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle permet de hiérarchiser clairement les besoins et gérer les ressources efficacement",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle fixe les attentes du client dès le début du projet",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle vise à coder en Python uniquement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "A quoi sert la méthodologie MVP ? Citer les caractéristiques clés",
+        "description": "Minimum Viable Product et ses caractéristiques.",
+        "point": 5,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "La méthodologie MVP consiste à développer une version minimale mais fonctionnelle d’un produit",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle contient uniquement les fonctionnalités essentielles",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle permet de valider les hypothèses et obtenir des retours réels",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle réduit coûts et délais de développement",
+            "isCorrect": true
+          },
+          {
+            "name": "Elle implique d'écrire un code en C++ uniquement",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que la planification itérative ?",
+        "description": "Planification en cycles courts successifs.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Organiser un projet en cycles courts et successifs permettant d’ajuster priorités, affiner objectifs et livrer progressivement",
+            "isCorrect": true
+          },
+          {
+            "name": "Planifier tout à l'avance sans possibilité de changement",
+            "isCorrect": false
+          },
+          {
+            "name": "Une technique de compression d'images",
+            "isCorrect": false
+          },
+          {
+            "name": "Une méthode pour CSS",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Citer 3 méthodes Agiles dans le cadre d’un projet informatique",
+        "description": "Exemples de méthodes Agiles.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Scrum",
+            "isCorrect": true
+          },
+          {
+            "name": "Kanban",
+            "isCorrect": true
+          },
+          {
+            "name": "Extreme Programming (XP)",
+            "isCorrect": true
+          },
+          {
+            "name": "Waterfall",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’une réunion de revue de projet ?",
+        "description": "Réunion pour faire le point sur l’avancement du projet.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une réunion permettant de faire le point sur l’avancement, de valider les livrables réalisés et d’ajuster la planification",
+            "isCorrect": true
+          },
+          {
+            "name": "Une réunion pour organiser un repas",
+            "isCorrect": false
+          },
+          {
+            "name": "Un meeting pour chiffrer la base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Une séance de sport",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un livrable dans un projet ?",
+        "description": "Élément concret remis au client ou à l’équipe.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Tout élément concret remis au client ou à l’équipe dans le cadre d’un projet",
+            "isCorrect": true
+          },
+          {
+            "name": "Un style CSS",
+            "isCorrect": false
+          },
+          {
+            "name": "Un fichier .exe inutilisé",
+            "isCorrect": false
+          },
+          {
+            "name": "Une combinaison",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quels sont les 3 piliers SCRUM ? Définir chacun d’entre eux",
+        "description": "Transparence, inspection, adaptation.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Transparence: vision claire et partagée de l’avancement, des objectifs et des obstacles",
+            "isCorrect": true
+          },
+          {
+            "name": "Inspection: travail et processus régulièrement examinés pour détecter les écarts ou problèmes",
+            "isCorrect": true
+          },
+          {
+            "name": "Adaptation: ajuster rapidement le plan ou la méthode pour améliorer en continu en fonction des retours",
+            "isCorrect": true
+          },
+          {
+            "name": "Repos: se reposer pendant le sprint",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que le DevOps et quel est son objectif principal ?",
+        "description": "Approche combinant développement et opérations.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Approche rapprochant développement (Dev) et opérations (Ops) en favorisant collaboration, automatisation et intégration continue",
+            "isCorrect": true
+          },
+          {
+            "name": "Un langage de programmation",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole de réseau",
+            "isCorrect": false
+          },
+          {
+            "name": "Un jeu vidéo",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que l’intégration continue ?",
+        "description": "Fusion fréquente du code et automatisation des tests.",
+        "point": 3,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Pratique consistant à fusionner fréquemment le code dans une branche commune et à automatiser tests et construction de l’application",
+            "isCorrect": true
+          },
+          {
+            "name": "Un test unitaire",
+            "isCorrect": false
+          },
+          {
+            "name": "Un type de base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Une extension JavaScript",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce que Docker ? Et en quoi est-il utile dans le cadre du DevOps ?",
+        "description": "Conteneurisation et utilité de Docker.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Docker permet de créer et gérer des conteneurs isolés contenant une application et ses dépendances",
+            "isCorrect": true
+          },
+          {
+            "name": "Il standardise les environnements et facilite la portabilité",
+            "isCorrect": true
+          },
+          {
+            "name": "Il simplifie le déploiement continu des applications",
+            "isCorrect": true
+          },
+          {
+            "name": "Docker est un navigateur web",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu’est-ce qu’un test unitaire ?",
+        "description": "Vérifier le fonctionnement d’une unité de code de manière isolée.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Vérifier le fonctionnement d’une fonction ou module de manière isolée sans dépendances externes",
+            "isCorrect": true
+          },
+          {
+            "name": "Un test complet de système",
+            "isCorrect": false
+          },
+          {
+            "name": "Une technique de maquillage",
+            "isCorrect": false
+          },
+          {
+            "name": "Une requête SQL",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelle est l'unité de code testée lors d'un test unitaire ?",
+        "description": "Unité testée dans un test unitaire.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Une fonction, une méthode ou une classe",
+            "isCorrect": true
+          },
+          {
+            "name": "L'ensemble du système",
+            "isCorrect": false
+          },
+          {
+            "name": "Le matériel",
+            "isCorrect": false
+          },
+          {
+            "name": "Une base de données",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Quelles sont les caractéristiques d'un bon test unitaire ?",
+        "description": "Caractéristiques essentielles des tests unitaires.",
+        "point": 4,
+        "type": "MULTI",
+        "choices": [
+          {
+            "name": "Isolé: il ne dépend pas d'autres tests ou services externes",
+            "isCorrect": true
+          },
+          {
+            "name": "Automatisable et rapide: exécutable fréquemment sans ralentir le développement",
+            "isCorrect": true
+          },
+          {
+            "name": "Déterministe: produit toujours le même résultat pour les mêmes entrées",
+            "isCorrect": true
+          },
+          {
+            "name": "Clair et pertinent: il vérifie un seul comportement précis",
+            "isCorrect": true
+          },
+          {
+            "name": "Il doit tester tout le code à la fois",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "name": "Qu'est-ce qu'une assertion dans un test unitaire ?",
+        "description": "Instruction vérifiant la validité d’une condition dans un test.",
+        "point": 2,
+        "type": "ONE",
+        "choices": [
+          {
+            "name": "Instruction qui vérifie qu’une condition est vraie lors de l’exécution d’un test unitaire",
+            "isCorrect": true
+          },
+          {
+            "name": "Un type de base de données",
+            "isCorrect": false
+          },
+          {
+            "name": "Une balise HTML",
+            "isCorrect": false
+          },
+          {
+            "name": "Un protocole de sécurité",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  }
+]

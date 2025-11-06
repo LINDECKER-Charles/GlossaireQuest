@@ -7,6 +7,8 @@ import { AboutComponent } from './components/misc/about/about.component';
 import { ProfilComponent } from './components/user/profil/profil.component';
 import { authGuard } from './guards/auth.guard';
 import { QuizzComponent } from './components/misc/quizz/quizz.component';
+import { CreateQuizzComponent } from './components/misc/create-quizz/create-quizz.component';
+import { isAdminGuard } from './guards/is-admin.guard';
 
 
 export const routes: Routes = [
@@ -17,6 +19,7 @@ export const routes: Routes = [
 
   { path: 'home', component: HomeComponent},
   { path: 'quizz/:id', component: QuizzComponent },
+  { path: 'quizz-create', component: CreateQuizzComponent },
   
   { path: 'profil', component: ProfilComponent, canActivate: [authGuard] },
 

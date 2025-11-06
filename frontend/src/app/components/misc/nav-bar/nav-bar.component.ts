@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { Subscription, filter } from 'rxjs';
 import { AuthService } from '../../../services/auth.service';
+import { UserRequestService } from 'src/app/services/request/user-request.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,29 +13,50 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class NavBarComponent implements OnInit, OnDestroy {
   isLoggedIn = false;
-  private sub?: Subscription;
+  isAdmin = false;
+  private sub = new Subscription();
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private userService: UserRequestService
+  ) {}
 
   ngOnInit(): void {
-    // Vérifie immédiatement l'état actuel
-    this.isLoggedIn = this.auth.isLoggedIn();
+    // Ecoute réactive des changements de connexion
+    this.sub.add(
+      this.auth.isLoggedIn$.subscribe((loggedIn) => {
+        this.isLoggedIn = loggedIn;
 
-    // Surveille les changements de route
-    this.sub = this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        this.isLoggedIn = this.auth.isLoggedIn();
-      });
+        // Si connecté → vérifie le rôle
+        if (loggedIn) {
+          this.userService.isAdmin().subscribe((isAdmin) => {
+            this.isAdmin = isAdmin;
+            console.log('isAdmin dans NavBar:', isAdmin);
+          });
+        } else {
+          this.isAdmin = false;
+        }
+      })
+    );
+
+    // Surveille les changements de route (optionnel mais utile)
+    this.sub.add(
+      this.router.events
+        .pipe(filter((event) => event instanceof NavigationEnd))
+        .subscribe(() => {
+          this.isLoggedIn = this.auth.isLoggedIn();
+        })
+    );
   }
 
   logout(): void {
+    // Déconnecte et l’état se mettra à jour automatiquement
     this.auth.logout();
-    this.isLoggedIn = false;
     this.router.navigate(['/login']);
   }
 
   ngOnDestroy(): void {
-    this.sub?.unsubscribe();
+    this.sub.unsubscribe();
   }
 }
