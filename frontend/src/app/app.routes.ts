@@ -17,7 +17,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [NoAuthGuard] },
 
-  { path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent },
   { path: 'quizz/:id', component: QuizzComponent },
   { path: 'quizz-create', component: CreateQuizzComponent },
   

@@ -11,7 +11,7 @@ import { UserRequestService } from 'src/app/services/request/user-request.servic
   imports: [CommonModule, RouterModule],
   templateUrl: './nav-bar.component.html',
 })
-export class NavBarComponent implements OnInit, OnDestroy {
+export class NavBarComponent implements OnInit {
   isLoggedIn = false;
   isAdmin = false;
   private sub = new Subscription();
@@ -23,40 +23,21 @@ export class NavBarComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // Ecoute réactive des changements de connexion
-    this.sub.add(
-      this.auth.isLoggedIn$.subscribe((loggedIn) => {
-        this.isLoggedIn = loggedIn;
+    // Vérifie immédiatement l'état actuel
+    this.isLoggedIn = this.auth.isLoggedIn();
 
-        // Si connecté → vérifie le rôle
-        if (loggedIn) {
-          this.userService.isAdmin().subscribe((isAdmin) => {
-            this.isAdmin = isAdmin;
-            console.log('isAdmin dans NavBar:', isAdmin);
-          });
-        } else {
-          this.isAdmin = false;
-        }
-      })
-    );
-
-    // Surveille les changements de route (optionnel mais utile)
-    this.sub.add(
-      this.router.events
-        .pipe(filter((event) => event instanceof NavigationEnd))
-        .subscribe(() => {
-          this.isLoggedIn = this.auth.isLoggedIn();
-        })
-    );
+    if (this.isLoggedIn) {
+      this.userService.isAdmin().subscribe((isAdmin) => {
+        this.isAdmin = isAdmin;
+        console.log('isAdmin dans NavBar:', isAdmin);
+      });
+    }
   }
+
 
   logout(): void {
     // Déconnecte et l’état se mettra à jour automatiquement
     this.auth.logout();
     this.router.navigate(['/login']);
-  }
-
-  ngOnDestroy(): void {
-    this.sub.unsubscribe();
   }
 }

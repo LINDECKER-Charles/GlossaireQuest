@@ -27,10 +27,6 @@ export abstract class AbstractRequestService {
   }
 
   protected requestNoAuth<T>(method: string, url: string, body?: any, log: boolean = true): Observable<T> {
-    if(this.auth.isTokenExpired() && log){
-      this.auth.logout();
-      this.router.navigate(['/login']);
-    }
     const token = this.auth.getToken();
     const headers = new HttpHeaders({
       'Authorization': token ? `Bearer ${token}` : '',
