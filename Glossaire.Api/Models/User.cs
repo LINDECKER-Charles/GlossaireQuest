@@ -20,8 +20,13 @@ namespace TechQuiz.Api.Models
         [Required, MaxLength(50)]
         public string Role { get; set; } = "user";
 
+        public bool IsVerified { get; set; } = false;
+
         // Relations
         public ICollection<Quizz> Quizzes { get; set; } = new List<Quizz>();
         public ICollection<Try> Tries { get; set; } = new List<Try>();
+        public VerificationToken? VerificationToken { get; set; }
+        public ResetToken? ResetToken { get; set; }
+
     }
 }

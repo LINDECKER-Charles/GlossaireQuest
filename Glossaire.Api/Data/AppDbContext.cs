@@ -13,12 +13,26 @@ namespace TechQuiz.Api.Data
         public DbSet<Question> Questions { get; set; }
         public DbSet<Choice> Choices { get; set; }
         public DbSet<Try> Tries { get; set; }
+        public DbSet<VerificationToken> VerificationTokens { get; set; }
+        public DbSet<ResetToken> ResetTokens { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             // Relations explicites si besoin
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.VerificationToken)
+                .WithOne(t => t.User)
+                .HasForeignKey<VerificationToken>(t => t.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.ResetToken)
+                .WithOne(t => t.User)
+                .HasForeignKey<ResetToken>(t => t.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<Quizz>()
                 .HasOne(q => q.User)
                 .WithMany(u => u.Quizzes)
