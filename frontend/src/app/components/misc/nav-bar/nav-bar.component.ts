@@ -24,13 +24,11 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     // Vérifie immédiatement l'état actuel
-    this.isLoggedIn = this.auth.isLoggedIn();
-
-    if (this.isLoggedIn) {
-      this.userService.isAdmin().subscribe((isAdmin) => {
-        this.isAdmin = isAdmin;
-        console.log('isAdmin dans NavBar:', isAdmin);
-      });
+    this.isLoggedIn = !this.auth.isTokenExpired();
+    console.log(this.userService.isAdmin());
+    if (this.isLoggedIn && this.userService.isAdmin()) {
+      this.isAdmin = true;
+      console.log('isAdmin dans NavBar:', true);
     }
   }
 

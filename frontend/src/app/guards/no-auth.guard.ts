@@ -8,7 +8,7 @@ export const NoAuthGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
 
   // Si l'utilisateur a un token valide, il est déjà connecté
-  if (authService.isLoggedIn()) {
+  if (!authService.isTokenExpired()) {
     router.navigate(['/home']); // redirige vers la page principale
     return false; // bloque l'accès à /login ou /register
   }

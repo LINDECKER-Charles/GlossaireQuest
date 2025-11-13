@@ -6,7 +6,8 @@ import { map } from 'rxjs/internal/operators/map';
 export interface User {
   name: string,
   email: string,
-  role: string
+  role: string,
+  isVerified: boolean
 }
 
 export interface Try {
@@ -33,6 +34,25 @@ export class UserRequestService extends AbstractRequestService {
   public getUser(): Observable<User> {
     return this.request<User>('GET', this.url + '/me');
   }
+
+
+  public isVerified(): Observable<boolean> {
+    return this.request<boolean>('GET', this.url + '/isVerified');
+  }
+
+  public patchUserPassword(password: string): Observable<User> {
+    return this.request<User>('PATCH', this.url, { "password" : password });
+  }
+
+  public patchUserEmail(email: string): Observable<User> {
+    return this.request<User>('PATCH', this.url, { "email" : email });
+  }
+
+  public patchUserName(name: string): Observable<User> {
+    return this.request<User>('PATCH', this.url, { "name" : name });
+  }
+
+
 
   public getTrys(): Observable<any> {
     return this.request<any>('GET', this.url + '/try');

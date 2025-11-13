@@ -100,7 +100,7 @@ export class QuizzComponent implements OnInit {
     this.score = total;
     this.isFinished = true;
     this.isPlaying = false;
-    if(this.authService.isLoggedIn()){
+    if(!this.authService.isTokenExpired()){
       this.userRequestService.addTry(this.score, this.quiz.id).subscribe({
         next: (response) => {
           console.log('Essai ajouté avec succès :', response);

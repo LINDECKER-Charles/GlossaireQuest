@@ -9,6 +9,8 @@ import { authGuard } from './guards/auth.guard';
 import { QuizzComponent } from './components/misc/quizz/quizz.component';
 import { CreateQuizzComponent } from './components/misc/create-quizz/create-quizz.component';
 import { isAdminGuard } from './guards/is-admin.guard';
+import { VerifyEmailComponent } from './components/auth/verify-email/verify-email.component';
+import { ConfirmEmailComponent } from './components/auth/confirm-email/confirm-email.component';
 
 
 export const routes: Routes = [
@@ -16,6 +18,8 @@ export const routes: Routes = [
 
   { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [NoAuthGuard] },
+  { path: 'verify', component: VerifyEmailComponent},
+  { path: 'send-verify', component: ConfirmEmailComponent},
 
   { path: 'home', component: HomeComponent },
   { path: 'quizz/:id', component: QuizzComponent },

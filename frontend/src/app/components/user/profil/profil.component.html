@@ -29,6 +29,21 @@
         <dt>Rôle :</dt>
         <dd>{{ user.role }}</dd>
       </div>
+
+      <div class="profile-row">
+        <dt>Vérifié :</dt>
+        <dd>
+          <span
+            [ngClass]="{
+              'text-green-400 font-semibold': user.isVerified,
+              'text-red-400 font-semibold': !user.isVerified
+            }"
+          >
+            {{ user.isVerified ? 'Oui' : 'Non' }}
+          </span>
+        </dd>
+      </div>
+      
     </dl>
 
     <!-- Résumé des tentatives -->

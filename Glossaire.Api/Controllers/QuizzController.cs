@@ -65,14 +65,6 @@ namespace TechQuiz.Api.Controllers
             return Ok(quiz);
         }
 
-        [HttpGet("best")]
-        public async Task<IActionResult> GetBestQuizzes()
-        {
-
-
-            return Ok();
-        }
-
         [HttpGet("summary")]
         public async Task<IActionResult> GetQuizzesSummary()
         {

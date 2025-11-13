@@ -23,6 +23,6 @@ export class HomeComponent implements OnInit {
   }
 
   isLoggedIn(): boolean {
-    return this.authService.isLoggedIn();
+    return !this.authService.isTokenExpired();
   }
 }

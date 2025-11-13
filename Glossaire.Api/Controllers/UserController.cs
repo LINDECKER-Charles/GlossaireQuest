@@ -7,6 +7,7 @@ using TechQuiz.Api.Models;
 using TechQuiz.Api.Dtos;
 using TechQuiz.Api.Factory;
 using BCrypt.Net;
+using TechQuiz.Api.Services.Email;
 
 namespace TechQuiz.Api.Controllers
 {
@@ -15,10 +16,12 @@ namespace TechQuiz.Api.Controllers
     public class UserController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _config;
 
-        public UserController(AppDbContext context)
+        public UserController(AppDbContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
 
         [Authorize]
@@ -36,7 +39,8 @@ namespace TechQuiz.Api.Controllers
                 user.Id,
                 user.Email,
                 user.Name,
-                user.Role
+                user.Role,
+                user.IsVerified
             });
         }
 
@@ -44,13 +48,13 @@ namespace TechQuiz.Api.Controllers
         [HttpGet("show/try")]
         public async Task<IActionResult> GetTries()
         {
-            // 🔹 Récupère l’utilisateur connecté via le token JWT
+            // Récupère l’utilisateur connecté via le token JWT
             string? email = User.FindFirst(ClaimTypes.Email)?.Value;
             User? user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
             if (user == null)
                 return NotFound(new { message = "Utilisateur introuvable" });
 
-            // 🔹 Récupère toutes ses tentatives avec les infos de quiz
+            // Récupère toutes ses tentatives avec les infos de quiz
             var tries = await _context.Tries
                 .Include(t => t.Quizz)
                 .Where(t => t.UserId == user.Id)
@@ -65,11 +69,11 @@ namespace TechQuiz.Api.Controllers
                 })
                 .ToListAsync();
 
-            // 🔹 S’il n’a jamais fait de tentative
+            // S’il n’a jamais fait de tentative
             if (!tries.Any())
                 return Ok(new { message = "Aucune tentative enregistrée pour cet utilisateur." });
 
-            // 🔹 Sinon, on renvoie la liste
+            // Sinon, on renvoie la liste
             return Ok(new
             {
                 message = $"Trouvé {tries.Count} tentative(s).",
@@ -110,6 +114,71 @@ namespace TechQuiz.Api.Controllers
             return Ok(new { message = "Tentative ajoutée avec succès." });
         }
 
+        [Authorize]
+        [HttpPost("send-verify")]
+        public async Task<IActionResult> SendVerificationEmail([FromServices] EmailSender emailSender)
+        {
+
+            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+            User? user = await _context.Users
+                .Include(u => u.VerificationToken)
+                .FirstOrDefaultAsync(u => u.Email == email);
+            if (user == null)
+                return NotFound(new { message = "Utilisateur introuvable" });
+            
+            if (user.IsVerified)
+                return BadRequest(new { message = "Votre compte est déjà vérifié." });
+            
+            if (user.VerificationToken != null)
+            {
+                _context.VerificationTokens.Remove(user.VerificationToken);
+                await _context.SaveChangesAsync();
+            }
+                
+            // Vérifie si l’utilisateur est déjà vérifié
+            
+
+            // Crée un token de vérification
+            var verifyToken = VerifyTokenFactory.CreateVerifyToken(user);
+            _context.VerificationTokens.Add(verifyToken);
+            await _context.SaveChangesAsync();
+
+            // Envoie l’email de vérification
+
+            string baseUrl = _config["App:BaseUrl"] 
+                ?? throw new Exception("App:BaseUrl manquant dans appsettings.json");
+            string verifyLink = $"{baseUrl}/verify?token={verifyToken.Token}";
+            string emailBody = $"Bonjour {user.Name},<br/><br/>Veuillez vérifier votre compte en cliquant sur le lien suivant : <a href=\"{verifyLink}\">Vérifier mon compte</a><br/><br/>Merci!";
+            
+            await emailSender.SendEmailAsync(user.Email, "Vérification de votre compte", emailBody);
+
+            return Ok(new { message = "Email de vérification envoyé." });
+        }
+
+
+        [HttpGet("verify")]
+        public async Task<IActionResult> VerifyEmail([FromQuery] string token)
+        {
+            var verifyToken = await _context.VerificationTokens
+                .Include(vt => vt.User)
+                .FirstOrDefaultAsync(vt => vt.Token == token);
+
+            if (verifyToken == null)
+                return BadRequest(new { message = "Token de vérification invalide." });
+
+            if(verifyToken.IsExpired())
+                return BadRequest(new { message = "Token de vérification expiré." });
+            
+            User user = verifyToken.User;
+            if (user == null)
+                return NotFound(new { message = "Utilisateur introuvable pour ce token." });
+
+            user.IsVerified = true;
+            _context.VerificationTokens.Remove(verifyToken);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Compte vérifié avec succès." });
+        }
     }
 
     // DTO (Data Transfer Object) pour la requête

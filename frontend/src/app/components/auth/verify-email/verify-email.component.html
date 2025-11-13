@@ -1,0 +1,45 @@
+<main id="main-content" class="page bg-background-dark text-neutral-100 px-4">
+  <section aria-labelledby="verify-title" class="card w-full max-w-lg text-center border border-neutral-700">
+    <h1 id="verify-title" class="text-3xl font-bold mb-6 text-primary-400">
+      Vérification de ton e-mail
+    </h1>
+
+    <!-- Chargement -->
+    <div *ngIf="loading" class="text-neutral-300 animate-pulse">
+      Vérification en cours...
+    </div>
+
+    <!-- Succès -->
+    <div *ngIf="!loading && successMessage" class="space-y-4">
+      <div role="status" class="text-green-500 text-lg font-semibold">
+        {{ successMessage }}
+      </div>
+      <p class="text-neutral-300 leading-relaxed">
+        Ton adresse e-mail a été vérifiée avec succès.  
+        Tu peux maintenant accéder à ton compte.
+      </p>
+      <a
+        routerLink="/login"
+        class="btn-primary inline-block mt-6 py-2.5 px-6 font-semibold"
+      >
+        Retour à la connexion
+      </a>
+    </div>
+
+    <!-- Erreur -->
+    <div *ngIf="!loading && errorMessage" class="space-y-4">
+      <div role="alert" class="text-red-500 text-lg font-semibold">
+        {{ errorMessage }}
+      </div>
+      <p class="text-neutral-300 leading-relaxed">
+        Le lien de vérification est invalide ou a expiré.
+      </p>
+      <a
+        routerLink="/check-email"
+        class="btn-outline inline-block mt-6 py-2.5 px-6 font-semibold"
+      >
+        Renvoyer un nouveau lien
+      </a>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,53 @@
+<main id="main-content" class="page bg-background-dark text-neutral-100 px-4">
+  <section aria-labelledby="verify-title" class="card w-full max-w-lg text-center border border-neutral-700">
+    <h1 id="verify-title" class="text-3xl font-bold mb-6 text-primary-400">
+      Vérifie ton adresse e-mail
+    </h1>
+
+    <article class="text-neutral-300 leading-relaxed mb-6 space-y-4">
+      <p>
+        Un e-mail de confirmation a été envoyé à ton adresse.  
+        Clique sur le lien dans ce message pour valider ton compte.
+      </p>
+
+      <p class="text-sm text-neutral-400">
+        Pense à vérifier ton dossier
+        <span class="font-semibold text-primary-400">Spam</span> ou
+        <span class="font-semibold text-primary-400">Courrier indésirable</span>
+        si tu ne vois pas l’e-mail.
+      </p>
+    </article>
+
+    <!-- Boutons -->
+    <div class="space-y-3">
+      <button
+        type="button"
+        (click)="resendEmail()"
+        [disabled]="cooldown > 0"
+        class="btn-outline w-full sm:w-auto px-6 py-2 font-semibold"
+      >
+        <span *ngIf="cooldown === 0">Renvoyer le mail</span>
+        <span *ngIf="cooldown > 0">Renvoyer dans {{ cooldown }}s</span>
+      </button>
+
+      <nav aria-label="Navigation secondaire" class="mt-6">
+        <a routerLink="/profil" class="btn-back">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke-width="2" stroke="currentColor" class="w-4 h-4 mr-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          Retour au profil
+        </a>
+      </nav>
+    </div>
+
+    <!-- Messages dynamiques -->
+    <div *ngIf="successMessage" role="alert" class="mt-6 text-green-500 font-medium">
+      {{ successMessage }}
+    </div>
+
+    <div *ngIf="errorMessage" role="alert" class="mt-6 text-red-500 font-medium">
+      {{ errorMessage }}
+    </div>
+  </section>
+</main>
