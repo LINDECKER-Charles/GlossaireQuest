@@ -14,11 +14,11 @@ export class SecurityRequestService extends AbstractRequestService {
   }
 
   sendPasswordResetEmail(email: string): Observable<{ message: string }> {
-    return this.request<{ message: string }>('POST', this.url + '/send-reset-password?email='+ encodeURIComponent(email), {}, false);
+    return this.requestNoAuth<{ message: string }>('POST', this.url + '/security/send-reset-password?email='+ encodeURIComponent(email), {}, false);
   }
 
   changePassword(token: string, newPassword: string): Observable<{ message: string }>{
-    return this.request<{ message: string }>('POST', this.url + '/reset-password?token=' + encodeURIComponent(token) + '&newPassword=' + encodeURIComponent(newPassword), {}, false);
+    return this.requestNoAuth<{ message: string }>('POST', this.url + '/security/reset-password?token=' + encodeURIComponent(token) + '&newPassword=' + encodeURIComponent(newPassword), { }, false);
   }
 
   verifyEmail(token: string): Observable<{ message: string }> {

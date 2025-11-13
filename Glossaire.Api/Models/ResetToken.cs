@@ -12,7 +12,7 @@ namespace TechQuiz.Api.Models
         public required string Token { get; init; }
 
         [Required]
-        public DateTime ExpirationDate { get; init; } = DateTime.UtcNow.AddMinutes(30);
+        public DateTime ExpirationDate { get; init; } = DateTime.UtcNow.AddMinutes(15);
 
         // Foreign key vers User
         [ForeignKey(nameof(User))]

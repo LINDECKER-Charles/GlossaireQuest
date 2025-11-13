@@ -9,6 +9,7 @@ export const NoAuthGuard: CanActivateFn = (route, state) => {
 
   // Si l'utilisateur a un token valide, il est déjà connecté
   if (!authService.isTokenExpired()) {
+    console.log("User already authenticated, redirecting to home.");
     router.navigate(['/home']); // redirige vers la page principale
     return false; // bloque l'accès à /login ou /register
   }

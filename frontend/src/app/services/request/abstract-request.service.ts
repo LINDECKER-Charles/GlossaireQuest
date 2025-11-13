@@ -15,8 +15,8 @@ export abstract class AbstractRequestService {
 
   protected request<T>(method: string, url: string, body?: any, log: boolean = true): Observable<T> {
     if(this.auth.isTokenExpired() && log){
+      console.log("Token expired, logging out and redirecting to login.");
       this.auth.logout();
-      this.router.navigate(['/login']);
     }
     const token = this.auth.getToken();
     const headers = new HttpHeaders({

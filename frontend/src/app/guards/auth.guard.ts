@@ -7,6 +7,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
 
   if (authService.isTokenExpired()) {
+    console.log("Token expired or not present, redirecting to login.");
     router.navigate(['/login']);
     return false;
   }

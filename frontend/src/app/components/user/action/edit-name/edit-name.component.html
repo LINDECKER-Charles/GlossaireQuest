@@ -1,0 +1,45 @@
+<main class="page min-h-[60vh]">
+  <section aria-labelledby="edit-name-title" class="card max-w-md w-full text-center">
+    <h1 id="edit-name-title" class="section-title">Modifier le nom d’utilisateur</h1>
+
+    <!-- Messages -->
+    <div *ngIf="error" class="alert-error text-center mb-4">
+      {{ error }}
+    </div>
+
+    <div *ngIf="success" class="alert-success text-center mb-4">
+      Nom mis à jour avec succès !
+    </div>
+
+    <!-- Formulaire -->
+    <form (ngSubmit)="updateName()" #nameForm="ngForm" class="space-y-5 text-left">
+
+      <div>
+        <label for="newName" class="label">Nouveau nom</label>
+        <input
+          type="text"
+          id="newName"
+          name="newName"
+          [(ngModel)]="newName"
+          required
+          placeholder="Entrez votre nouveau nom"
+          class="input mt-1"
+        />
+      </div>
+
+      <!-- Bouton principal -->
+      <button
+        type="submit"
+        [disabled]="nameForm.invalid"
+        class="btn-primary w-full py-2.5 font-bold"
+      >
+        Mettre à jour
+      </button>
+
+      <!-- Retour -->
+      <nav aria-label="Retour au profil" class="text-center mt-3">
+        <a routerLink="/profil" class="btn-text">← Retour au profil</a>
+      </nav>
+    </form>
+  </section>
+</main>

@@ -36,6 +36,7 @@ export class UserRequestService extends AbstractRequestService {
   }
 
 
+  
   public isVerified(): Observable<boolean> {
     return this.request<boolean>('GET', this.url + '/isVerified');
   }

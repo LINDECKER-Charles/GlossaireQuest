@@ -7,6 +7,7 @@ export const isAdminGuard: CanActivateFn = (route, state) => {
   const router = inject(Router);
 
   if (!userService.isAdmin()) {
+    console.log("User is not admin, redirecting to home.");
     router.navigate(['/home']);
     return false;
   }

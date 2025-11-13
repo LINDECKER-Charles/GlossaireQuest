@@ -11,6 +11,8 @@ import { CreateQuizzComponent } from './components/misc/create-quizz/create-quiz
 import { isAdminGuard } from './guards/is-admin.guard';
 import { VerifyEmailComponent } from './components/auth/verify-email/verify-email.component';
 import { ConfirmEmailComponent } from './components/auth/confirm-email/confirm-email.component';
+import { ResetPasswordComponent } from './components/auth/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
 
 
 export const routes: Routes = [
@@ -18,8 +20,12 @@ export const routes: Routes = [
 
   { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [NoAuthGuard] },
-  { path: 'verify', component: VerifyEmailComponent},
-  { path: 'send-verify', component: ConfirmEmailComponent},
+
+  { path: 'check-email', component: ConfirmEmailComponent },
+  { path: 'send-reset-password', component: ForgotPasswordComponent, canActivate: [NoAuthGuard] },
+  { path: 'reset', component: ResetPasswordComponent },
+
+  { path: 'verify', component: VerifyEmailComponent },
 
   { path: 'home', component: HomeComponent },
   { path: 'quizz/:id', component: QuizzComponent },

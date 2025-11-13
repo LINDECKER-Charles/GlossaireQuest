@@ -1,0 +1,49 @@
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { UserRequestService } from 'src/app/services/request/user-request.service';
+import { ValidationService } from 'src/app/services/utils/validation.service';
+
+@Component({
+  selector: 'app-edit-password',
+  standalone: true,
+  imports: [CommonModule, FormsModule, RouterModule],
+  templateUrl: './edit-password.component.html',
+  styleUrl: './edit-password.component.scss'
+})
+export class EditPasswordComponent {
+
+  public password: string = '';
+  public confirmPassword: string = '';
+  public error: string | null = null;
+
+  public showPassword: boolean = false;
+  public showConfirm: boolean = false;
+
+  constructor(private userRequest: UserRequestService, private router: Router, private validate: ValidationService) { }
+
+  public toggleShowPassword(): void {
+    this.showPassword = !this.showPassword;
+  }
+  public toggleShowConfirmPassword(): void {
+    this.showConfirm = !this.showConfirm
+  }
+
+  public onSubmit(): void {
+    if(!this.validate.validPassword(this.password)){
+      this.error = "Mot de passe trop faible.";
+      return;
+    }
+    this.userRequest.patchUserPassword(this.password).subscribe({
+      next: (response) => {
+        this.router.navigate(['/profil']);
+      },
+      error: (err) => {
+        this.error = err;
+      }
+    });
+  }
+
+}
