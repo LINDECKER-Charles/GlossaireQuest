@@ -34,6 +34,10 @@ export class UserRequestService extends AbstractRequestService {
     return this.request<User>('PATCH', this.url, { "name" : name });
   }
 
+  public deleteUser(): Observable<void> {
+    return this.request<void>('DELETE', this.url);
+  }
+
 
 
   public getTrys(): Observable<any> {
@@ -48,7 +52,6 @@ export class UserRequestService extends AbstractRequestService {
     return this.request<Tries>('GET', this.url + '/show/try');
   }
 
-  
   public isAdmin(): boolean {
     return localStorage.getItem('role') === 'ADMIN';
   }

@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { User, UserRequestService } from 'src/app/services/request/user-request.service';
+import { UserRequestService } from 'src/app/services/request/user-request.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-delete-account',

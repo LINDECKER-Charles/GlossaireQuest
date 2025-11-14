@@ -13,6 +13,10 @@ import { VerifyEmailComponent } from './components/auth/verify-email/verify-emai
 import { ConfirmEmailComponent } from './components/auth/confirm-email/confirm-email.component';
 import { ResetPasswordComponent } from './components/auth/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './components/auth/forgot-password/forgot-password.component';
+import { DeleteAccountComponent } from './components/user/action/delete-account/delete-account.component';
+import { EditNameComponent } from './components/user/action/edit-name/edit-name.component';
+import { EditEmailComponent } from './components/user/action/edit-email/edit-email.component';
+import { EditPasswordComponent } from './components/user/action/edit-password/edit-password.component';
 
 
 export const routes: Routes = [
@@ -32,6 +36,10 @@ export const routes: Routes = [
   { path: 'quizz-create', component: CreateQuizzComponent },
   
   { path: 'profil', component: ProfilComponent, canActivate: [authGuard] },
-
+  { path: 'profil/password-change', component: EditPasswordComponent, canActivate: [authGuard] },
+  { path: 'profil/email-change', component: EditEmailComponent, canActivate: [authGuard] },
+  { path: 'profil/name-change', component: EditNameComponent, canActivate: [authGuard] },
+  { path: 'profil/delete-account', component: DeleteAccountComponent, canActivate: [authGuard] },
+  
   { path: 'about', component: AboutComponent }
 ];

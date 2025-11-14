@@ -75,22 +75,13 @@ export class ProfilComponent implements OnInit {
     this.triesSummary = { total, best, average };
   }
 
+  isVerified(): boolean {
+    return this.user ? this.user.isVerified : false;
+  }
+
   // Déconnexion
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/login']);
-  }
-
-  // Changements de profil
-  changePassword(): void {
-    this.router.navigate(['/profil/password-change']);
-  }
-
-  changeEmail(): void {
-    this.router.navigate(['/profil/email-change']);
-  }
-
-  changeName(): void {
-    this.router.navigate(['/profil/name-change']);
   }
 }

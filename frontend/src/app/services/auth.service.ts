@@ -16,7 +16,8 @@ export class AuthService {
   constructor(private readonly http: HttpClient, private readonly router: Router) {
     interval(10_000).subscribe(() => {
       if(this.isTokenExpired()) {
-        this.logout();
+        this.loggedIn$.next(false);
+        this.isAdmin$.next(false);
       }
     });
 

@@ -3,8 +3,10 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { UserRequestService, User } from 'src/app/services/request/user-request.service';
+import { UserRequestService } from 'src/app/services/request/user-request.service';
 import { ValidationService } from 'src/app/services/utils/validation.service';
+import { User } from 'src/app/models/user';
+import { SecurityRequestService } from 'src/app/services/request/security-request.service';
 
 @Component({
   selector: 'app-edit-email',
@@ -28,7 +30,7 @@ export class EditEmailComponent {
 
   public error: string | null = null;
 
-  constructor(private userRequest: UserRequestService, private router: Router, private auth: AuthService, private validate: ValidationService) {}
+  constructor(private userRequest: UserRequestService, private router: Router, private auth: AuthService, private validate: ValidationService, private securityRequest: SecurityRequestService) {}
 
   checkEmailAvailability(): void {
     this.checking = true;
@@ -43,7 +45,7 @@ export class EditEmailComponent {
         this.checking = false;
         return;
       }
-      this.userRequest.getEmailAvailability(this.newEmail).subscribe({
+      this.securityRequest.getEmailAvailability(this.newEmail).subscribe({
         next: (response) => {
           response ? this.emailTaken = true : this.emailTaken = false;
           this.checking = false;

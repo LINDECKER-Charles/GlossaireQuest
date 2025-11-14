@@ -51,7 +51,8 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <a routerLink="/profil/password-change" class="btn-outline p-2">Changer le mot de passe</a>
         <a routerLink="/profil/email-change" class="btn-outline p-2">Changer d’adresse e-mail</a>
-        <a routerLink="/profil/name-change" class="btn-outline sm:col-span-2 p-2">Changer de nom</a>
+        <a routerLink="/profil/name-change" [ngClass]="!isVerified() ? 'btn-outline p-2' : 'btn-outline sm:col-span-2 p-2'">Changer de nom</a>
+        <a routerLink="/check-email" class="btn-outline p-2" *ngIf="!isVerified()" >Vérifier l’adresse e-mail</a>
       </div>
 
       <a

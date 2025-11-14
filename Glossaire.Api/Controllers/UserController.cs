@@ -24,6 +24,7 @@ namespace TechQuiz.Api.Controllers
             _config = config;
         }
 
+        /* User */
         [Authorize]
         [HttpGet("me")]
         public async Task<IActionResult> GetMe()
@@ -44,6 +45,63 @@ namespace TechQuiz.Api.Controllers
             });
         }
 
+        [Authorize]
+        [HttpPatch]
+        public async Task<IActionResult> UpdateUser([FromBody] UpdateUserRequest request)
+        {
+            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+            User? user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            if (user == null)
+                return NotFound(new { message = "Utilisateur introuvable" });
+
+            if (!string.IsNullOrEmpty(request.Name))
+                user.Name = request.Name;
+
+            if (!string.IsNullOrEmpty(request.Email))
+            {
+                user.Email = request.Email;
+                user.IsVerified = false;
+            }
+
+            if (!string.IsNullOrEmpty(request.Password))
+                user.Password = BCrypt.Net.BCrypt.HashPassword(request.Password);
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Profil mis à jour avec succès." });
+        }
+
+        [Authorize]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteUser()
+        {
+            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+            User? user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            if (user == null)
+                return NotFound(new { message = "Utilisateur introuvable" });
+
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Compte utilisateur supprimé avec succès." });
+        }
+
+        [Authorize]
+        [HttpGet("isVerified")]
+        public async Task<IActionResult> IsVerified()
+        {
+            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+            User? user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            if (user == null)
+                return NotFound(new { message = "Utilisateur introuvable" });
+
+            return Ok(new
+            {
+                isVerified = user.IsVerified
+            });
+        }
+
+        /* Try */
         [Authorize]
         [HttpGet("show/try")]
         public async Task<IActionResult> GetTries()
@@ -81,7 +139,6 @@ namespace TechQuiz.Api.Controllers
             });
         }
 
-
         [Authorize]
         [HttpPost("try")]
         public async Task<IActionResult> AddTry([FromBody] TryRequest request)
@@ -114,6 +171,7 @@ namespace TechQuiz.Api.Controllers
             return Ok(new { message = "Tentative ajoutée avec succès." });
         }
 
+        /* Verify */
         [Authorize]
         [HttpPost("send-verify")]
         public async Task<IActionResult> SendVerificationEmail([FromServices] EmailSender emailSender)
@@ -155,7 +213,6 @@ namespace TechQuiz.Api.Controllers
             return Ok(new { message = "Email de vérification envoyé." });
         }
 
-
         [HttpGet("verify")]
         public async Task<IActionResult> VerifyEmail([FromQuery] string token)
         {
@@ -182,5 +239,5 @@ namespace TechQuiz.Api.Controllers
     }
 
     // DTO (Data Transfer Object) pour la requête
-    public record UpdateUserRequest(string? Name, string? NewPassword);
+    public record UpdateUserRequest(string? Name, string? Password, string? Email);
 }

@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TechQuiz.Api.Data;
@@ -73,6 +74,14 @@ namespace TechQuiz.Api.Controllers
             await _context.SaveChangesAsync();
 
             return Ok(new { message = "Mot de passe réinitialisé avec succès." });
+        }
+
+        [Authorize]
+        [HttpGet("email-availability")]
+        public async Task<IActionResult> CheckEmailAvailability([FromQuery] string email)
+        {
+            bool emailExists = await _context.Users.AnyAsync(u => u.Email == email);
+            return Ok(emailExists);
         }
     }
 

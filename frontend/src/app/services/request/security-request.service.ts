@@ -24,4 +24,9 @@ export class SecurityRequestService extends AbstractRequestService {
   verifyEmail(token: string): Observable<{ message: string }> {
     return this.requestNoAuth<{ message: string }>('GET', this.url + '/user/verify?token=' + encodeURIComponent(token), {});
   }
+
+
+  public getEmailAvailability(email: string): Observable<boolean> {
+    return this.request<boolean>('GET', this.url + '/security/email-availability?email=' + encodeURIComponent(email), {});
+  }
 }
