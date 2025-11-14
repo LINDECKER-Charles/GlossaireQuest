@@ -67,10 +67,9 @@ export class UserRequestService extends AbstractRequestService {
     return this.request<Tries>('GET', this.url + '/show/try');
   }
 
-  public isAdmin(): Observable<boolean> {
-    return this.getUser().pipe(
-      map(user => user.role === 'ADMIN')
-    );
+  
+  public isAdmin(): boolean {
+    return localStorage.getItem('role') === 'ADMIN';
   }
 
 }

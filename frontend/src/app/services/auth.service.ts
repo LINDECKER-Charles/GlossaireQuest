@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, interval, Observable, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,19 @@ import { environment } from '../../environments/environment';
 export class AuthService {
 
   private apiUrl = environment.apiUrl + '/auth';
+  public loggedIn$ = new BehaviorSubject<boolean>(!this.isTokenExpired());
+  public isAdmin$ = new BehaviorSubject<boolean>(false);
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient, private readonly router: Router) {
+    interval(10_000).subscribe(() => {
+      if(this.isTokenExpired()) {
+        this.logout();
+      }
+    });
+
+  }
 
   // === AUTH ===
-
   login(email: string, password: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, { email, password })
       .pipe(
@@ -21,6 +30,10 @@ export class AuthService {
           if (response.token) {
             localStorage.setItem('token', response.token);
             localStorage.setItem('email', email);
+            localStorage.setItem('role', response.role);
+
+            this.loggedIn$.next(true);
+            this.isAdmin$.next(this.isAdmin(response.role));
           }
         })
       );
@@ -33,17 +46,33 @@ export class AuthService {
           if (response.token) {
             localStorage.setItem('token', response.token);
             localStorage.setItem('email', email);
+            localStorage.setItem('role', response.role);
+
+            this.loggedIn$.next(true);
+            this.isAdmin$.next(this.isAdmin(response.role));
           }
         })
       );
   }
 
+  private isAdmin(role : string): boolean {
+    return role === 'ADMIN';
+  }
 
-  
+  private getLocalUser(){
+    return {
+      email: localStorage.getItem('email'),
+      role: localStorage.getItem('role'),
+      token: localStorage.getItem('token')
+    }
+  }
 
   public logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('email');
+    this.loggedIn$.next(false);
+    this.isAdmin$.next(false);
+    this.router.navigate(['/login']);
   }
 
   // === TOKEN ===

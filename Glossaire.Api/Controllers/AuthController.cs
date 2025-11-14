@@ -27,7 +27,7 @@ namespace TechQuiz.Api.Controllers
                 return Unauthorized(new { message = "Identifiants invalides" });
 
             var token = _jwtService.GenerateToken(user);
-            return Ok(new { token });
+            return Ok(new { token, role = user.Role });
         }
 
         [HttpPost("register")]
@@ -52,7 +52,7 @@ namespace TechQuiz.Api.Controllers
 
             // Génére un token directement (auto-login)
             var token = _jwtService.GenerateToken(user);
-            return Ok(new { token });
+            return Ok(new { token, role = user.Role });
         }
     }
 

@@ -11,31 +11,41 @@ import { UserRequestService } from 'src/app/services/request/user-request.servic
   imports: [CommonModule, RouterModule],
   templateUrl: './nav-bar.component.html',
 })
-export class NavBarComponent implements OnInit {
-  isLoggedIn = false;
-  isAdmin = false;
+export class NavBarComponent implements OnInit, OnDestroy {
+
+  public isLoggedIn = false;
+  public isAdmin = false;
+
   private sub = new Subscription();
 
   constructor(
     private auth: AuthService,
-    private router: Router,
-    private userService: UserRequestService
   ) {}
 
   ngOnInit(): void {
-    // Vérifie immédiatement l'état actuel
-    this.isLoggedIn = !this.auth.isTokenExpired();
-    console.log(this.userService.isAdmin());
-    if (this.isLoggedIn && this.userService.isAdmin()) {
-      this.isAdmin = true;
-      console.log('isAdmin dans NavBar:', true);
-    }
+
+    this.sub.add(
+      this.auth.loggedIn$.subscribe((status: boolean) => {
+        this.isLoggedIn = status;
+      })
+    );
+
+    this.sub.add(
+      this.auth.isAdmin$.subscribe((status: boolean) => {
+        this.isAdmin = status;
+      })
+    );
+
   }
 
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
 
   logout(): void {
     // Déconnecte et l’état se mettra à jour automatiquement
     this.auth.logout();
-    this.router.navigate(['/login']);
   }
+
+
 }

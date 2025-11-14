@@ -27,7 +27,6 @@ export class ResetPasswordComponent implements OnInit{
     const token = this.route.snapshot.queryParamMap.get('token');
     if (!token) {
       console.log("No token provided, redirecting to login.");
-
     }
   }
 
