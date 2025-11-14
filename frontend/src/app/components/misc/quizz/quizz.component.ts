@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { QuizzRequestService, Quizz, Question, Choice } from '../../../services/request/quizz-request.service';
+import { QuizzRequestService } from '../../../services/request/quizz-request.service';
 import { UserRequestService } from 'src/app/services/request/user-request.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { Choice, Question, Quizz } from 'src/app/models/quizz';
 
 @Component({
   selector: 'app-quizz',

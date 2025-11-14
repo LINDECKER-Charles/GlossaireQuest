@@ -1,50 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AbstractRequestService } from './abstract-request.service';
 import { Observable } from 'rxjs/internal/Observable';
-
-export interface Choice {
-  id: number;
-  name: string;
-  isCorrect: boolean;
-  selected?: boolean;
-}
-
-export interface Question {
-  id: number;
-  name: string;
-  description: string;
-  point: number;
-  type: string;
-  choices: Choice[];
-}
-
-export interface Quizz {
-  id: number;
-  name: string;
-  description: string;
-  author: string;
-  questionCount: number;
-  questions: Question[];
-}
-
-export interface ChoicePost {
-  name: string;
-  isCorrect: boolean;
-}
-
-export interface QuestionPost {
-  name: string;
-  description: string;
-  point: number;
-  type: string;
-  choices: ChoicePost[];
-}
-
-export interface QuizzPost {
-  name: string;
-  description: string;
-  questions: QuestionPost[];
-}
+import { Choice, Question, Quizz } from 'src/app/models/quizz';
+import { ChoicePost, QuizzPost, QuestionPost } from 'src/app/models/quizzpost';
 
 @Injectable({
   providedIn: 'root'

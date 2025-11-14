@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { QuizzRequestService, QuizzPost } from 'src/app/services/request/quizz-request.service';
+import { QuizzRequestService } from 'src/app/services/request/quizz-request.service';
+import { ChoicePost, QuestionPost, QuizzPost } from 'src/app/models/quizzpost';
 
 
 @Component({

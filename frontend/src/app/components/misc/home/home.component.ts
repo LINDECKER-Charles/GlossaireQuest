@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { QuizzRequestService, Quizz } from '../../../services/request/quizz-request.service';
+import { QuizzRequestService } from '../../../services/request/quizz-request.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { Quizz, Choice, Question } from 'src/app/models/quizz';
 
 @Component({
   selector: 'app-home',
