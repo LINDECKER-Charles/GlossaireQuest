@@ -2,7 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { SecurityRequestService } from 'src/app/services/request/security-request.service';
-import { User, UserRequestService } from 'src/app/services/request/user-request.service';
+import { UserRequestService } from 'src/app/services/request/user-request.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-confirm-email',

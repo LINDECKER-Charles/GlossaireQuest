@@ -1,27 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AbstractRequestService } from './abstract-request.service';
 import { Observable } from 'rxjs/internal/Observable';
-import { map } from 'rxjs/internal/operators/map';
-
-export interface User {
-  name: string,
-  email: string,
-  role: string,
-  isVerified: boolean
-}
-
-export interface Try {
-  tryId: number;
-  quizId: number;
-  quizName: string;
-  result: number;
-  date: string;
-}
-
-export interface Tries {
-  message: string;
-  tries: Try[];
-}
+import { User } from 'src/app/models/user';
+import { Tries, Try } from 'src/app/models/tries';
 
 @Injectable({
   providedIn: 'root'

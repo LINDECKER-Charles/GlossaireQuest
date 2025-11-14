@@ -2,7 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { UserRequestService, User, Try } from 'src/app/services/request/user-request.service';
+import { UserRequestService } from 'src/app/services/request/user-request.service';
+import { User } from 'src/app/models/user';
+import { Try } from 'src/app/models/tries';
 
 @Component({
   selector: 'app-profil',
