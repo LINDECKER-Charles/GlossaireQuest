@@ -40,16 +40,20 @@ export class UserRequestService extends AbstractRequestService {
 
 
 
-  public getTrys(): Observable<any> {
-    return this.request<any>('GET', this.url + '/try');
+  public getTrys(amount?: number): Observable<any> {
+    const param = amount !== undefined ? `/${amount}` : "";
+    return this.request<any>('GET', `${this.url}/try${param}`);
   }
+
 
   public addTry(result: number, quizzId: number): Observable<any> {
     return this.request<any>('POST', this.url + '/try', { result, quizzId });
   }
 
-  public getTries(): Observable<Tries> {
-    return this.request<Tries>('GET', this.url + '/show/try');
+  public getTries(amount?: number, scope?: number): Observable<Tries> {
+    const param = amount !== undefined ? `/${amount}` : "";
+    const scopeParam = scope !== undefined ? `/${scope}` : "";
+    return this.request<Tries>('GET', `${this.url}/show/try${param}${scopeParam}`);
   }
 
   public isAdmin(): boolean {

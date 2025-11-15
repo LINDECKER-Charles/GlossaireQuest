@@ -1,0 +1,126 @@
+<main class="page">
+  <section aria-labelledby="profile-title" class="card max-w-lg w-full h-full m-8">
+
+    <!-- Titre -->
+    <h1 id="profile-title" class="section-title text-center">Historique utilisateur</h1>
+
+    <!-- État : chargement -->
+    <div *ngIf="loading" class="text-center text-muted animate-pulse">
+      Chargement des informations...
+    </div>
+
+    <!-- État : erreur -->
+    <div *ngIf="error" class="text-center text-red-500 font-semibold">
+      {{ error }}
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 mb-6">
+
+    <!-- Nombre d’éléments -->
+    <div>
+        <label for="amount" class="text-secondary text-sm block mb-2">
+        Éléments par page
+        </label>
+
+        <select
+        id="amount"
+        [formControl]="amountOfTries"
+        class="w-full bg-[#1E293B] border border-[#334155] text-primary px-4 py-2 rounded-xl shadow-sm
+                focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-[#3B82F6]
+                transition-all duration-200 cursor-pointer"
+        >
+            <option [ngValue]="1">1</option>
+            <option [ngValue]="2">2</option>
+            <option [ngValue]="5">5</option>
+            <option [ngValue]="10">10</option>
+            <option [ngValue]="20">20</option>
+            <option [ngValue]="30">30</option>
+            <option [ngValue]="50">50</option>
+        </select>
+    </div>
+
+    <!-- Numéro de page -->
+    <div>
+        <label for="page" class="text-secondary text-sm block mb-2">
+        Page
+        </label>
+
+        <select
+        id="page"
+        [formControl]="page"
+        class="w-full bg-[#1E293B] border border-[#334155] text-primary px-4 py-2 rounded-xl shadow-sm
+                focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-[#3B82F6]
+                transition-all duration-200 cursor-pointer"
+        >
+        <option [ngValue]="1">1</option>
+        <option [ngValue]="2">2</option>
+        <option [ngValue]="3">3</option>
+        <option [ngValue]="4">4</option>
+        <option [ngValue]="5">5</option>
+        </select>
+    </div>
+
+    </div>
+
+
+    <!-- X dernières tentatives -->
+    <section *ngIf="!loading && tries?.length" class="mt-10 card">
+      <h2 class="section-title mb-6 text-center">Dernières tentatives</h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead class="bg-neutral-900 text-primary-400">
+            <tr>
+              <th class="py-3 px-4">Quiz</th>
+              <th class="py-3 px-4 text-center">Résultat</th>
+              <th class="py-3 px-4 text-center">Date</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngIf="tries.length === 0">
+                <td colspan="3" class="py-6 text-center text-neutral-500 italic">
+                Aucun élément à afficher.
+                </td>
+            </tr>
+            <tr
+              *ngFor="let t of tries"
+              class="border-t border-neutral-700 hover:bg-neutral-800/70 transition duration-200"
+            >
+              <td class="nav-link hover:nav-link-active hover:cursor-pointer" routerLink="/quizz/{{ t.quizId }}">{{ t.quizName }}</td>
+              <td class="py-3 px-4 text-center text-primary-400 font-semibold">
+                {{ t.result }} / {{t.maxPoint}}
+                <span 
+                [ngClass]="{
+                  'text-green-500': (t.result / t.maxPoint) * 100 >= 70,
+                  'text-yellow-500': (t.result / t.maxPoint) * 100 >= 40 && (t.result / t.maxPoint) * 100 < 70,
+                  'text-red-500': (t.result / t.maxPoint) * 100 < 40}">
+                  [{{ (t.result / t.maxPoint) * 100 | number:'1.0-1' }}%]
+                </span>
+              </td>
+              <td class="py-3 px-4 text-center text-neutral-400">
+                {{ t.date | date:'short' }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+    </section>
+
+    <section *ngIf="!loading" class="text-center mt-8">
+        <button routerLink="/profil" class="btn-primary w-full py-2.5 font-semibold">
+            Profil
+        </button>
+    </section>
+
+    <!-- Aucun essai -->
+    <section
+        *ngIf="!loading && (!tries?.length || tries?.length === 0)"
+        class="mt-10 text-center text-muted"
+        >
+        Aucune tentative enregistrée pour le moment.
+        </section>
+    </section>
+
+</main>

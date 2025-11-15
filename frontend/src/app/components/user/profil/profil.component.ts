@@ -48,7 +48,7 @@ export class ProfilComponent implements OnInit {
 
   // Charger les tentatives et calculer le résumé
   private loadTries(): void {
-    this.userRequest.getTries().subscribe({
+    this.userRequest.getTries(5).subscribe({
       next: (data) => {
         this.tries = data.tries || [];
         this.computeSummary();

@@ -8,7 +8,6 @@ import { ProfilComponent } from './components/user/profil/profil.component';
 import { authGuard } from './guards/auth.guard';
 import { QuizzComponent } from './components/misc/quizz/quizz.component';
 import { CreateQuizzComponent } from './components/misc/create-quizz/create-quizz.component';
-import { isAdminGuard } from './guards/is-admin.guard';
 import { VerifyEmailComponent } from './components/auth/verify-email/verify-email.component';
 import { ConfirmEmailComponent } from './components/auth/confirm-email/confirm-email.component';
 import { ResetPasswordComponent } from './components/auth/reset-password/reset-password.component';
@@ -17,6 +16,7 @@ import { DeleteAccountComponent } from './components/user/action/delete-account/
 import { EditNameComponent } from './components/user/action/edit-name/edit-name.component';
 import { EditEmailComponent } from './components/user/action/edit-email/edit-email.component';
 import { EditPasswordComponent } from './components/user/action/edit-password/edit-password.component';
+import { HistoryComponent } from './components/user/history/history.component';
 
 
 export const routes: Routes = [
@@ -36,6 +36,9 @@ export const routes: Routes = [
   { path: 'quizz-create', component: CreateQuizzComponent },
   
   { path: 'profil', component: ProfilComponent, canActivate: [authGuard] },
+
+  { path: 'profil/history', component: HistoryComponent, canActivate: [authGuard] },
+
   { path: 'profil/password-change', component: EditPasswordComponent, canActivate: [authGuard] },
   { path: 'profil/email-change', component: EditEmailComponent, canActivate: [authGuard] },
   { path: 'profil/name-change', component: EditNameComponent, canActivate: [authGuard] },

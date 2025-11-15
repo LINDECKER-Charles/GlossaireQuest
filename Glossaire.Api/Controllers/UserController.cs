@@ -47,7 +47,7 @@ namespace TechQuiz.Api.Controllers
 
         [Authorize]
         [HttpPatch]
-        public async Task<IActionResult> UpdateUser([FromBody] UpdateUserRequest request)
+        public async Task<IActionResult> PatchUser([FromBody] UpdateUserRequest request)
         {
             string? email = User.FindFirst(ClaimTypes.Email)?.Value;
             User? user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
@@ -103,8 +103,8 @@ namespace TechQuiz.Api.Controllers
 
         /* Try */
         [Authorize]
-        [HttpGet("show/try")]
-        public async Task<IActionResult> GetTries()
+        [HttpGet("show/try/{amount?}/{scope?}")]
+        public async Task<IActionResult> GetTries(int? amount, int? scope)
         {
             // Récupère l’utilisateur connecté via le token JWT
             string? email = User.FindFirst(ClaimTypes.Email)?.Value;
@@ -123,10 +123,14 @@ namespace TechQuiz.Api.Controllers
                     QuizId = t.QuizzId,
                     QuizName = t.Quizz.Name,
                     Result = t.Result,
-                    Date = t.CreatedAt
+                    MaxPoint = t.Quizz.Questions.Sum(q => q.Point),
+                    Date = t.CreatedAt,
+                    
                 })
+                .Skip(scope ?? 0)
+                .Take(amount ?? 5)
                 .ToListAsync();
-
+            Console.WriteLine($"Retrieved {amount ?? 999}  {scope ?? 999} {tries.Count} tries for user {user.Email}");
             // S’il n’a jamais fait de tentative
             if (!tries.Any())
                 return Ok(new { message = "Aucune tentative enregistrée pour cet utilisateur." });

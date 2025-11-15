@@ -4,6 +4,7 @@ export interface Try {
   quizName: string;
   result: number;
   date: string;
+  maxPoint: number;
 }
 
 export interface Tries {

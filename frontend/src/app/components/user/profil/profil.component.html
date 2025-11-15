@@ -1,5 +1,5 @@
-<main class="page ">
-  <section aria-labelledby="profile-title" class="card max-w-lg w-full m-8">
+<main class="page">
+  <section aria-labelledby="profile-title" class="card max-w-lg w-full h-full m-8">
     <!-- Titre -->
     <h1 id="profile-title" class="section-title text-center">Profil utilisateur</h1>
 
@@ -106,9 +106,16 @@
               *ngFor="let t of tries | slice:0:5"
               class="border-t border-neutral-700 hover:bg-neutral-800/70 transition duration-200"
             >
-              <td class="py-3 px-4 font-medium text-neutral-100">{{ t.quizName }}</td>
+              <td class="nav-link hover:nav-link-active hover:cursor-pointer" routerLink="/quizz/{{ t.quizId }}">{{ t.quizName }}</td>
               <td class="py-3 px-4 text-center text-primary-400 font-semibold">
-                {{ t.result }}
+                {{ t.result }} / {{t.maxPoint}}
+                <span 
+                [ngClass]="{
+                  'text-green-500': (t.result / t.maxPoint) * 100 >= 70,
+                  'text-yellow-500': (t.result / t.maxPoint) * 100 >= 40 && (t.result / t.maxPoint) * 100 < 70,
+                  'text-red-500': (t.result / t.maxPoint) * 100 < 40}">
+                  [{{ (t.result / t.maxPoint) * 100 | number:'1.0-1' }}%]
+                </span>
               </td>
               <td class="py-3 px-4 text-center text-neutral-400">
                 {{ t.date | date:'short' }}
@@ -117,6 +124,9 @@
           </tbody>
         </table>
       </div>
+      <button routerLink="/profil/history" class="btn-primary w-full py-2.5 mt-6 font-semibold">
+        Historique complet
+      </button>
     </section>
 
     <!-- Aucun essai -->
