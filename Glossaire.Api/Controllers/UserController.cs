@@ -130,7 +130,6 @@ namespace TechQuiz.Api.Controllers
                 .Skip(scope ?? 0)
                 .Take(amount ?? 5)
                 .ToListAsync();
-            Console.WriteLine($"Retrieved {amount ?? 999}  {scope ?? 999} {tries.Count} tries for user {user.Email}");
             // S’il n’a jamais fait de tentative
             if (!tries.Any())
                 return Ok(new { message = "Aucune tentative enregistrée pour cet utilisateur." });

@@ -11,7 +11,7 @@ export class AuthService {
 
   private apiUrl = environment.apiUrl + '/auth';
   public loggedIn$ = new BehaviorSubject<boolean>(!this.isTokenExpired());
-  public isAdmin$ = new BehaviorSubject<boolean>(false);
+  public isAdmin$ = new BehaviorSubject<boolean>(this.isAdmin(localStorage.getItem('role') || ''));
 
   constructor(private readonly http: HttpClient, private readonly router: Router) {
     interval(10_000).subscribe(() => {

@@ -23,19 +23,17 @@ export class NavBarComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-
     this.sub.add(
       this.auth.loggedIn$.subscribe((status: boolean) => {
         this.isLoggedIn = status;
       })
     );
-
     this.sub.add(
       this.auth.isAdmin$.subscribe((status: boolean) => {
         this.isAdmin = status;
       })
     );
-
+    console.log('NavBar initialized. LoggedIn:', this.isLoggedIn, 'IsAdmin:', this.isAdmin);
   }
 
   ngOnDestroy(): void {
