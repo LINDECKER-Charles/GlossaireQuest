@@ -101,7 +101,7 @@ namespace TechQuiz.Api.Controllers
             _context.Quizzes.Add(quizz);
             await _context.SaveChangesAsync();
 
-            return Ok(new { message = "Quiz créé avec succès." });
+            return Ok(new { message = "Quiz créé avec succès.", id = quizz.Id });
         }
 
         [Authorize]

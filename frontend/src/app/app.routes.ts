@@ -6,8 +6,8 @@ import { NoAuthGuard } from './guards/no-auth.guard';
 import { AboutComponent } from './components/misc/about/about.component';
 import { ProfilComponent } from './components/user/profil/profil.component';
 import { authGuard } from './guards/auth.guard';
-import { QuizzComponent } from './components/misc/quizz/quizz.component';
-import { CreateQuizzComponent } from './components/misc/create-quizz/create-quizz.component';
+import { QuizzComponent } from './components/quizz/quizz/quizz.component';
+import { CreateQuizzComponent } from './components/quizz/create-quizz/create-quizz.component';
 import { VerifyEmailComponent } from './components/auth/verify-email/verify-email.component';
 import { ConfirmEmailComponent } from './components/auth/confirm-email/confirm-email.component';
 import { ResetPasswordComponent } from './components/auth/reset-password/reset-password.component';
@@ -17,6 +17,8 @@ import { EditNameComponent } from './components/user/action/edit-name/edit-name.
 import { EditEmailComponent } from './components/user/action/edit-email/edit-email.component';
 import { EditPasswordComponent } from './components/user/action/edit-password/edit-password.component';
 import { HistoryComponent } from './components/user/history/history.component';
+import { isAdminGuard } from './guards/is-admin.guard';
+import { CreateQuizzJsonComponent } from './components/quizz/create-quizz-json/create-quizz-json.component';
 
 
 export const routes: Routes = [
@@ -33,7 +35,8 @@ export const routes: Routes = [
 
   { path: 'home', component: HomeComponent },
   { path: 'quizz/:id', component: QuizzComponent },
-  { path: 'quizz-create', component: CreateQuizzComponent },
+  { path: 'quizz-create', component: CreateQuizzComponent, canActivate: [isAdminGuard] },
+  { path: 'quizz-create-json', component: CreateQuizzJsonComponent, canActivate: [isAdminGuard] },
   
   { path: 'profil', component: ProfilComponent, canActivate: [authGuard] },
 

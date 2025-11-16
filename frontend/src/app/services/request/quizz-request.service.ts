@@ -20,8 +20,16 @@ export class QuizzRequestService extends AbstractRequestService {
     return this.requestNoAuth<Quizz[]>('GET', this.url + '/summary');
   }
 
-  public postQuizz(quizz: QuizzPost): Observable<any> {
+  public postQuizz(quizz: QuizzPost | string): Observable<any> {
     return this.request<any>('POST', this.url, quizz);
+  }
+
+  public patchQuizz(quizz: QuizzPost | string, id: number): Observable<any> {
+    return this.request<any>('PATCH', this.url, { id: id, request: quizz });
+  }
+
+  public deleteQuizz(id: number): Observable<any> {
+    return this.request<any>('DELETE', this.url, { id: id });
   }
 
 }

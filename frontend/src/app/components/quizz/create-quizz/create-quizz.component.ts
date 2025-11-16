@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { QuizzRequestService } from 'src/app/services/request/quizz-request.service';
 import { ChoicePost, QuestionPost, QuizzPost } from 'src/app/models/quizzpost';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-create-quizz',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './create-quizz.component.html',
   styleUrls: ['./create-quizz.component.scss']
 })

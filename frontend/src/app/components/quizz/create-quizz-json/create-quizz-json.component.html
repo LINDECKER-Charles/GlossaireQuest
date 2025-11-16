@@ -1,0 +1,191 @@
+<main class="page flex-col">
+  <section class="card max-w-3xl w-full mx-auto my-10 p-6">
+
+    <!-- Titre -->
+    <h1 class="section-title text-center mb-6">
+      Générer un Quiz depuis un JSON
+    </h1>
+
+    <!-- Description -->
+    <p class="text-neutral-400 text-sm text-center mb-6">
+      Collez ci-dessous votre JSON complet. Le système analysera automatiquement
+      le contenu et générera un Quiz prêt à être enregistré.
+    </p>
+
+    <!-- Zone de JSON -->
+    <label for="jsonInput" class="text-secondary text-sm font-medium">
+      JSON source
+    </label>
+
+    <textarea
+      id="jsonInput"
+      [(ngModel)]="rawJson"
+      placeholder="{ ... }"
+      class="w-full h-64 mt-2 mb-4 p-4 rounded-lg bg-neutral-900 border border-neutral-700
+             text-neutral-200 font-mono text-sm resize-y focus:outline-none
+             focus:ring-2 focus:ring-primary-400"
+    ></textarea>
+
+    <!-- Erreur éventuelle -->
+    <div *ngIf="error" class="text-red-500 text-sm font-semibold mb-4">
+      {{ error }}
+    </div>
+
+    <!-- Boutons -->
+    <div class="flex items-center justify-between mt-4">
+
+      <button
+        type="button"
+        class="btn-back"
+        routerLink="/quizz-create"
+      >
+        Retour
+      </button>
+
+      <button
+        type="button"
+        class="btn-primary"
+        (click)="convertJson()"
+      >
+        Convertir en Quiz
+      </button>
+    </div>
+
+
+    <!-- Modal -->
+    <div 
+      *ngIf="isModalOpen" 
+      class="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-50"
+    >
+      <div class="bg-neutral-900 border border-neutral-700 rounded-xl shadow-xl p-6 max-w-lg w-full mx-4">
+        
+        <!-- Titre -->
+        <h2 class="text-primary-400 font-semibold text-xl mb-4">
+          {{ modalTitle }}
+        </h2>
+
+        <!-- Message -->
+        <p class="text-neutral-300 text-sm whitespace-pre-wrap mb-6" [innerHTML]="modalMessage">
+        </p>
+
+        <button
+          *ngIf="quizzId"
+          type="button"
+          routerLink="/quizz/{{ quizzId }}"
+          class="btn-primary mt-3 w-full md:w-auto "
+        >
+          Aller au Quiz
+        </button>
+
+        <!-- Boutons -->
+        <div class="flex justify-end gap-3">
+          <button class="btn-back" (click)="closeModal()">
+            Fermer
+          </button>
+
+          <button *ngIf="modalConfirmFn" class="btn-primary" (click)="confirmModal()">
+            Confirmer
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <ng-container *ngIf="showPreview && parsedQuizz">
+    <section class="card max-w-3xl w-full mx-auto my-10 p-6">
+      
+      <!-- Titre -->
+      <div class="form-group mb-6">
+        <label class="label">Titre du Quiz</label>
+        <input
+          type="text"
+          class="input"
+          [(ngModel)]="parsedQuizz.name"
+          placeholder="Nom du quiz"
+        />
+      </div>
+
+      <!-- Description -->
+      <div class="form-group mb-8">
+        <label class="label">Description</label>
+        <textarea
+          class="input h-24 resize-none"
+          [(ngModel)]="parsedQuizz.description"
+          placeholder="Description du quiz"
+        ></textarea>
+      </div>
+
+      <!-- Questions -->
+      <div *ngFor="let question of parsedQuizz.questions; let i = index" class="mt-10 border-t border-neutral-700 pt-6">
+        
+        <h3 class="text-xl font-semibold text-primary-400 mb-4">
+          Question {{ i + 1 }}
+        </h3>
+
+        <!-- Nom de la question -->
+        <div class="form-group mb-4">
+          <label class="label">Titre</label>
+          <input
+            type="text"
+            class="input"
+            [(ngModel)]="question.name"
+            placeholder="Nom de la question"
+          />
+        </div>
+
+        <!-- Description de la question -->
+        <div class="form-group mb-4">
+          <label class="label">Description</label>
+          <textarea
+            class="input h-20 resize-none"
+            [(ngModel)]="question.description"
+            placeholder="Description de la question"
+          ></textarea>
+        </div>
+
+        <!-- Choix (lecture seule pour l'instant) -->
+        <div class="mt-6 space-y-3">
+          <h4 class="text-lg font-medium text-primary-400">Choix</h4>
+
+          <div
+            *ngFor="let choice of question.choices; let ci = index"
+            class="flex items-center gap-4 bg-neutral-800 border border-neutral-700 p-3 rounded-lg"
+          >
+            <!-- Input du texte -->
+            <input
+              type="text"
+              class="input flex-1"
+              [(ngModel)]="choice.name"
+              placeholder="Texte du choix"
+            />
+
+            <!-- Checkbox "correct" -->
+            <label class="flex items-center gap-2 text-neutral-300 select-none cursor-pointer">
+              <input
+                type="checkbox"
+                [(ngModel)]="choice.isCorrect"
+                class="w-4 h-4 accent-primary-400"
+              />
+              Correct
+            </label>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- Bouton -->
+      <div class="flex justify-end items-end mt-10">
+        <button type="button" class="btn-primary" (click)="saveQuizz()">
+          Convertir en Quiz
+        </button>
+      </div>
+
+    </section>
+  </ng-container>
+
+  
+  
+</main>

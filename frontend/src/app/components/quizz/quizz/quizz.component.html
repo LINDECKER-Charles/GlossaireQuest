@@ -17,7 +17,7 @@
   </section>
 
   <!-- Liste des questions -->
-  <section *ngIf="isPlaying" class="quiz-questions max-w-3xl mx-auto space-y-8">
+  <section *ngIf="isPlaying" class="quiz-questions max-w-full mx-auto space-y-8">
     <article
       *ngFor="let question of quiz?.questions; let index = index"
       class="card"
