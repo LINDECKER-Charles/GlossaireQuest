@@ -19,7 +19,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 var secretKey = "71d6f722f2725e62ce44ec1caec3701245e2b0fbc4e506b307bff50d05f69f9bc752b0dd";
 var key = Encoding.ASCII.GetBytes(secretKey);
 
-// ✅ Enregistre ton service JWT dans le conteneur DI
+// Enregistre ton service JWT dans le conteneur DI
 builder.Services.AddSingleton(new JwtService(secretKey));
 
 // Configure l’authentification JWT
@@ -39,12 +39,15 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+
+
 builder.Services.AddCors(options =>
 {
+    var frontendUrl = builder.Configuration["App:BaseUrl"];
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy
-            .WithOrigins("http://localhost:4200") // Remplace par l'URL de ton frontend
+            .WithOrigins(frontendUrl ?? "localhost:4200") // Remplace par l'URL de ton frontend
             .AllowAnyHeader()
             .WithMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
             .AllowCredentials();
@@ -75,9 +78,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
+    app.UseCors("AllowFrontend");
 }
 
-app.UseCors("AllowFrontend");
+
 
 /* app.UseHttpsRedirection(); */
 
@@ -85,5 +89,11 @@ app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
+app.MapFallbackToFile("index.html");
+
 app.MapControllers();
 app.Run();
+

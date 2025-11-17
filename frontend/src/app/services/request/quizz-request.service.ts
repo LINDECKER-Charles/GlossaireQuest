@@ -33,7 +33,7 @@ export class QuizzRequestService extends AbstractRequestService {
   }
 
   public deleteQuizz(id: number): Observable<any> {
-    return this.request<any>('DELETE', this.url, { id: id });
+    return this.request<any>('DELETE', `${this.url}/${id}`);
   }
 
 }

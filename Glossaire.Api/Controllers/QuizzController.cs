@@ -211,7 +211,7 @@ namespace TechQuiz.Api.Controllers
         }
 
         [Authorize]
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteQuiz(int id)
         {
             string? email = User.FindFirst(ClaimTypes.Email)?.Value;

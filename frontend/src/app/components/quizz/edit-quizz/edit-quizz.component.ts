@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { QuizzPost } from 'src/app/models/quizzpost';
 import { QuizzRequestService } from 'src/app/services/request/quizz-request.service';
 import { QuizzService } from 'src/app/services/utils/quizz.service';
@@ -23,7 +23,7 @@ export class EditQuizzComponent implements OnInit {
     modalMessage = "";
     modalConfirmFn: (() => void) | null = null;
 
-  constructor(private readonly quizzRequestService: QuizzRequestService, private readonly quizzService: QuizzService, private readonly route: ActivatedRoute) { }
+  constructor(private readonly quizzRequestService: QuizzRequestService, private readonly quizzService: QuizzService, private readonly route: ActivatedRoute, private readonly router: Router) { }
 
   ngOnInit(): void {
     this.quizzId = Number(this.route.snapshot.paramMap.get('id'));
@@ -55,6 +55,23 @@ export class EditQuizzComponent implements OnInit {
     this.closeModal();
   }
 
+  public deleteQuizz() {
+    
+    if (!this.quizzId) {
+      this.openModal("Erreur", "Aucun quiz valide à supprimer.");
+      return;
+    }
+    this.quizzRequestService.deleteQuizz(this.quizzId).subscribe({
+      next: (res) => {
+        console.log('Quiz supprimé avec succès :', res);
+        this.router.navigate(['/home']);
+      },
+      error: (err) => {
+        console.error('Erreur lors de la suppression du quiz :', err);
+        this.openModal("Erreur", "Une erreur est survenue lors de la suppression du quiz.");
+      }
+    });
+  }
 
   public saveQuizz() {
     if (!this.quizz || !this.quizzId) {

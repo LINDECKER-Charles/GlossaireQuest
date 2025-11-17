@@ -9,9 +9,15 @@
       {{ quiz.questionCount }} question{{ quiz.questionCount > 1 ? 's' : '' }}
     </p>
 
-    <div class="mt-6">
+    <div class="mt-6 flex flex-row justify-center gap-4">
       <button class="btn-primary px-6 py-2" (click)="startQuiz()">
         Commencer le quiz
+      </button>
+      <button class="btn-primary px-6 py-2 pr-6" *ngIf="isAdmin()" routerLink="/quizz-edit/{{quiz.id}}">
+        Editer le quiz
+      </button>
+      <button type="button" class="btn-danger" *ngIf="isAdmin()" (click)="deleteQuizz()">
+          Delete Quiz
       </button>
     </div>
   </section>

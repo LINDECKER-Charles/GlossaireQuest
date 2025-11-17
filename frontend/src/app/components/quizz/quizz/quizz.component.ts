@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { QuizzRequestService } from '../../../services/request/quizz-request.service';
 import { UserRequestService } from 'src/app/services/request/user-request.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -22,15 +22,19 @@ export class QuizzComponent implements OnInit {
   public score = 0;
   public totalPoints = 0;
 
+  public quizzId: number | null = null;
+
   constructor(
     private quizzRequestService: QuizzRequestService,
     private route: ActivatedRoute,
     private userRequestService: UserRequestService,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.quizzId = id;
     console.log('ID du quiz :', id);
 
     this.quizzRequestService.getQuizz(id).subscribe({
@@ -60,6 +64,10 @@ export class QuizzComponent implements OnInit {
     this.score = 0;
   }
 
+  public isAdmin(): boolean {
+    return localStorage.getItem('role') === 'ADMIN';
+  }
+
   // Sélectionner une réponse
   public selectChoice(question: any, choice: any): void {
     // Si question de type ONE → une seule réponse possible
@@ -71,6 +79,22 @@ export class QuizzComponent implements OnInit {
     else if (question.type === 'MULTI') {
       choice.selected = !choice.selected;
     }
+  }
+
+  public deleteQuizz() {
+    console.log(this.quizzId);
+    if (!this.quizzId) {
+      return;
+    }
+    this.quizzRequestService.deleteQuizz(this.quizzId).subscribe({
+      next: (res) => {
+        console.log('Quiz supprimé avec succès :', res);
+        this.router.navigate(['/home']);
+      },
+      error: (err) => {
+        console.error('Erreur lors de la suppression du quiz :', err);
+      }
+    });
   }
 
   // Soumettre le quiz
