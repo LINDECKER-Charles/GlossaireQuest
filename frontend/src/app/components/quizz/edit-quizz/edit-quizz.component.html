@@ -1,1 +1,157 @@
-<p>edit-quizz works!</p>
+<main class="page flex-col">
+
+  <ng-container *ngIf="quizz">
+    <section class="card max-w-3xl w-full mx-auto my-10 p-6">
+      
+      <!-- Titre -->
+      <div class="form-group mb-6">
+        <label class="label">Titre du Quiz</label>
+        <input
+          type="text"
+          class="input"
+          [(ngModel)]="quizz.name"
+          placeholder="Nom du quiz"
+        />
+      </div>
+
+      <!-- Description -->
+      <div class="form-group mb-8">
+        <label class="label">Description</label>
+        <textarea
+          class="input h-24 resize-none"
+          [(ngModel)]="quizz.description"
+          placeholder="Description du quiz"
+        ></textarea>
+      </div>
+
+      <!-- Questions -->
+      <div *ngFor="let question of quizz.questions; let i = index" class="mt-10 border-t border-neutral-700 pt-6">
+        
+        <h3 class="text-xl font-semibold text-primary-400 mb-4">
+          Question {{ i + 1 }}
+        </h3>
+
+        <!-- Nom de la question -->
+        <div class="form-group mb-4">
+          <label class="label">Titre</label>
+          <input
+            type="text"
+            class="input"
+            [(ngModel)]="question.name"
+            placeholder="Nom de la question"
+          />
+        </div>
+
+        <!-- Description de la question -->
+        <div class="form-group mb-4">
+          <label class="label">Description</label>
+          <textarea
+            class="input h-20 resize-none"
+            [(ngModel)]="question.description"
+            placeholder="Description de la question"
+          ></textarea>
+        </div>
+
+        <!-- Choix (lecture seule pour l'instant) -->
+        <div class="mt-6 space-y-3">
+          <h4 class="text-lg font-medium text-primary-400">Choix</h4>
+
+          <div
+            *ngFor="let choice of question.choices; let ci = index"
+            class="flex items-center gap-4 bg-neutral-800 border border-neutral-700 p-3 rounded-lg"
+          >
+            <!-- Input du texte -->
+            <input
+              type="text"
+              class="input flex-1"
+              [(ngModel)]="choice.name"
+              placeholder="Texte du choix"
+            />
+
+            <!-- Checkbox "correct" -->
+            <label class="flex items-center gap-3 text-neutral-300 select-none cursor-pointer">
+
+              <!-- Case custom -->
+              <div
+                class="w-5 h-5 rounded-md border border-primary-400 flex items-center justify-center transition-colors duration-200"
+                [class.bg-primary-400]="choice.isCorrect"
+              >
+                <svg
+                  *ngIf="choice.isCorrect"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="#1B1C1C"
+                  class="w-4 h-4"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 10-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+
+              <!-- Label -->
+              <span>Correct</span>
+
+              <!-- Checkbox réelle (cachée mais liée) -->
+              <input
+                type="checkbox"
+                [(ngModel)]="choice.isCorrect"
+                class="hidden"
+              />
+            </label>
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- Bouton -->
+      <div class="flex justify-end items-end mt-10">
+        <button type="button" class="btn-primary" (click)="saveQuizz()">
+          Update Quiz
+        </button>
+      </div>
+
+      <!-- Modal -->
+    <div 
+      *ngIf="isModalOpen" 
+      class="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-50"
+    >
+      <div class="bg-neutral-900 border border-neutral-700 rounded-xl shadow-xl p-6 max-w-lg w-full mx-4">
+        
+        <!-- Titre -->
+        <h2 class="text-primary-400 font-semibold text-xl mb-4">
+          {{ modalTitle }}
+        </h2>
+
+        <!-- Message -->
+        <p class="text-neutral-300 text-sm whitespace-pre-wrap mb-6" [innerHTML]="modalMessage">
+        </p>
+
+        <button
+          *ngIf="quizzId"
+          type="button"
+          routerLink="/quizz/{{ quizzId }}"
+          class="btn-primary mt-3 w-full md:w-auto "
+        >
+          Aller au Quiz
+        </button>
+
+        <!-- Boutons -->
+        <div class="flex justify-end gap-3">
+          <button class="btn-back" (click)="closeModal()">
+            Fermer
+          </button>
+        </div>
+
+      </div>
+    </div>
+    </section>
+  </ng-container>
+
+  
+  
+</main>

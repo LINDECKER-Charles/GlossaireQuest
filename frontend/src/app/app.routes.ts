@@ -19,6 +19,8 @@ import { EditPasswordComponent } from './components/user/action/edit-password/ed
 import { HistoryComponent } from './components/user/history/history.component';
 import { isAdminGuard } from './guards/is-admin.guard';
 import { CreateQuizzJsonComponent } from './components/quizz/create-quizz-json/create-quizz-json.component';
+import { EditQuizzComponent } from './components/quizz/edit-quizz/edit-quizz.component';
+import { AllUsersComponent } from './components/admin/all-users/all-users.component';
 
 
 export const routes: Routes = [
@@ -35,17 +37,22 @@ export const routes: Routes = [
 
   { path: 'home', component: HomeComponent },
   { path: 'quizz/:id', component: QuizzComponent },
+  { path: 'quizz-edit/:id', component: EditQuizzComponent, canActivate: [isAdminGuard] },
   { path: 'quizz-create', component: CreateQuizzComponent, canActivate: [isAdminGuard] },
   { path: 'quizz-create-json', component: CreateQuizzJsonComponent, canActivate: [isAdminGuard] },
   
   { path: 'profil', component: ProfilComponent, canActivate: [authGuard] },
+  { path: 'admin/profil/:email', component: ProfilComponent, canActivate: [isAdminGuard] },
 
   { path: 'profil/history', component: HistoryComponent, canActivate: [authGuard] },
+  { path: 'admin/profil/history/:email', component: HistoryComponent, canActivate: [isAdminGuard] },
 
   { path: 'profil/password-change', component: EditPasswordComponent, canActivate: [authGuard] },
   { path: 'profil/email-change', component: EditEmailComponent, canActivate: [authGuard] },
   { path: 'profil/name-change', component: EditNameComponent, canActivate: [authGuard] },
   { path: 'profil/delete-account', component: DeleteAccountComponent, canActivate: [authGuard] },
   
+  { path: 'admin/users', component: AllUsersComponent, canActivate: [isAdminGuard] },
+
   { path: 'about', component: AboutComponent }
 ];

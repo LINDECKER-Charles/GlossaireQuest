@@ -8,6 +8,7 @@ using TechQuiz.Api.Dtos;
 using TechQuiz.Api.Factory;
 using BCrypt.Net;
 using TechQuiz.Api.Services.Email;
+using TechQuiz.Api.Services;
 
 namespace TechQuiz.Api.Controllers
 {
@@ -17,14 +18,40 @@ namespace TechQuiz.Api.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IConfiguration _config;
+        private readonly AccesService _acces;
 
-        public UserController(AppDbContext context, IConfiguration config)
+        public UserController(AppDbContext context, IConfiguration config, AccesService acces)
         {
             _context = context;
             _config = config;
+            _acces = acces;
         }
 
         /* User */
+
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+            User? user = await _acces.getUser(email);
+            if (user == null || _acces.IsAdmin(user))
+                return Unauthorized(new { message = "Accès non autorisé." });
+
+            var users = await _context.Users
+                .Select(u => new
+                {
+                    u.Id,
+                    u.Email,
+                    u.Name,
+                    u.Role,
+                    u.IsVerified
+                })
+                .ToListAsync();
+
+            return Ok(users);
+        }
+
         [Authorize]
         [HttpGet("me")]
         public async Task<IActionResult> GetMe()
@@ -42,6 +69,28 @@ namespace TechQuiz.Api.Controllers
                 user.Name,
                 user.Role,
                 user.IsVerified
+            });
+        }
+
+        [Authorize]
+        [HttpGet("{userEmail}")]
+        public async Task<IActionResult> GetUser(string userEmail)
+        {
+            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+            User? user = await _acces.getUser(email);
+            if (user == null || _acces.IsAdmin(user))
+                return Unauthorized(new { message = "Accès non autorisé." });
+            User? userTarget = await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
+            if (userTarget == null)
+                return NotFound(new { message = "Utilisateur introuvable" });
+
+            return Ok(new
+            {
+                userTarget.Id,
+                userTarget.Email,
+                userTarget.Name,
+                userTarget.Role,
+                userTarget.IsVerified
             });
         }
 
@@ -101,14 +150,25 @@ namespace TechQuiz.Api.Controllers
             });
         }
 
+
         /* Try */
         [Authorize]
-        [HttpGet("show/try/{amount?}/{scope?}")]
-        public async Task<IActionResult> GetTries(int? amount, int? scope)
+        [HttpGet("show/try/{amount?}/{scope?}/{userEmail?}")]
+        public async Task<IActionResult> GetTries(int? amount, int? scope, string? userEmail)
         {
             // Récupère l’utilisateur connecté via le token JWT
-            string? email = User.FindFirst(ClaimTypes.Email)?.Value;
-            User? user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            if(string.IsNullOrEmpty(userEmail))
+            {
+                userEmail = User.FindFirst(ClaimTypes.Email)?.Value;
+            }
+            else
+            {
+                string? email = User.FindFirst(ClaimTypes.Email)?.Value;
+                User? userCur = await _acces.getUser(email);
+                if (userCur == null || _acces.IsAdmin(userCur))
+                    return Unauthorized(new { message = "Accès non autorisé." });
+            }
+            User? user = await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
             if (user == null)
                 return NotFound(new { message = "Utilisateur introuvable" });
 

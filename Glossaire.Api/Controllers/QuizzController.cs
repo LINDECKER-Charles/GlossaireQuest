@@ -150,24 +150,24 @@ namespace TechQuiz.Api.Controllers
         }
 
         [Authorize]
-        [HttpPatch]
-        public async Task<IActionResult> PatchQuiz(int id, [FromBody] QuizzPatch request)
+        [HttpPut]
+        public async Task<IActionResult> PatchQuiz([FromQuery] int id, [FromBody] QuizzRequest request)
         {
-            Console.WriteLine("PatchQuiz called");
+            Console.WriteLine("PatchQuiz called", id);
             string? email = User.FindFirst(ClaimTypes.Email)?.Value;
             User? user = await _acces.getUser(email);
             if (user == null || _acces.IsAdmin(user))
                 return Unauthorized(new { message = "Accès non autorisé." });
             
-            var quiz = await _context.Quizzes.FindAsync(id);
-            if (quiz == null) return NotFound();
+            var newQuiz = QuizzFactory.CreateQuizz(request, user);
 
-            quiz = QuizzService.PatchQuizz(request, quiz);
+            // Forcer l'ancien ID
+            newQuiz.Id = id;
 
-            _context.Quizzes.Update(quiz);
+            _context.Quizzes.Update(newQuiz);
             await _context.SaveChangesAsync();
 
-            return Ok(new { message = "Quiz modifié avec succès." });
+            return Ok(newQuiz.Id);
         }
 
         [Authorize]

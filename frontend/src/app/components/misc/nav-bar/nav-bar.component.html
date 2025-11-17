@@ -22,6 +22,11 @@
               Créer un Quiz
             </a>
           </li>
+          <li>
+            <a routerLink="/admin/users" routerLinkActive="nav-link-active" class="nav-link">
+              Voir tous les utilisateurs
+            </a>
+          </li>
         </ng-container>
         <!-- Si utilisateur connecté -->
         <ng-container *ngIf="isLoggedIn; else guestLinks">

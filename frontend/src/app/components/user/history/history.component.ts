@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { combineLatest } from 'rxjs/internal/observable/combineLatest';
 import { startWith } from 'rxjs/internal/operators/startWith';
 import { Try } from 'src/app/models/tries';
@@ -24,10 +24,13 @@ export class HistoryComponent implements OnInit {
   public amountOfTries: FormControl<number> = new FormControl<number>(10, { nonNullable: true });
   public page: FormControl<number> = new FormControl<number>(1, { nonNullable: true });
 
-  constructor(private router: Router, private userRequest: UserRequestService) {}
+  public emailUser: string | null= null;
+
+  constructor(private router: Router, private userRequest: UserRequestService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.loadTries(this.amountOfTries.value);
+    this.emailUser = this.route.snapshot.paramMap.get('email');
 
     console.log("Initial amount: ", this.amountOfTries.value);
 
@@ -42,7 +45,7 @@ export class HistoryComponent implements OnInit {
   }
 
   private loadTries(amount: number = 10, scope: number = 0): void {
-    this.userRequest.getTries(amount, scope).subscribe({
+    this.userRequest.getTries(amount, scope, this.emailUser || undefined).subscribe({
       next: (data) => {
         this.tries = data.tries || [];
         this.loading = false;

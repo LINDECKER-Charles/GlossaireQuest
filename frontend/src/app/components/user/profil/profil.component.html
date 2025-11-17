@@ -47,7 +47,7 @@
     </dl>
 
     <!-- Actions -->
-    <div *ngIf="!loading && user" class="profile-actions">
+    <div *ngIf="!loading && user && !emailUser" class="profile-actions">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <a routerLink="/profil/password-change" class="btn-outline p-2">Changer le mot de passe</a>
         <a routerLink="/profil/email-change" class="btn-outline p-2">Changer d’adresse e-mail</a>
@@ -124,9 +124,16 @@
           </tbody>
         </table>
       </div>
-      <button routerLink="/profil/history" class="btn-primary w-full py-2.5 mt-6 font-semibold">
-        Historique complet
-      </button>
+      <ng-container *ngIf="!emailUser">
+        <button routerLink="/profil/history" class="btn-primary w-full py-2.5 mt-6 font-semibold">
+          Historique complet
+        </button>
+      </ng-container>
+      <ng-container *ngIf="emailUser">
+        <button routerLink="/admin/profil/history/{{ emailUser }}" class="btn-primary w-full py-2.5 mt-6 font-semibold">
+          Historique complet
+        </button>
+      </ng-container>
     </section>
 
     <!-- Aucun essai -->

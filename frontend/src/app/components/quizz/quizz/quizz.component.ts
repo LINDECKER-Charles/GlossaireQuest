@@ -16,7 +16,7 @@ import { Choice, Question, Quizz } from 'src/app/models/quizz';
 export class QuizzComponent implements OnInit {
   public quiz: Quizz | null = null;
 
-  // 🔹 États du quiz
+  // États du quiz
   public isPlaying = false;
   public isFinished = false;
   public score = 0;

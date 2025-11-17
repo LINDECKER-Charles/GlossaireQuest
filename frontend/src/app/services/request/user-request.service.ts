@@ -17,6 +17,13 @@ export class UserRequestService extends AbstractRequestService {
   }
 
 
+  public getAllUsers(): Observable<User[]> {
+    return this.request<User[]>('GET', this.url);
+  }
+
+  public getUserByEmail(email: string): Observable<User> {
+    return this.request<User>('GET', `${this.url}/${email}`);
+  }
   
   public isVerified(): Observable<boolean> {
     return this.request<boolean>('GET', this.url + '/isVerified');
@@ -50,10 +57,11 @@ export class UserRequestService extends AbstractRequestService {
     return this.request<any>('POST', this.url + '/try', { result, quizzId });
   }
 
-  public getTries(amount?: number, scope?: number): Observable<Tries> {
+  public getTries(amount?: number, scope?: number, userEmail?: string): Observable<Tries> {
     const param = amount !== undefined ? `/${amount}` : "";
     const scopeParam = scope !== undefined ? `/${scope}` : "";
-    return this.request<Tries>('GET', `${this.url}/show/try${param}${scopeParam}`);
+    const emailParam = userEmail !== undefined ? `/${userEmail}` : "";
+    return this.request<Tries>('GET', `${this.url}/show/try${param}${scopeParam}${emailParam}`);
   }
 
   public isAdmin(): boolean {
