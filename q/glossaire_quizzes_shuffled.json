@@ -5,155 +5,161 @@
     "questions": [
       {
         "name": "Quel est l’environnement à installer pour exécuter un script PHP ?",
-        "description": "Environnement serveur intégrant PHP et exemples de logiciels locaux.",
+        "description": "PHP adore fonctionner avec un serveur. Le lancer sans, c’est un peu comme essayer d’allumer un four sans branchement : ça ne sentira jamais le gâteau.",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Un IDE tel que Visual Studio Code suffit",
+            "name": "Un IDE comme VS Code suffit pour exécuter du PHP",
             "isCorrect": false
           },
           {
-            "name": "Un simple navigateur sans serveur",
+            "name": "Un navigateur seul peut interpréter le script sans serveur",
             "isCorrect": false
           },
           {
-            "name": "Des logiciels comme XAMPP ou Laragon pour un usage local",
+            "name": "Un environnement local prêt à l’emploi comme XAMPP, WAMP ou Laragon",
             "isCorrect": true
           },
           {
-            "name": "Un environnement serveur intégrant PHP (Apache ou Nginx avec PHP)",
+            "name": "Un serveur web (Apache ou Nginx) associé à un module PHP",
             "isCorrect": true
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’un algorithme ?",
-        "description": "Définition d’un algorithme.",
+        "description": "Un algorithme, c’est un peu comme une recette de cuisine : sauf qu’ici, si on rate les étapes, personne ne mange, mais le programme plante.",
         "point": 2,
         "type": "ONE",
         "choices": [
           {
-            "name": "Un composant hardware d’un ordinateur",
+            "name": "Une pièce électronique indispensable au processeur",
             "isCorrect": false
           },
           {
-            "name": "Une variable en PHP",
+            "name": "Une sorte de variable préconfigurée en PHP",
             "isCorrect": false
           },
           {
-            "name": "Une suite finie et ordonnée d’instructions pour résoudre un problème",
+            "name": "Une suite finie d’instructions permettant de résoudre un problème",
             "isCorrect": true
           },
           {
-            "name": "Un langage de programmation",
+            "name": "Un langage utilisé pour communiquer avec une base de données",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’une variable ? Par quel symbole est préfixée une variable en PHP ?",
-        "description": "Définition d’une variable et symbole de préfixe en PHP.",
+        "description": "Une variable garde une valeur en mémoire, un peu comme un tiroir où tout est rangé… tant qu’on n’y touche pas trop.",
         "point": 3,
         "type": "MULTI",
         "choices": [
           {
-            "name": "En PHP, une variable est préfixée par le symbole $",
+            "name": "Elle est préfixée par le symbole $",
             "isCorrect": true
           },
           {
-            "name": "Le symbole est &",
+            "name": "Elle utilise le symbole & en PHP",
             "isCorrect": false
           },
           {
-            "name": "Elle se déclare en HTML uniquement",
+            "name": "Une variable ne peut être créée qu’à l’intérieur d’une page HTML",
             "isCorrect": false
           },
           {
-            "name": "Un espace mémoire identifié par un nom pour stocker une valeur",
+            "name": "C’est un espace mémoire nommé dans lequel on stocke une valeur",
             "isCorrect": true
           }
         ]
       },
+
       {
         "name": "Qu’est-ce que la portée d’une variable ?",
-        "description": "Zone du code où la variable est accessible.",
+        "description": "Une variable n’a pas envie d’être vue par tout le monde. La portée définit exactement qui peut la regarder et qui doit rester dehors.",
         "point": 2,
         "type": "ONE",
         "choices": [
           {
-            "name": "Son type de données",
+            "name": "Le type exact de donnée contenu dans la variable",
             "isCorrect": false
           },
           {
-            "name": "Son emplacement dans la base de données",
+            "name": "L’endroit où la variable est sauvegardée physiquement",
             "isCorrect": false
           },
           {
-            "name": "La zone du code où elle est accessible",
+            "name": "La zone du code dans laquelle la variable est accessible",
             "isCorrect": true
           },
           {
-            "name": "L'adresse IP de l'utilisateur",
+            "name": "L’adresse utilisée pour contacter un serveur distant",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’une constante ? Quelle est la différence avec une variable ?",
-        "description": "Concept de constante et différence avec une variable.",
+        "description": "La constante est le genre de valeur qui refuse catégoriquement de changer d’avis, même sous pression. Une variable, elle, négocie.",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Elles sont identiques en PHP",
+            "name": "Constantes et variables fonctionnent de la même manière",
             "isCorrect": false
           },
           {
-            "name": "Une constante est préfixée par #",
+            "name": "Une constante commence obligatoirement par #",
             "isCorrect": false
           },
           {
-            "name": "Une constante est un cookie",
+            "name": "Une constante est un cookie côté client",
             "isCorrect": false
           },
           {
-            "name": "Une constante est une valeur fixe non modifiable, tandis qu'une variable peut changer",
+            "name": "Une constante a une valeur fixe non modifiable contrairement à une variable",
             "isCorrect": true
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’une superglobale, combien en existent-ils et donner un exemple d’utilisation",
-        "description": "Variables internes de PHP accessibles partout dans le script.",
+        "description": "Une superglobale est comme une célébrité du langage : tout le monde peut l’appeler, quel que soit l’endroit du script.",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Il en existe environ 9 principales",
+            "name": "Il existe environ 9 superglobales principales",
             "isCorrect": true
           },
           {
-            "name": "Un plugin jQuery",
+            "name": "Une superglobale est un module jQuery utilisé en PHP",
             "isCorrect": false
           },
           {
-            "name": "Par exemple $_GET pour récupérer des paramètres de la requête HTTP",
+            "name": "Exemple : $_GET pour récupérer des paramètres d’URL",
             "isCorrect": true
           },
           {
-            "name": "Une variable PHP interne accessible partout dans le script sans déclaration",
+            "name": "Une variable interne PHP disponible sans déclaration",
             "isCorrect": true
           },
           {
-            "name": "Une classe statique en Java",
+            "name": "Une classe statique utilisée exclusivement en Java",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Quels sont les différents types (primitifs) que l’on peut associer à une variable en PHP ?",
-        "description": "Types primitifs et exemples.",
+        "description": "PHP accepte de nombreuses valeurs simples, un peu comme une boîte à outils où chaque outil a un rôle très précis.",
         "point": 5,
         "type": "MULTI",
         "choices": [
@@ -166,7 +172,7 @@
             "isCorrect": true
           },
           {
-            "name": "Booléen (true/false)",
+            "name": "Booléen",
             "isCorrect": true
           },
           {
@@ -174,7 +180,7 @@
             "isCorrect": true
           },
           {
-            "name": "NULL pour une variable sans valeur",
+            "name": "NULL pour indiquer qu’il n’y a pas de valeur",
             "isCorrect": true
           },
           {
@@ -187,57 +193,60 @@
           }
         ]
       },
+
       {
         "name": "Existe-t-il plusieurs types de tableaux en PHP, si oui lesquels ?",
-        "description": "Utilisation des tableaux indexés et associatifs en PHP.",
+        "description": "Les tableaux en PHP sont un peu caméléons : ils changent de comportement selon la manière dont on les remplit.",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Il existe un seul type 'array' réutilisé comme tableau associatif",
+            "name": "Un seul type 'array' utilisé comme tableau associatif",
             "isCorrect": true
           },
           {
-            "name": "PHP ne supporte pas les tableaux associatifs",
+            "name": "PHP ne permet pas la création de tableaux associatifs",
             "isCorrect": false
           },
           {
-            "name": "Il existe un seul type 'array' réutilisé comme tableau indexé",
+            "name": "Un seul type 'array' utilisé comme tableau indexé",
             "isCorrect": true
           },
           {
-            "name": "Chaque type de tableau a une classe spéciale",
+            "name": "Chaque catégorie de tableau possède sa propre classe",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Quelles sont les différentes structures de contrôles qu’il existe en algorithmie ?",
-        "description": "Structures de contrôle comme conditions et boucles.",
+        "description": "Les structures de contrôle décident du chemin que prend le programme. Un peu comme un GPS, mais sans recalculer la route toutes les 2 minutes.",
         "point": 3,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Les conditions, par exemple if()",
+            "name": "Les structures conditionnelles comme if()",
             "isCorrect": true
           },
           {
-            "name": "Les bases de données, par exemple SQL()",
+            "name": "Les requêtes SQL comme SELECT()",
             "isCorrect": false
           },
           {
-            "name": "Les boucles, par exemple while()",
+            "name": "Les boucles comme while() ou for()",
             "isCorrect": true
           },
           {
-            "name": "Les stylos, par exemple CSS()",
+            "name": "Des éléments graphiques comme CSS()",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Quelle est la fonction PHP permettant de demander la longueur d’une chaîne de caractères ?",
-        "description": "Fonction pour obtenir la longueur d’une chaîne.",
+        "description": "Demander la taille d’une chaîne, c’est un peu mesurer un mot avec une règle numérique. PHP a une fonction dédiée.",
         "point": 2,
         "type": "ONE",
         "choices": [
@@ -259,86 +268,90 @@
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’une session ? Quelle fonction permet de démarrer une session en PHP ?",
-        "description": "Mécanisme de session et fonction session_start().",
+        "description": "La session garde des données pour l’utilisateur le temps de sa visite. C’est un peu un casier temporaire, mais sans cadenas.",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Les données sont stockées dans $_SESSION",
+            "name": "Les données sont stockées dans la superglobale $_SESSION",
             "isCorrect": true
           },
           {
-            "name": "On démarre la session avec session_start()",
+            "name": "La session se lance avec session_start()",
             "isCorrect": true
           },
           {
-            "name": "Pour créer une session on utilise echo()",
+            "name": "On utilise echo() pour créer une session",
             "isCorrect": false
           },
           {
-            "name": "Un mécanisme côté serveur pour stocker des informations sur un utilisateur",
+            "name": "Un mécanisme serveur qui stocke des informations utilisateur temporairement",
             "isCorrect": true
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’un cookie ? Donner un exemple d’utilisation en PHP",
-        "description": "Définition et utilisation des cookies.",
+        "description": "Un cookie contient quelques infos côté navigateur. Hélas, il ne contient ni chocolat ni pépites.",
         "point": 3,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Une variable stockée sur le serveur",
+            "name": "Un cookie est stocké uniquement sur le serveur",
             "isCorrect": false
           },
           {
-            "name": "Permet d'enregistrer des préférences ou un identifiant de connexion",
+            "name": "Il peut contenir des préférences ou un identifiant de connexion",
             "isCorrect": true
           },
           {
-            "name": "Envoyée automatiquement au serveur à chaque requête HTTP",
+            "name": "Il est envoyé automatiquement au serveur à chaque requête",
             "isCorrect": true
           },
           {
-            "name": "Une petite donnée stockée sur le navigateur de l’utilisateur",
+            "name": "C’est une petite donnée stockée dans le navigateur de l’utilisateur",
             "isCorrect": true
           }
         ]
       },
+
       {
         "name": "Quelle est la différence entre les instructions “require” et “include” en PHP",
-        "description": "Comportement d'inclusion de fichiers.",
+        "description": "require et include font la même chose… jusqu’à ce que l’un des deux rencontre un fichier introuvable. Là, l'ambiance change.",
         "point": 3,
         "type": "MULTI",
         "choices": [
           {
-            "name": "require ne peut pas être utilisé dans PHP",
+            "name": "require n’est pas utilisable en PHP",
             "isCorrect": false
           },
           {
-            "name": "require lève une erreur fatale et stoppe l’exécution si le fichier est introuvable",
+            "name": "require stoppe totalement l’exécution en cas d’échec",
             "isCorrect": true
           },
           {
-            "name": "include lève un warning et le script continue",
+            "name": "include génère un warning mais continue le script",
             "isCorrect": true
           },
           {
-            "name": "include fonctionne uniquement pour les fichiers JS",
+            "name": "include ne fonctionne qu’avec les fichiers JavaScript",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Comment effectuer une redirection en PHP ?",
-        "description": "Utilisation de header('Location: ...') et exit().",
+        "description": "La redirection en PHP marche un peu comme un panneau 'par ici'. Encore faut-il utiliser la bonne fonction.",
         "point": 2,
         "type": "ONE",
         "choices": [
           {
-            "name": "using include()",
+            "name": "include() suffit à déplacer l’utilisateur",
             "isCorrect": false
           },
           {
@@ -355,74 +368,77 @@
           }
         ]
       },
+
       {
         "name": "Définir la partie « front-end » et « back-end » d’une application",
-        "description": "Distinction entre front-end et back-end.",
+        "description": "L’un s’occupe de ce que l’utilisateur voit, l’autre de ce qu’il ne veut pas voir. Comme la scène et les coulisses d’un théâtre.",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Front-end est tout ce qui est exécuté côté client (HTML/CSS/JS)",
+            "name": "Le front-end concerne l’affichage côté client (HTML, CSS, JS)",
             "isCorrect": true
           },
           {
-            "name": "Back-end est exécuté côté serveur et gère la logique métier et les données",
+            "name": "Le back-end gère la logique métier et l’accès aux données",
             "isCorrect": true
           },
           {
-            "name": "Back-end est chargé uniquement de l’apparence",
+            "name": "Le back-end sert uniquement à gérer les couleurs d’un site",
             "isCorrect": false
           },
           {
-            "name": "Front-end gère la base de données",
+            "name": "Le front-end manipule directement la base de données",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Définir le contrôle de version ? Qu’est-ce que Git ?",
-        "description": "Concept de contrôle de version et Git.",
+        "description": "Le contrôle de version, c’est un peu comme une machine à remonter le temps pour ton projet. Git, c’est la DeLorean.",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Git est un navigateur web",
+            "name": "Git est un simple navigateur web",
             "isCorrect": false
           },
           {
-            "name": "Un système qui enregistre l’historique des modifications d’un projet",
+            "name": "Un système permettant d’enregistrer et suivre les changements d’un projet",
             "isCorrect": true
           },
           {
-            "name": "Git est l’outil de contrôle de version le plus utilisé aujourd’hui",
+            "name": "L’outil de versioning le plus utilisé aujourd’hui",
             "isCorrect": true
           },
           {
-            "name": "Permet de revenir en arrière en cas d’erreur et de collaborer",
+            "name": "Permet de revenir sur une version précédente et de collaborer",
             "isCorrect": true
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’un CMS ? Citer au moins 2 exemples",
-        "description": "Définition d'un CMS et exemples.",
+        "description": "Un CMS est une boîte à outils clé en main pour créer du contenu, sans coder chaque détail à la main. Pratique quand on veut aller vite.",
         "point": 3,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Exemples : WordPress et PrestaShop",
+            "name": "Exemples valides : WordPress, Drupal ou PrestaShop",
             "isCorrect": true
           },
           {
-            "name": "Un protocole de messagerie",
+            "name": "Un protocole utilisé pour envoyer des emails",
             "isCorrect": false
           },
           {
-            "name": "Un système pour compiler du code C++",
+            "name": "Un outil servant à compiler des programmes en C++",
             "isCorrect": false
           },
           {
-            "name": "Une application qui permet de créer et gérer du contenu sur un site web",
+            "name": "Un système conçu pour créer et gérer du contenu web",
             "isCorrect": true
           }
         ]
@@ -435,16 +451,16 @@
     "questions": [
       {
         "name": "Définir HTML",
-        "description": "Langage de balisage structurant le contenu des pages web.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
           {
-            "name": "Un langage de programmation compilé",
+            "name": "Un langage structuré destiné à exécuter des instructions dans le navigateur",
             "isCorrect": false
           },
           {
-            "name": "Un protocole de communication",
+            "name": "Un format textuel permettant d’échanger des données entre services web",
             "isCorrect": false
           },
           {
@@ -452,38 +468,38 @@
             "isCorrect": true
           },
           {
-            "name": "Un framework de sécurité",
+            "name": "Un ensemble de règles servant à contrôler la sécurité des ressources web",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Définir CSS",
-        "description": "Langage de feuille de style décrivant l’apparence d’une page HTML.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
           {
-            "name": "Un système d'exploitation",
+            "name": "Un langage permettant de définir la logique d'exécution d'une application web",
             "isCorrect": false
           },
           {
-            "name": "Un outil de base de données",
-            "isCorrect": false
-          },
-          {
-            "name": "Un langage de programmation serveur",
+            "name": "Une technologie utilisée pour gérer la persistance des données dans le navigateur",
             "isCorrect": false
           },
           {
             "name": "Un langage de style qui décrit la présentation d'une page HTML",
             "isCorrect": true
+          },
+          {
+            "name": "Un protocole chargé de récupérer des ressources sur un serveur",
+            "isCorrect": false
           }
         ]
       },
       {
         "name": "Définir Javascript",
-        "description": "Langage de programmation côté client pour rendre les pages dynamiques.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
@@ -492,22 +508,22 @@
             "isCorrect": true
           },
           {
-            "name": "Un protocole HTTP",
+            "name": "Un langage spécialisé dans la mise en forme des documents HTML",
             "isCorrect": false
           },
           {
-            "name": "Un langage de markup",
+            "name": "Un standard utilisé pour échanger des données entre serveurs",
             "isCorrect": false
           },
           {
-            "name": "Une base de données",
+            "name": "Un outil de gestion des requêtes réseau dans les API REST",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Définir JSON. Dans quel contexte ce format est-il utilisé ?",
-        "description": "Format de données pour l’échange de données entre client et serveur.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
@@ -516,22 +532,22 @@
             "isCorrect": true
           },
           {
-            "name": "Un protocole d'authentification",
+            "name": "Une méthode standard pour structurer les pages web à l’aide de balises",
             "isCorrect": false
           },
           {
-            "name": "Un programme C++",
+            "name": "Un outil compilant des données vers des fichiers binaires",
             "isCorrect": false
           },
           {
-            "name": "Un langage de balisage pour documents",
+            "name": "Un langage permettant d’exécuter des scripts dans le navigateur",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Peut-on interpréter du Javascript côté serveur ? Si oui, comment ?",
-        "description": "Utilisation de Node.js pour exécuter JavaScript côté serveur.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
@@ -540,46 +556,46 @@
             "isCorrect": true
           },
           {
-            "name": "Oui, en PHP",
+            "name": "Oui, via une extension intégrée au navigateur",
             "isCorrect": false
           },
           {
-            "name": "Oui, via SQL",
+            "name": "Oui, mais uniquement par le biais d'un service SQL",
             "isCorrect": false
           },
           {
-            "name": "Non, uniquement dans les navigateurs",
+            "name": "Non, l'exécution serveur n'est pas supportée pour ce langage",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Qu’est-ce qu’un sélecteur CSS ?",
-        "description": "Mécanisme de ciblage des balises HTML pour appliquer des styles.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
           {
-            "name": "Une fonction JavaScript",
+            "name": "Une commande permettant d’exécuter des scripts à l'intérieur d’un élément HTML",
             "isCorrect": false
           },
           {
-            "name": "Un attribut HTML",
-            "isCorrect": false
-          },
-          {
-            "name": "Un logiciel d'édition",
+            "name": "Un mécanisme contrôlant les dépendances entre balises HTML",
             "isCorrect": false
           },
           {
             "name": "Un élément de syntaxe permettant de cibler les balises HTML pour appliquer des règles de style",
             "isCorrect": true
+          },
+          {
+            "name": "Un outil chargé de manipuler les attributs d’un élément HTML",
+            "isCorrect": false
           }
         ]
       },
       {
         "name": "Quelle balise HTML permet de créer un lien hypertexte ?",
-        "description": "Balise permettant de créer un lien vers une autre page.",
+        "description": ".",
         "point": 1,
         "type": "ONE",
         "choices": [
@@ -603,12 +619,12 @@
       },
       {
         "name": "Qu’est-ce qu’une requête AJAX ?",
-        "description": "Requête HTTP asynchrone permettant d'échanger des données sans recharger la page.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Une extension PHP",
+            "name": "Une extension permettant d'exécuter du code serveur sans requête HTTP",
             "isCorrect": false
           },
           {
@@ -616,55 +632,55 @@
             "isCorrect": true
           },
           {
-            "name": "Un protocole de mise en page CSS",
+            "name": "Une règle CSS gérant l’adaptation d’une page aux écrans mobiles",
             "isCorrect": false
           },
           {
-            "name": "Une redirection HTTP",
+            "name": "Un mécanisme de navigation interne aux navigateurs",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Quel sélecteur CSS permet de sélectionner tous les éléments d’une classe spécifique ? D’un identifiant spécifique ?",
-        "description": "Syntaxe pour cibler une classe et un identifiant en CSS.",
+        "description": ".",
         "point": 3,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Utiliser un dièse (#) suivi du nom de l'identifiant",
+            "name": "Pour un identifiant : utiliser # suivi du nom",
             "isCorrect": true
           },
           {
-            "name": "Utiliser @media",
+            "name": "Utiliser @media comme préfixe pour cibler une classe",
             "isCorrect": false
           },
           {
-            "name": "Utiliser un point (.) suivi du nom de la classe",
+            "name": "Pour une classe : utiliser . suivi du nom",
             "isCorrect": true
           },
           {
-            "name": "Utiliser deux points",
+            "name": "Pour un identifiant : utiliser deux points avant son nom",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Définir le responsive design",
-        "description": "Approche adaptant la page à toutes les tailles d'écran.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
           {
-            "name": "Une méthode pour cacher des images",
+            "name": "Un ensemble de règles pour désactiver certains scripts en fonction du réseau",
             "isCorrect": false
           },
           {
-            "name": "Un plugin jQuery",
+            "name": "Un mécanisme permettant d’ajuster automatiquement la taille des ressources chargées",
             "isCorrect": false
           },
           {
-            "name": "Un langage de programmation",
+            "name": "Un système imposant une seule mise en page fixe pour l’ensemble des écrans",
             "isCorrect": false
           },
           {
@@ -675,16 +691,16 @@
       },
       {
         "name": "Qu’est-ce que le templating ?",
-        "description": "Méthode consistant à créer un modèle de page et y injecter des données.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Un type d'algorithme de tri",
+            "name": "Une procédure visant à optimiser la performance d'une API",
             "isCorrect": false
           },
           {
-            "name": "Une méthode de chiffrement",
+            "name": "Une méthode consistant à définir un modèle statique pour des scripts exécutés côté serveur",
             "isCorrect": false
           },
           {
@@ -692,23 +708,23 @@
             "isCorrect": true
           },
           {
-            "name": "Un protocole HTTP",
+            "name": "Une technique permettant de compresser les fichiers HTML à l'exécution",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Qu’est-ce qu’une fonction anonyme en Javascript ?",
-        "description": "Fonction sans nom pouvant être affectée à une variable ou passée en paramètre.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Une balise HTML",
+            "name": "Une fonction dotée d’un nom, mais non accessible depuis l'extérieur",
             "isCorrect": false
           },
           {
-            "name": "Une méthode privée obligatoire",
+            "name": "Une fonction déclarée automatiquement à partir d’un objet",
             "isCorrect": false
           },
           {
@@ -716,14 +732,14 @@
             "isCorrect": true
           },
           {
-            "name": "Un objet JSON",
+            "name": "Une fonction déclarée uniquement dans un fichier JSON",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Quelle méthode JavaScript est utilisée pour ajouter un élément à la fin d'un tableau ?",
-        "description": "Méthode pour ajouter à la fin d’un tableau.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
@@ -732,27 +748,27 @@
             "isCorrect": true
           },
           {
-            "name": "pop()",
+            "name": "insert()",
             "isCorrect": false
           },
           {
-            "name": "shift()",
+            "name": "appendChild()",
             "isCorrect": false
           },
           {
-            "name": "append()",
+            "name": "extend()",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Qu’est-ce qu’un “media query” ?",
-        "description": "Règle CSS appliquant des styles selon le périphérique.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
           {
-            "name": "Un attribut HTML",
+            "name": "Un élément HTML permettant de charger un fichier CSS externe",
             "isCorrect": false
           },
           {
@@ -760,42 +776,42 @@
             "isCorrect": true
           },
           {
-            "name": "Un plugin PHP",
+            "name": "Un module dédié à l'analyse du trafic réseau",
             "isCorrect": false
           },
           {
-            "name": "Une fonction JavaScript",
+            "name": "Un outil JavaScript pour surveiller les changements de résolution",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Qu’est-ce qu’un pseudo élément en CSS ?",
-        "description": "Sélecteur permettant de styliser une partie spécifique d’un élément.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
+          {
+            "name": "Un mécanisme permettant de redéfinir le comportement d’une balise HTML",
+            "isCorrect": false
+          },
           {
             "name": "Un sélecteur spécial permettant de styliser une partie spécifique d’un élément",
             "isCorrect": true
           },
           {
-            "name": "Une balise script",
+            "name": "Une méthode pour importer des feuilles de style conditionnelles",
             "isCorrect": false
           },
           {
-            "name": "Un serveur web",
-            "isCorrect": false
-          },
-          {
-            "name": "Un langage de programmation",
+            "name": "Une technique permettant de générer du contenu HTML via CSS",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Qu’est-ce que Bootstrap ? Donner d’autres exemples équivalent",
-        "description": "Framework CSS et alternatives équivalentes.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
@@ -808,18 +824,18 @@
             "isCorrect": true
           },
           {
-            "name": "Un moteur de base de données",
+            "name": "Un environnement utilisé pour configurer des serveurs HTTP",
             "isCorrect": false
           },
           {
-            "name": "Un serveur Apache",
+            "name": "Un système permettant d’automatiser la compilation du JavaScript",
             "isCorrect": false
           }
         ]
       },
       {
         "name": "Quand un formulaire HTML est créé, quelles sont les 2 méthodes qui peuvent lui être associées ?",
-        "description": "Différence entre les méthodes GET et POST.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
@@ -828,7 +844,7 @@
             "isCorrect": true
           },
           {
-            "name": "DELETE : utilisé pour créer les données",
+            "name": "DELETE : méthode dédiée à la récupération de données",
             "isCorrect": false
           },
           {
@@ -836,7 +852,7 @@
             "isCorrect": true
           },
           {
-            "name": "PUT : utilisé pour supprimer les données",
+            "name": "PUT : méthode utilisée pour exécuter un script serveur",
             "isCorrect": false
           }
         ]
@@ -849,192 +865,199 @@
     "questions": [
       {
         "name": "Quelle est la différence entre UX Design et UI Design ?",
-        "description": "Distinction entre l’UX et l’UI Design.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "L’UI Design concerne l’aspect visuel et esthétique d’une interface",
+            "name": "L’UX Design englobe la logique globale d’utilisation et la façon dont l’utilisateur vit l’expérience",
             "isCorrect": true
           },
           {
-            "name": "L’UX Design consiste à choisir les couleurs et les typographies",
+            "name": "L’UI Design se concentre sur l’apparence visuelle et la présentation de l’interface",
+            "isCorrect": true
+          },
+          {
+            "name": "L’UI Design concerne prioritairement la définition du parcours utilisateur et de ses interactions",
             "isCorrect": false
           },
           {
-            "name": "L’UX Design s’intéresse à l’expérience globale de l’utilisateur",
-            "isCorrect": true
-          },
-          {
-            "name": "L’UI Design se limite à la structure fonctionnelle du produit",
+            "name": "L’UX Design correspond principalement aux décisions esthétiques appliquées à l’interface",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’un wireframe ?",
-        "description": "Maquette schématique montrant la structure d’une interface sans détails graphiques.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Un code source HTML",
+            "name": "Une représentation visuelle finalisée intégrant couleurs, typographies et interactions complètes",
             "isCorrect": false
           },
           {
-            "name": "Une maquette haute-fidélité",
-            "isCorrect": false
-          },
-          {
-            "name": "Un style CSS complet",
-            "isCorrect": false
-          },
-          {
-            "name": "Une maquette schématique montrant uniquement la disposition et la hiérarchie des éléments sans détails graphiques",
+            "name": "Une structure schématique permettant d’organiser les éléments d’une interface sans y intégrer les détails visuels",
             "isCorrect": true
+          },
+          {
+            "name": "Une vue détaillée du parcours utilisateur intégrant les règles d'interaction",
+            "isCorrect": false
+          },
+          {
+            "name": "Un document décrivant les choix graphiques principaux appliqués à un produit",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’un prototype ?",
-        "description": "Version interactive pour tester l'expérience utilisateur avant le développement final.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Un modèle de données",
-            "isCorrect": false
-          },
-          {
-            "name": "Une version intermédiaire interactive simulant le fonctionnement afin de tester l’expérience utilisateur",
+            "name": "Un modèle interactif permettant de simuler le comportement d’une interface avant son développement",
             "isCorrect": true
           },
           {
-            "name": "Un fichier de code",
+            "name": "Un fichier regroupant les ressources nécessaires au fonctionnement technique du backend",
             "isCorrect": false
           },
           {
-            "name": "Une capture d'écran statique",
+            "name": "Une maquette figée destinée uniquement à illustrer les intentions visuelles",
+            "isCorrect": false
+          },
+          {
+            "name": "Un document textuel listant l’ensemble des règles d’interaction d’un produit",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce que la hiérarchie visuelle en UI Design ?",
-        "description": "Organisation visuelle guidant l'utilisateur.",
+        "description": ".",
         "point": 4,
         "type": "ONE",
         "choices": [
           {
-            "name": "Organisation des éléments pour guider l’utilisateur, basée sur arrangement, taille, couleurs, contrastes et typographie",
+            "name": "La manière dont les éléments sont organisés pour guider l'œil de l’utilisateur selon leur importance",
             "isCorrect": true
           },
           {
-            "name": "Ordre alphabétique des fichiers",
+            "name": "Un ensemble de règles définissant l'ordre dans lequel les fichiers HTML doivent être importés",
             "isCorrect": false
           },
           {
-            "name": "Disposition aléatoire",
+            "name": "Une méthode visant à catégoriser les éléments selon leur fréquence d’utilisation",
             "isCorrect": false
           },
           {
-            "name": "Ordre des pages HTML",
+            "name": "Un système destiné à organiser les éléments exclusivement selon leur fonction technique",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce que l’accessibilité en UX Design ?",
-        "description": "Conception universelle pour tous les utilisateurs.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Ajouter des attributs alt sur les images pour les lecteurs d'écran",
-            "isCorrect": true
-          },
-          {
-            "name": "Concevoir des interfaces utilisables par toutes les personnes y compris les personnes handicapées",
-            "isCorrect": true
-          },
-          {
-            "name": "Utiliser exclusivement des animations flashy",
+            "name": "Optimiser une interface uniquement pour la perception visuelle et la rapidité d’affichage",
             "isCorrect": false
           },
           {
-            "name": "Concevoir un design uniquement pour les utilisateurs payants",
+            "name": "Créer des interfaces accessibles aux personnes avec divers handicaps ou limitations",
+            "isCorrect": true
+          },
+          {
+            "name": "Ajouter des textes alternatifs descriptifs pour les lecteurs d’écran",
+            "isCorrect": true
+          },
+          {
+            "name": "Limiter certaines fonctionnalités pour éviter une surcharge cognitive sur les parcours standards",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’une grille de mise en page ?",
-        "description": "Système d’organisation structurant une interface en lignes et colonnes.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Une base de données",
-            "isCorrect": false
-          },
-          {
-            "name": "Un type de serveur",
-            "isCorrect": false
-          },
-          {
-            "name": "Une fonction PHP",
-            "isCorrect": false
-          },
-          {
-            "name": "Un système d’organisation structurant une interface en lignes, colonnes et marges",
+            "name": "Un système de lignes, colonnes et marges pour structurer la mise en page d’une interface",
             "isCorrect": true
+          },
+          {
+            "name": "Un outil destiné à répartir automatiquement les composants selon leur priorité fonctionnelle",
+            "isCorrect": false
+          },
+          {
+            "name": "Une méthodologie permettant d’harmoniser uniquement les choix typographiques d’un projet",
+            "isCorrect": false
+          },
+          {
+            "name": "Un ensemble de contraintes imposant la taille exacte à utiliser pour chaque élément",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce que la notion d’affordance en UX Design ?",
-        "description": "Capacité d’un élément d’interface à suggérer son usage.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Le design adaptatif",
+            "name": "La manière dont un système ajuste son interface aux variations de résolution",
             "isCorrect": false
           },
           {
-            "name": "La réactivité d'une page web",
+            "name": "La capacité d’une interface à conserver ses fonctionnalités hors connexion",
             "isCorrect": false
           },
           {
-            "name": "La capacité d'un élément d'interface à suggérer son utilisation par son apparence",
+            "name": "La façon dont un produit maintient une cohérence visuelle sur l’ensemble des écrans",
+            "isCorrect": false
+          },
+          {
+            "name": "Le fait qu’un élément suggère son usage simplement par son apparence",
             "isCorrect": true
-          },
-          {
-            "name": "La fiabilité du serveur",
-            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’un “mobile first design” ?",
-        "description": "Approche de conception en pensant d'abord au mobile.",
+        "description": ".",
         "point": 4,
         "type": "ONE",
         "choices": [
           {
-            "name": "Un langage de programmation mobile",
+            "name": "Une technique visant à concevoir d'abord pour les écrans larges avant d'adapter au mobile",
             "isCorrect": false
           },
           {
-            "name": "Un design uniquement pour PC",
+            "name": "Une méthode dont l’objectif est d’optimiser uniquement les performances sur smartphone",
             "isCorrect": false
           },
           {
-            "name": "Une approche de conception qui consiste à créer une interface en pensant d’abord à son utilisation sur mobile",
+            "name": "Une approche consistant à concevoir l’interface en priorité pour les écrans mobiles avant d’adapter vers le desktop",
             "isCorrect": true
           },
           {
-            "name": "Une base de données mobile",
+            "name": "Une stratégie réservée à la création d’applications mobiles natives avant leur version web",
             "isCorrect": false
           }
         ]
@@ -1045,94 +1068,98 @@
     "name": "Glossaire - Programmation orientée objet",
     "description": "Quiz sur la programmation orientée objet (POO).",
     "questions": [
+
       {
         "name": "Donner une définition de la programmation orientée objet",
-        "description": "Paradigme manipulant des objets avec données et comportements.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Une méthode de chiffrement",
-            "isCorrect": false
-          },
-          {
-            "name": "Un langage de requête base de données",
-            "isCorrect": false
-          },
-          {
-            "name": "Un format de données JSON",
-            "isCorrect": false
-          },
-          {
             "name": "Un paradigme de programmation qui manipule des objets contenant données et comportements, basés sur encapsulation, héritage et polymorphisme",
             "isCorrect": true
+          },
+          {
+            "name": "Un format de données JSON pensé pour structurer des classes et sous-classes",
+            "isCorrect": false
+          },
+          {
+            "name": "Une extension SQL permettant de relier des tables automatiquement",
+            "isCorrect": false
+          },
+          {
+            "name": "Un mécanisme cryptographique permettant de protéger les méthodes privées",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’une classe ? Comment la déclare-t-on ?",
-        "description": "Définition d’une classe et déclaration en PHP.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Les classes sont déclarées avec la balise <class>",
-            "isCorrect": false
+            "name": "En PHP on la déclare avec le mot-clé class",
+            "isCorrect": true
           },
           {
             "name": "Une classe est un modèle qui définit propriétés et méthodes des objets",
             "isCorrect": true
           },
           {
-            "name": "Chaque classe doit être déclarée dans un fichier séparé selon PSR-4",
-            "isCorrect": true
+            "name": "Les classes sont déclarées avec la balise <class>",
+            "isCorrect": false
           },
           {
-            "name": "En PHP on la déclare avec le mot-clé class",
+            "name": "Chaque classe doit être déclarée dans un fichier séparé selon PSR-4",
             "isCorrect": true
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’un objet ?",
-        "description": "Instance concrète d’une classe.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
-          {
-            "name": "Une base de données",
-            "isCorrect": false
-          },
           {
             "name": "Une instance concrète d’une classe",
             "isCorrect": true
           },
           {
-            "name": "Une fonction SQL",
+            "name": "Une fonction exécutée automatiquement par le moteur PHP lorsqu'un fichier est importé",
             "isCorrect": false
           },
           {
-            "name": "Une variable qui change",
+            "name": "Un conteneur mémoire utilisé pour stocker des données persistantes",
+            "isCorrect": false
+          },
+          {
+            "name": "Un type particulier de variable dont la valeur ne peut pas changer",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Définir la notion de propriété / attribut / méthode",
-        "description": "Différence entre propriété, méthode et attribut en PHP 8+.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
-          {
-            "name": "En PHP 8+, un attribut est une métadonnée attachée à une classe, méthode ou propriété",
-            "isCorrect": true
-          },
           {
             "name": "Une propriété est une variable définie dans une classe représentant l'état d'un objet",
             "isCorrect": true
           },
           {
-            "name": "Une propriété est un fichier PHP",
+            "name": "En PHP 8+, un attribut est une métadonnée attachée à une classe, méthode ou propriété",
+            "isCorrect": true
+          },
+          {
+            "name": "Une propriété est un fichier PHP automatiquement importé",
             "isCorrect": false
           },
           {
@@ -1141,22 +1168,19 @@
           }
         ]
       },
+
       {
         "name": "Qu’est-ce que la visibilité d’une propriété ou d’une méthode ? Citer les différents types de visibilité",
-        "description": "Niveaux d’accès pour propriétés et méthodes.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "protected: accessible dans la classe et les classes qui en héritent",
-            "isCorrect": true
-          },
-          {
-            "name": "public: accessible partout, aussi bien dans la classe que de l'extérieur",
-            "isCorrect": true
-          },
-          {
             "name": "private: accessible uniquement dans la classe qui la définit",
+            "isCorrect": true
+          },
+          {
+            "name": "protected: accessible dans la classe et les classes qui en héritent",
             "isCorrect": true
           },
           {
@@ -1166,19 +1190,20 @@
           {
             "name": "public: empêche l'accès aux enfants",
             "isCorrect": false
+          },
+          {
+            "name": "public: accessible partout, aussi bien dans la classe que de l'extérieur",
+            "isCorrect": true
           }
         ]
       },
+
       {
         "name": "Quelle est la méthode spécifique utilisée pour créer un nouvel objet à partir d’une classe ?",
-        "description": "Instanciation d’une classe en PHP.",
+        "description": ".",
         "point": 3,
         "type": "MULTI",
         "choices": [
-          {
-            "name": "Utiliser header()",
-            "isCorrect": false
-          },
           {
             "name": "Utiliser le mot-clé new pour instancier la classe",
             "isCorrect": true
@@ -1186,108 +1211,117 @@
           {
             "name": "Le constructeur __construct() est appelé automatiquement lors de l'instanciation",
             "isCorrect": true
+          },
+          {
+            "name": "Utiliser header() pour initialiser l'objet",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce que l’encapsulation ?",
-        "description": "Principe consistant à regrouper et protéger les données internes.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Une méthode de chiffrement",
-            "isCorrect": false
-          },
-          {
-            "name": "Encapsuler l'application dans un conteneur docker",
-            "isCorrect": false
-          },
-          {
-            "name": "Placer tout le code dans un seul fichier",
-            "isCorrect": false
-          },
-          {
             "name": "Regrouper propriétés et méthodes dans une classe et contrôler l'accès via des niveaux de visibilité pour protéger les données internes",
             "isCorrect": true
+          },
+          {
+            "name": "Rendre toutes les propriétés publiques pour simplifier l'accès",
+            "isCorrect": false
+          },
+          {
+            "name": "Isoler les classes dans des namespaces pour éviter les collisions",
+            "isCorrect": false
+          },
+          {
+            "name": "Emballer un objet dans un autre pour en modifier le comportement",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Que signifie « étendre une classe » ? Quelle est le concept clé mis en œuvre ?",
-        "description": "Étendre une classe et concept d’héritage.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Remplacer la classe parent par un module jQuery",
-            "isCorrect": false
+            "name": "Créer une nouvelle classe qui hérite des propriétés et méthodes d'une autre classe",
+            "isCorrect": true
           },
           {
             "name": "Par exemple : class VoitureElectrique extends Voiture",
             "isCorrect": true
           },
           {
-            "name": "Créer une nouvelle classe qui hérite des propriétés et méthodes d'une autre classe",
+            "name": "Le concept clé est l'héritage",
             "isCorrect": true
           },
           {
-            "name": "Le concept clé est l'héritage",
-            "isCorrect": true
+            "name": "Remplacer la classe parent par un module jQuery",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Définir l’opérateur de résolution de portée",
-        "description": "Opérateur :: pour accéder à des éléments de classe sans instantiation.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
           {
-            "name": "Le mot-clé new",
-            "isCorrect": false
-          },
-          {
-            "name": "L'opérateur ->",
-            "isCorrect": false
-          },
-          {
-            "name": "L'underscore _",
-            "isCorrect": false
-          },
-          {
             "name": "En PHP, l’opérateur :: permet d’accéder à des éléments d’une classe sans instancier d’objet",
             "isCorrect": true
+          },
+          {
+            "name": "L'opérateur -> permet d'accéder aux constantes statiques",
+            "isCorrect": false
+          },
+          {
+            "name": "L'underscore _ est utilisé pour les propriétés privées uniquement",
+            "isCorrect": false
+          },
+          {
+            "name": "Le mot-clé new permet d'accéder aux propriétés de classe",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Définir une méthode / propriété statique",
-        "description": "Concept de statique en POO.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Une propriété statique est partagée par toutes les instances de la classe",
+            "name": "Une méthode statique est définie avec le mot-clé static et peut être appelée sans créer d'objet",
             "isCorrect": true
           },
           {
-            "name": "Une méthode statique est accessible uniquement via ->",
-            "isCorrect": false
+            "name": "Une propriété statique est partagée par toutes les instances de la classe",
+            "isCorrect": true
           },
           {
             "name": "On y accède avec l'opérateur ::",
             "isCorrect": true
           },
           {
-            "name": "Une méthode statique est définie avec le mot-clé static et peut être appelée sans créer d'objet",
-            "isCorrect": true
+            "name": "Une méthode statique est accessible uniquement via ->",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Définir le polymorphisme en POO",
-        "description": "Principe permettant à une même méthode d’avoir des comportements différents selon l’objet.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
@@ -1296,75 +1330,82 @@
             "isCorrect": true
           },
           {
-            "name": "Un format de données",
+            "name": "Technique consistant à dupliquer automatiquement une classe dans plusieurs namespaces",
             "isCorrect": false
           },
           {
-            "name": "Remplacement des objets par des variables",
+            "name": "Transformation d’un objet en tableau pour optimiser sa sérialisation",
             "isCorrect": false
           },
           {
-            "name": "Multiplication de classes identiques",
+            "name": "Remplacement des objets par des variables primitives",
             "isCorrect": false
           }
         ]
       },
+
       {
-        "name": "Définir une méthode / classe abstraite ?",
-        "description": "Classes abstraites et méthodes abstraites.",
+        "name": "Définir une méthode / classe abstraite",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
-          {
-            "name": "Une classe abstraite ne peut pas être instanciée directement",
-            "isCorrect": true
-          },
           {
             "name": "Elle doit être redéfinie par les classes enfants",
             "isCorrect": true
           },
           {
-            "name": "Une classe abstraite est une classe de base de données",
-            "isCorrect": false
+            "name": "Une classe abstraite ne peut pas être instanciée directement",
+            "isCorrect": true
           },
           {
             "name": "Une méthode abstraite est déclarée sans implémentation dans une classe abstraite",
             "isCorrect": true
+          },
+          {
+            "name": "Une classe abstraite est une classe de base de données",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Définir le chaînage de méthodes",
-        "description": "Technique d’appels successifs sur un même objet.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
-          {
-            "name": "Usage de colonnes multiples",
-            "isCorrect": false
-          },
           {
             "name": "Technique permettant d'appeler plusieurs méthodes à la suite sur un même objet, chaque méthode renvoyant l'objet courant",
             "isCorrect": true
           },
           {
-            "name": "Création d'un réseau de serveurs",
+            "name": "Technique de communication réseau permettant d'empiler plusieurs requêtes",
             "isCorrect": false
           },
           {
-            "name": "Chaînage de classes en SQL",
+            "name": "Méthode consistant à relier plusieurs fichiers PHP en une seule inclusion",
+            "isCorrect": false
+          },
+          {
+            "name": "Chaînage automatique des classes via PSR-0",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce que la méthode __toString() ? Existe-t-il d’autres méthodes « magiques »",
-        "description": "Méthode __toString et autres méthodes magiques en PHP.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
             "name": "__toString() est appelée lorsqu'un objet est utilisé comme une chaîne",
+            "isCorrect": true
+          },
+          {
+            "name": "Il existe d'autres méthodes magiques comme __construct(), __destruct(), __get(), __set(), __call(), __clone()",
             "isCorrect": true
           },
           {
@@ -1374,16 +1415,13 @@
           {
             "name": "Elle doit retourner une chaîne",
             "isCorrect": true
-          },
-          {
-            "name": "Il existe d'autres méthodes magiques comme __construct(), __destruct(), __get(), __set(), __call(), __clone()",
-            "isCorrect": true
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’un « autoload » ?",
-        "description": "Mécanisme de chargement automatique des classes en PHP.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
@@ -1392,224 +1430,234 @@
             "isCorrect": true
           },
           {
-            "name": "Une boucle for",
+            "name": "Un système permettant de précharger automatiquement les classes en cache OPcache",
             "isCorrect": false
           },
           {
-            "name": "Une méthode de test unitaire",
+            "name": "Un alias de include() utilisé pour les classes héritées",
             "isCorrect": false
           },
           {
-            "name": "Une base de données autogérée",
+            "name": "Un module PHP chargé d’optimiser le chargement des fichiers HTML",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Comment appelle-t-on en français les « getters » et les « setters » ?",
-        "description": "Traduction française des getters et setters.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
           {
-            "name": "Lecteurs pour getters et écrivains pour setters",
-            "isCorrect": false
-          },
-          {
-            "name": "Créateurs et modificateurs",
-            "isCorrect": false
-          },
-          {
-            "name": "Destructeurs",
-            "isCorrect": false
-          },
-          {
             "name": "Accesseurs pour getters et mutateurs pour setters",
             "isCorrect": true
+          },
+          {
+            "name": "Destructeurs et constructeurs",
+            "isCorrect": false
+          },
+          {
+            "name": "Lecteurs et écrivains",
+            "isCorrect": false
+          },
+          {
+            "name": "Exécuteurs et modifieurs",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce que la sérialisation en PHP ?",
-        "description": "Conversion d'une variable en chaîne pour stockage ou transmission.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Création de fichiers HTML",
-            "isCorrect": false
-          },
-          {
-            "name": "Conversion de chaîne en nombre",
-            "isCorrect": false
-          },
-          {
-            "name": "Remplissage d'une base de données",
-            "isCorrect": false
-          },
-          {
             "name": "Processus consistant à convertir une variable (tableau, objet, etc.) en une chaîne pour la stocker ou la transmettre",
             "isCorrect": true
+          },
+          {
+            "name": "Technique consistant à optimiser la vitesse des requêtes SQL en transformant les objets",
+            "isCorrect": false
+          },
+          {
+            "name": "Compilation d’un fichier PHP en binaire pour accélérer son exécution",
+            "isCorrect": false
+          },
+          {
+            "name": "Transformation d'une classe abstraite en classe concrète",
+            "isCorrect": false
           }
         ]
       }
+
     ]
   },
   {
     "name": "Glossaire - Architecture",
     "description": "Quiz sur l’architecture logicielle, client/serveur et design patterns.",
     "questions": [
+
       {
         "name": "Qu’est-ce que l’architecture client / serveur ?",
-        "description": "Description du modèle client/serveur et requêtes HTTP/HTTPS.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "HTTP est un langage de programmation",
-            "isCorrect": false
+            "name": "HTTPS indique que les échanges sont chiffrés via TLS/SSL",
+            "isCorrect": true
+          },
+          {
+            "name": "HTTP permet la communication entre client et serveur via requêtes et réponses",
+            "isCorrect": true
           },
           {
             "name": "C'est un modèle où un client envoie des requêtes à un serveur qui répond",
             "isCorrect": true
           },
           {
-            "name": "HTTPS indique que les échanges sont chiffrés via TLS/SSL",
-            "isCorrect": true
-          },
-          {
-            "name": "On interroge via HTTP (HyperText Transfer Protocol)",
-            "isCorrect": true
+            "name": "HTTP est un langage de programmation orienté protocole",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Donner la définition d’un design pattern. Citer au moins 3 exemples de design pattern",
-        "description": "Solution générique réutilisable et exemples de patterns.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Exemples : Singleton, Observer, Factory",
-            "isCorrect": true
-          },
-          {
-            "name": "Une spécification SQL",
-            "isCorrect": false
-          },
-          {
-            "name": "Une classe CSS",
-            "isCorrect": false
-          },
-          {
             "name": "Une solution réutilisable à un problème de conception logiciel",
             "isCorrect": true
+          },
+          {
+            "name": "Une méthode permettant d'abstraire automatiquement les schémas SQL",
+            "isCorrect": false
+          },
+          {
+            "name": "Singleton, Observer, Factory",
+            "isCorrect": true
+          },
+          {
+            "name": "Un type avancé de sélecteur CSS utilisé pour structurer l’interface",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce que l’architecture MVC ?",
-        "description": "Modèle de séparation en Model, View, Controller.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
-          {
-            "name": "Base de données relationnelle",
-            "isCorrect": false
-          },
-          {
-            "name": "Technique de chiffrement",
-            "isCorrect": false
-          },
           {
             "name": "Modèle de conception séparant une application en Model, View, Controller",
             "isCorrect": true
           },
           {
-            "name": "Modèle basé sur microservices",
+            "name": "Modèle utilisé pour faire communiquer plusieurs microservices entre eux",
+            "isCorrect": false
+          },
+          {
+            "name": "Structure fondée exclusivement sur des bases de données relationnelles",
+            "isCorrect": false
+          },
+          {
+            "name": "Méthode de cryptage utilisée pour sécuriser la couche applicative",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Quel est le rôle de chaque couche du design pattern MVC : Model, View, Controller ?",
-        "description": "Description des responsabilités de chaque couche.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
-          {
-            "name": "View gère l'affichage et la présentation des données",
-            "isCorrect": true
-          },
-          {
-            "name": "View gère la base de données",
-            "isCorrect": false
-          },
           {
             "name": "Model gère les données et la logique métier",
             "isCorrect": true
           },
           {
-            "name": "Controller gère les requêtes utilisateur et choisit la vue à afficher",
+            "name": "View gère l'affichage et la présentation des données",
             "isCorrect": true
+          },
+          {
+            "name": "Controller reçoit les requêtes utilisateur et choisit la vue à afficher",
+            "isCorrect": true
+          },
+          {
+            "name": "View gère la mise à jour des enregistrements en base de données",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Quels sont les avantages de l’architecture MVC ?",
-        "description": "Avantages de la séparation Model-View-Controller.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Meilleure organisation et factorisation du code",
+            "name": "Scalabilité plus simple",
             "isCorrect": true
-          },
-          {
-            "name": "Il n'y a aucun avantage",
-            "isCorrect": false
           },
           {
             "name": "Séparation claire des responsabilités (données, logique, présentation)",
             "isCorrect": true
           },
           {
-            "name": "Scalabilité plus simple",
+            "name": "Meilleure organisation et factorisation du code",
             "isCorrect": true
           },
           {
             "name": "Réutilisabilité et testabilité accrues",
             "isCorrect": true
+          },
+          {
+            "name": "Architecture imposant automatiquement l’optimisation du backend",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Existe-t-il des variantes à l’architecture MVC ?",
-        "description": "Variantes du modèle MVC.",
+        "description": ".",
         "point": 3,
         "type": "MULTI",
         "choices": [
           {
-            "name": "API REST",
-            "isCorrect": false
+            "name": "Oui, par exemple MVP (Model–View–Presenter)",
+            "isCorrect": true
           },
           {
             "name": "MVVM (Model–View–ViewModel)",
             "isCorrect": true
           },
           {
-            "name": "Oui, par exemple MVP (Model–View–Presenter)",
-            "isCorrect": true
+            "name": "API REST",
+            "isCorrect": false
           },
           {
-            "name": "SQL",
+            "name": "SQL (Structured Query Layer)",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’une API ? Définir l’architecture REST",
-        "description": "Description d’une API et des principes REST.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
@@ -1618,52 +1666,55 @@
             "isCorrect": true
           },
           {
-            "name": "Il utilise les verbes GET, POST, PUT/PATCH et DELETE",
-            "isCorrect": true
-          },
-          {
             "name": "Une API permet à deux applications de communiquer via requêtes et réponses",
             "isCorrect": true
           },
           {
-            "name": "REST est un système de base de données",
+            "name": "Il utilise les verbes GET, POST, PUT/PATCH et DELETE",
+            "isCorrect": true
+          },
+          {
+            "name": "REST est un langage compilé utilisé pour les échanges backend/backend",
             "isCorrect": false
           }
         ]
       }
+
     ]
   },
   {
     "name": "Glossaire - Modélisation et Base de données",
     "description": "Quiz sur la modélisation de données et les bases de données.",
     "questions": [
+
       {
         "name": "Qu’est-ce que la modélisation de données ? Définir la méthode Merise",
-        "description": "Représentation schématique des données et méthode Merise.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
-          {
-            "name": "MCD est un média de vidéo",
-            "isCorrect": false
-          },
           {
             "name": "La méthode Merise distingue MCD, MLD et MPD",
             "isCorrect": true
           },
           {
-            "name": "Merise est un langage de programmation",
+            "name": "Représenter les données et leurs relations de manière schématique",
+            "isCorrect": true
+          },
+          {
+            "name": "Merise est un ensemble d'outils de gouvernance des données utilisé principalement pour l’audit",
             "isCorrect": false
           },
           {
-            "name": "Représenter les données et leurs relations de manière schématique",
-            "isCorrect": true
+            "name": "Le MCD est un format binaire utilisé pour compresser des structures d'information",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Quelles sont les 3 étapes principales de la méthode Merise ?",
-        "description": "Étapes de la méthode Merise.",
+        "description": ".",
         "point": 3,
         "type": "MULTI",
         "choices": [
@@ -1672,70 +1723,73 @@
             "isCorrect": true
           },
           {
-            "name": "Interprétation",
+            "name": "Interprétation documentaire",
             "isCorrect": false
-          },
-          {
-            "name": "Conception",
-            "isCorrect": true
           },
           {
             "name": "Réalisation",
             "isCorrect": true
+          },
+          {
+            "name": "Conception",
+            "isCorrect": true
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’un modèle conceptuel de données (MCD) en Merise ?",
-        "description": "Définition du MCD.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
-          {
-            "name": "Modèle de Comptabilité des Documents",
-            "isCorrect": false
-          },
           {
             "name": "MCD : Modèle Conceptuel de Données (entités, associations)",
             "isCorrect": true
           },
           {
-            "name": "Machine Calculatrice Désuète",
+            "name": "Une couche système permettant de mapper l’OS aux données logiques",
             "isCorrect": false
           },
           {
-            "name": "Moniteur CPU distant",
+            "name": "Un modèle dédié à la gestion documentaire dans les entreprises",
+            "isCorrect": false
+          },
+          {
+            "name": "Un processus de supervision matérielle (moniteur CPU étendu)",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’un modèle logique de données (MLD) en Merise ?",
-        "description": "Définition du MLD.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
           {
-            "name": "Module Linux Dashboard",
-            "isCorrect": false
-          },
-          {
-            "name": "Modèle de Lien Documentaire",
-            "isCorrect": false
-          },
-          {
-            "name": "Machine Learning Device",
-            "isCorrect": false
-          },
-          {
             "name": "MLD : Modèle Logique de Données (adapté au SGBD)",
             "isCorrect": true
+          },
+          {
+            "name": "Un format standard destiné au catalogage des documents XML",
+            "isCorrect": false
+          },
+          {
+            "name": "Une couche de virtualisation utilisée en machine learning",
+            "isCorrect": false
+          },
+          {
+            "name": "Un gestionnaire de liens documentaire pour systèmes distribués",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Donner la définition des mots suivants : Entité, Relation, Cardinalité, Clé primaire / clé étrangère",
-        "description": "Notions de modélisation : entité, relation, cardinalité, clés.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
@@ -1744,26 +1798,31 @@
             "isCorrect": true
           },
           {
-            "name": "Une entité est un champ d'une table",
-            "isCorrect": false
+            "name": "Une entité est un objet ou concept représenté dans la base et correspond généralement à une table",
+            "isCorrect": true
           },
           {
             "name": "Une clé primaire identifie de manière unique chaque enregistrement; une clé étrangère référence la clé primaire d'une autre table",
             "isCorrect": true
           },
           {
-            "name": "Une entité est un objet ou concept représenté dans la base et correspond généralement à une table",
-            "isCorrect": true
+            "name": "Une entité est un champ dérivé utilisé pour optimiser les requêtes",
+            "isCorrect": false
           },
           {
-            "name": "La cardinalité exprime le nombre minimum et maximum d'occurrences d'une entité associées à une autre",
-            "isCorrect": true
+            "name": "La cardinalité indique uniquement le nombre maximal d’occurrences sans minimum",
+            "isCorrect": false
+          },
+          {
+            "name": "Une clé primaire identifie un champ non unique utilisé pour les jointures",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Que devient une relation de type « Many To Many » dans le modèle logique de données ?",
-        "description": "Transformation d'une relation Many-to-Many.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
@@ -1772,53 +1831,51 @@
             "isCorrect": true
           },
           {
-            "name": "Elle supprime la relation",
+            "name": "Elle est convertie en une unique entité sans clé primaire pour éviter les doublons",
             "isCorrect": false
           },
           {
-            "name": "Elle fusionne les tables",
+            "name": "Elle reste déclarée telle quelle si les cardinalités sont équilibrées",
             "isCorrect": false
           },
           {
-            "name": "Elle reste inchangée",
+            "name": "Elle utilise deux relations croisées One To Many gérées automatiquement par l’indexation",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’une base de données ?",
-        "description": "Définition d'une base de données.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
-          {
-            "name": "Une feuille Excel",
-            "isCorrect": false
-          },
           {
             "name": "Un système organisé permettant de stocker, structurer et manipuler des données de manière fiable et efficace",
             "isCorrect": true
           },
           {
-            "name": "Un langage de programmation",
+            "name": "Un module applicatif dédié à la gestion d’archives multimédia",
             "isCorrect": false
           },
           {
-            "name": "Un serveur web",
+            "name": "Un format d’indexation utilisé pour la sauvegarde d’applications web",
+            "isCorrect": false
+          },
+          {
+            "name": "Une extension de langage permettant de gérer des flux de stockage",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Définir les notions suivantes : SQL, MySQL, SGBD (donner 2 exemples de SGBD)",
-        "description": "Description de SQL, MySQL et des SGBD.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
-          {
-            "name": "SQL est un protocole réseau",
-            "isCorrect": false
-          },
           {
             "name": "SQL est un langage déclaratif normalisé pour interagir avec une base de données relationnelle",
             "isCorrect": true
@@ -1828,82 +1885,94 @@
             "isCorrect": true
           },
           {
-            "name": "Un SGBD est un logiciel qui permet de créer, gérer et interroger une base de données; exemples : PostgreSQL et MongoDB",
+            "name": "Un SGBD est un logiciel permettant de créer, gérer et interroger une base; exemples : PostgreSQL et MongoDB",
             "isCorrect": true
+          },
+          {
+            "name": "SQL est un protocole de transport utilisé pour synchroniser plusieurs serveurs",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Dans une base de données, les données sont stockées dans des ___. Celles-ci sont constituées de lignes appelées ___ et de colonnes appelées ___",
-        "description": "Tables, enregistrements et champs.",
+        "description": ".",
         "point": 3,
         "type": "MULTI",
         "choices": [
           {
-            "name": "Les colonnes sont appelées champs",
+            "name": "Dans une base, les données sont stockées dans des tables",
             "isCorrect": true
-          },
-          {
-            "name": "Les lignes sont appelées programmes",
-            "isCorrect": false
           },
           {
             "name": "Les lignes sont appelées enregistrements",
             "isCorrect": true
           },
           {
-            "name": "Dans une base de données, les données sont stockées dans des tables",
+            "name": "Les colonnes sont appelées champs",
             "isCorrect": true
+          },
+          {
+            "name": "Les colonnes sont appelées segments logiques",
+            "isCorrect": false
+          },
+          {
+            "name": "Les lignes sont appelées modules",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Quelle est la différence entre une base de données relationnelle et non relationnelle ?",
-        "description": "Comparaison entre bases SQL et NoSQL.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
           {
-            "name": "Une base relationnelle n'existe pas",
-            "isCorrect": false
-          },
-          {
-            "name": "Elles sont identiques",
-            "isCorrect": false
-          },
-          {
-            "name": "Une base non relationnelle stocke uniquement des images",
-            "isCorrect": false
-          },
-          {
-            "name": "Une base relationnelle organise les données en tables reliées par clés primaires/étrangères pour des données structurées; une base non relationnelle stocke les données sous forme de documents, graphes, colonnes ou paires clé/valeur",
+            "name": "Une base relationnelle organise les données en tables reliées par clés primaires/étrangères; une base non relationnelle stocke les données sous forme de documents, graphes, colonnes ou paires clé/valeur",
             "isCorrect": true
+          },
+          {
+            "name": "Une base non relationnelle est conçue exclusivement pour stocker des fichiers binaires massifs",
+            "isCorrect": false
+          },
+          {
+            "name": "Les deux modèles stockent les données sous forme tabulaire avec des systèmes d’index différents",
+            "isCorrect": false
+          },
+          {
+            "name": "Une base relationnelle ne peut pas gérer plus de deux tables sans vue",
+            "isCorrect": false
           }
         ]
       },
+
       {
-        "name": "Qu’est-ce qu’une jointure dans une base de données ? En existe-t-il plusieurs ? Si oui lesquelles ?",
-        "description": "Opération combinant des tables et types de jointures.",
+        "name": "Qu’est-ce qu’une jointure dans une base de données ? En existe-t-il plusieurs ?",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
+          {
+            "name": "Une jointure permet de combiner les données de plusieurs tables basées sur un attribut commun",
+            "isCorrect": true
+          },
           {
             "name": "Il existe plusieurs types: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN",
             "isCorrect": true
           },
           {
-            "name": "Une jointure renvoie une requête SELECT",
+            "name": "Une jointure crée automatiquement un résulat agrégé si aucune condition n'est fournie",
             "isCorrect": false
-          },
-          {
-            "name": "Combiner les données de plusieurs tables basées sur un attribut commun",
-            "isCorrect": true
           }
         ]
       },
+
       {
         "name": "A quoi sert une vue dans une base de données ?",
-        "description": "Définition d'une vue en base de données.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
@@ -1912,63 +1981,57 @@
             "isCorrect": true
           },
           {
-            "name": "Une vue est un index",
+            "name": "Une vue est une copie matérielle de la table utilisée pour optimiser les tris",
             "isCorrect": false
           },
           {
-            "name": "Une vue est un serveur",
+            "name": "Une vue agit comme un index chargé de redistribuer les permissions",
             "isCorrect": false
           },
           {
-            "name": "Une vue est une clé primaire",
+            "name": "Une vue sert à définir la structure physique d’une base de données",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce que l’intégrité référentielle dans une base de données ?",
-        "description": "Concept de cohérence des relations entre tables.",
+        "description": ".",
         "point": 3,
         "type": "ONE",
         "choices": [
-          {
-            "name": "C'est une extension de CSS",
-            "isCorrect": false
-          },
-          {
-            "name": "Elle permet d'encrypter les mots de passe",
-            "isCorrect": false
-          },
           {
             "name": "L'intégrité référentielle garantit que les relations entre tables restent cohérentes: une clé étrangère doit correspondre à une clé primaire valide",
             "isCorrect": true
           },
           {
-            "name": "Elle définit la taille d'une colonne",
+            "name": "Elle optimise la répartition des requêtes sur plusieurs serveurs SQL",
+            "isCorrect": false
+          },
+          {
+            "name": "Elle contrôle le stockage interne des vues et index",
+            "isCorrect": false
+          },
+          {
+            "name": "C'est un mécanisme optionnel permettant d'ajuster automatiquement la syntaxe des requêtes",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Quelles sont les fonctions d’agrégation en SQL ?",
-        "description": "Fonctions d’agrégation courantes en SQL.",
+        "description": ".",
         "point": 4,
         "type": "MULTI",
         "choices": [
-          {
-            "name": "AVG()",
-            "isCorrect": true
-          },
           {
             "name": "MAX()",
             "isCorrect": true
           },
           {
-            "name": "SELECT()",
-            "isCorrect": false
-          },
-          {
-            "name": "MIN()",
+            "name": "AVG()",
             "isCorrect": true
           },
           {
@@ -1978,12 +2041,21 @@
           {
             "name": "COUNT()",
             "isCorrect": true
+          },
+          {
+            "name": "MIN()",
+            "isCorrect": true
+          },
+          {
+            "name": "SELECT()",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Qu’est-ce qu’un CRUD dans le contexte d’une base de données ?",
-        "description": "Opérations de base Create, Read, Update, Delete.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
@@ -1992,22 +2064,23 @@
             "isCorrect": true
           },
           {
-            "name": "Un fichier HTML",
+            "name": "Un moteur de cache utilisé par les ORM",
             "isCorrect": false
           },
           {
-            "name": "Un type d'algorithme",
+            "name": "Une architecture réseau permettant l'exposition d'API SQL distantes",
             "isCorrect": false
           },
           {
-            "name": "Un protocole de messagerie",
+            "name": "Un type de système d’indexation utilisé pour accélérer le tri",
             "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Quelles sont les clauses qui permettent de : Insérer, Modifier, Supprimer, Supprimer base, Filtrer, Trier, Regrouper, Concaténer ?",
-        "description": "Clauses SQL pour les opérations communes.",
+        "description": ".",
         "point": 8,
         "type": "MULTI",
         "choices": [
@@ -2016,7 +2089,7 @@
             "isCorrect": true
           },
           {
-            "name": "WHERE ...",
+            "name": "GROUP BY ...",
             "isCorrect": true
           },
           {
@@ -2024,19 +2097,7 @@
             "isCorrect": true
           },
           {
-            "name": "ORDER BY ... [ASC|DESC]",
-            "isCorrect": true
-          },
-          {
-            "name": "DELETE FROM ... WHERE ...",
-            "isCorrect": true
-          },
-          {
-            "name": "FORMAT()",
-            "isCorrect": false
-          },
-          {
-            "name": "UPDATE ... SET ... WHERE ...",
+            "name": "ORDER BY ...",
             "isCorrect": true
           },
           {
@@ -2044,39 +2105,53 @@
             "isCorrect": true
           },
           {
-            "name": "PRINT()",
+            "name": "UPDATE ... SET ... WHERE ...",
+            "isCorrect": true
+          },
+          {
+            "name": "WHERE ...",
+            "isCorrect": true
+          },
+          {
+            "name": "DELETE FROM ... WHERE ...",
+            "isCorrect": true
+          },
+          {
+            "name": "FORMAT(TABLE, STRICT)",
             "isCorrect": false
           },
           {
-            "name": "GROUP BY ...",
-            "isCorrect": true
+            "name": "PRINT()",
+            "isCorrect": false
           }
         ]
       },
+
       {
         "name": "Comment se connecter à une base de données en PHP ? Quelle est la classe native utilisée ?",
-        "description": "Connexion à la base de données via PDO.",
+        "description": ".",
         "point": 2,
         "type": "ONE",
         "choices": [
-          {
-            "name": "Using HTML form only",
-            "isCorrect": false
-          },
-          {
-            "name": "script.js",
-            "isCorrect": false
-          },
           {
             "name": "On se connecte généralement en PHP via la classe PDO (PHP Data Objects)",
             "isCorrect": true
           },
           {
-            "name": "La classe DBConnect",
+            "name": "La classe SQLManager intégrée aux versions récentes de PHP",
+            "isCorrect": false
+          },
+          {
+            "name": "Un fichier .ini côté navigateur qui initialise la session SQL",
+            "isCorrect": false
+          },
+          {
+            "name": "La classe DBConnect, utilisée pour les connexions système",
             "isCorrect": false
           }
         ]
       }
+
     ]
   },
   {
